@@ -270,9 +270,9 @@
 				</div>
 					<!--</form> End form -->
 			</div>
-			<div class="form-wrap">
+			<div class="form-wrap checked">
 				<div class="checkbox checked">
-					<input id="cityCheck" type="checkbox" name="cityCheck" checked
+					<input id="cityCheck" type="checkbox" name="cityCheck"
 					       [(ngModel)]="model.cityCheck"
 					       (blur)="blurel($event)"
 					       #cityCheck="ngModel">
@@ -280,7 +280,7 @@
 				</div>
 				<h5>Почтовый адрес</h5>
 				<!--<form class="place--second" action=""> Start form -->
-					<div class="form-item">
+					<div class="form-item checked-hide">
 						<div class="input--yoshiko">
 							<input class="field--yoshiko" id="input20" type="number" name="postIndex"
 							       [(ngModel)]="model.postIndex"
