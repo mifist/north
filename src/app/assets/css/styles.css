@@ -17225,7 +17225,7 @@ textarea.field--yoshiko + .label--yoshiko {
   margin-bottom: 15px;
 }
 
-.form-wrap .form-item:first-child.--simple {
+.form-wrap .form-item:nth-child(1).--simple {
   margin-bottom: 30px;
 }
 

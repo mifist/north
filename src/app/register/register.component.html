@@ -35,90 +35,60 @@
 -->
 
 
-
-
-
-
-
-
 <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
 
-			<div class="entry-content">
-				<div class="row"><!-- Start row -->
-					<h2 class="entry-title">Форма регистрации</h2>
-					<div class="entry-more">
-						<p>Реквизиты будут использоваться для формирования счетов и других финансовых документов.</p>
-						<p>Пожалуйста, указывайте корректные данные</p>
+<div class="entry-content">
+	<div class="row"><!-- Start row -->
+		<h2 class="entry-title">Форма регистрации</h2>
+		<div class="entry-more">
+			<p>Реквизиты будут использоваться для формирования счетов и других финансовых документов.</p>
+			<p>Пожалуйста, указывайте корректные данные</p>
+		</div>
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7"><!-- Start Form -->
+			<!-- Photo -->
+			<div class="form-wrap">
+				<h5>Ваш логтип</h5>
+				<div class="form-image">
+					<img src="../assets/images/images.jpg" alt="Logotype">
+				</div>
+				<a class="btn _large --download">ЗАГРУЗИТЬ ЛОГОТИП</a>
+			</div>
+			<!-- Main form -->
+			<div class="form-wrap">
+				<p class="entry-warning">
+					<span class="mbri-flag"></span>
+					Этим флажком отмечены поля обязательные к заполнению
+				</p>
+				<h5>Основные данные компании</h5>
+
+
+				<!-- <form class="" action="">     Start form -->
+                                            <!-- <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>  -->
+                                            <!-- <form name="form" (ngSubmit)="register()" #f="ngForm" novalidate>  -->
+				
+
+					<div class="form-item --requared --simple" [ngClass]="{ 'has-error': f.submitted && !formown.valid }">
+					    <div class="input--yoshiko">
+					<!--  <label for="power">Hero Power</label>  -->
+							<select class="field--yoshiko"  id="input121" required
+							    #formown="ngModel"
+								[(ngModel)]="model.formown" name="formown"
+							    (blur)="blurel($event)">
+								<option *ngFor="let formo of formowns" [value]="formo">{{formo}}</option>
+							</select>
+							
+							<label class="label--yoshiko" for="input121">
+								<span class="content--yoshiko" data-content="ФОРМА СОБСТВЕННОСТИ:">
+									Форма собственности:
+								</span>
+							</label>
+					    </div>
+						<div *ngIf="f.submitted && !formown.valid" class="help-block">Заполните обязательное поле</div>
 					</div>
-					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7"><!-- Start Form -->
-						<!-- Photo -->
-						<div class="form-wrap">
-							<h5>Ваш логтип</h5>
-							<div class="form-image">
-								<img src="../assets/images/images.jpg" alt="Logotype">
-							</div>
-							<a class="btn _large --download">ЗАГРУЗИТЬ ЛОГОТИП</a>
-						</div>
-						<!-- Main form -->
-						<div class="form-wrap">
-							<p class="entry-warning">
-								<span class="mbri-flag"></span>
-								Этим флажком отмечены поля обязательные к заполнению
-							</p>
-							<h5>Основные данные компании</h5>
-
-
-							<!-- <form class="" action="">     Start form -->
-                                                        <!-- <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>  -->
-                                                        <!-- <form name="form" (ngSubmit)="register()" #f="ngForm" novalidate>  -->
-
-
-								
-								<div class="form-item --requared --simple">
-									<div class="input--yoshiko">
-										<select class="field--yoshiko" id="input12" name="" required>
-											<option value="Москва">Форма собственности 1</option>
-											<option value="Москва">Форма собственности 2</option>
-											<option value="Москва">Форма собственности 3</option>
-										</select>
-										<label class="label--yoshiko" for="input12">
-											<span class="content--yoshiko" data-content="ФОРМА СОБСТВЕННОСТИ:">
-												Форма собственности:
-											</span>
-										</label>
-									</div>
-								</div>
-
-
-
-
-								<div class="form-item --requared --simple">
-								    <div class="input--yoshiko">
-								<!--  <label for="power">Hero Power</label>  -->
-								
-										<select class="field--yoshiko"  id="input121"
-											required
-											[(ngModel)]="model.formown" name="formown" (blur)="blurel($event)">
-												<option *ngFor="let formo of formowns" [value]="formo">{{formo}}</option>
-										</select>
-										
-										<label class="label--yoshiko" for="input121">
-											<span class="content--yoshiko" data-content="ФОРМА СОБСТВЕННОСТИ:">
-												Форма собственности:
-											</span>
-										</label>
-								
-								
-								    </div>
-								</div>
-
-
-
-
-
-<div class="form-item --requared --simple">
- <!--   <label for="power">Hero Power</label>  -->
-      <div class="input--yoshiko">
+<!--
+<div class="form-item &#45;&#45;requared &#45;&#45;simple">
+ &lt;!&ndash;   <label for="power">Hero Power</label>  &ndash;&gt;
+      <div class="input&#45;&#45;yoshiko">
 
 
             <select class="form-control" id="power" (ngModel)="model.formown" required>
@@ -127,15 +97,10 @@
 											<option value="3">Форма собственности 33</option> 
 
 
-<!-- <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option> -->
+&lt;!&ndash; <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option> &ndash;&gt;
             </select>
       </div>
-</div>
-
-
-
-
-
+</div>-->
 <!--
 <div class="form-item --requared --simple">
 	<div class="input--yoshiko">
@@ -151,10 +116,6 @@
 
 	</div>
 </div>
-
-
-
-
 <div class="form-group">
       <label for="organisation">Organisation
       <select id="organisation" class="form-control" [(ngModel)]="selectedOrgMod" required>
@@ -166,235 +127,217 @@
 							
 							
 
-        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-           <div class="input--yoshiko">
-             <!--  <label for="firstName">First Name</label> -->
-
-             <input type="text" class="form-control field--yoshiko" id="input131" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" (blur)="blurel($event)" (keyup)="onKeyUp($event)" required />
-
-					<label class="label--yoshiko" for="input131">
-						<span class="content--yoshiko" data-content="НАЗВАНИЕ ЮРИДИЧЕСКОГО ЛИЦА_">
-							Название юридического лица__
-						</span>
-					</label>
-
-
-
-             <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
-           </div>
-        </div>
+		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
+		           <div class="input--yoshiko">
+		             <!--  <label for="firstName">First Name</label> -->
+		             <input type="text" class="form-control field--yoshiko" id="input131" name="firstName"
+		                    [(ngModel)]="model.firstName"
+		                    #firstName="ngModel"
+		                    (blur)="blurel($event)"
+		                    (keyup)="onKeyUp($event)" required />
+						<label class="label--yoshiko" for="input131">
+							<span class="content--yoshiko" data-content="НАЗВАНИЕ ЮРИДИЧЕСКОГО ЛИЦА">
+								Название юридического лица
+							</span>
+						</label>
+		           </div>
+			        <div *ngIf="f.submitted && !firstName.valid" class="help-block">Заполните обязательное поле</div>
+		        </div>
+									
+		
+		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+		           <div class="input--yoshiko">
+		              <!--  <label for="username">Username</label>  -->
+		              <input type="text" class="form-control field--yoshiko" id="input141" name="username"
+		                     [(ngModel)]="model.username"
+		                     #username="ngModel"
+		                     (blur)="blurel($event)" required />
+						<label class="label--yoshiko" for="input141">
+							<span class="content--yoshiko" data-content="ИНН (Ваш личный логин)">
+								ИНН (Ваш личный логин)
+							</span>
+						</label>
+		           </div>
+			        <div *ngIf="f.submitted && !username.valid" class="help-block">Заполните обязательное поле</div>
+		        </div>
+		
+		
+		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !kpp.valid }">
+		           <div class="input--yoshiko">
+		              <input type="text" class="form-control field--yoshiko" id="input152" name="kpp"
+		                     [(ngModel)]="model.kpp"
+		                     #kpp="ngModel"
+		                     (blur)="blurel($event)" required />
+						<label class="label--yoshiko" for="input152">
+							<span class="content--yoshiko" data-content="КПП">
+								КПП
+							</span>
+						</label>
+		           </div>
+			        <div *ngIf="f.submitted && !kpp.valid" class="help-block">Заполните обязательное поле</div>
+		        </div>
+				
+				<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
+					<label for="lastName">Last Name</label>
+					<input type="text" class="form-control" id="lastName" name="lastName" required
+					       [(ngModel)]="model.lastName"
+					       (blur)="blurel($event)"
+					       #lastName="ngModel"/>
+					<div *ngIf="f.submitted && !lastName.valid" class="help-block">Заполните обязательное поле</div>
+				</div>
+		
+		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+		           <div class="input--yoshiko">
+		            <!--  <label for="password">Password</label>  -->
+			            <input type="password" class="form-control field--yoshiko" id="input151"  name="password"
+			                   [(ngModel)]="model.password"
+			                   (blur)="blurel($event)"
+			                   #password="ngModel" required />
+						<label class="label--yoshiko" for="input151">
+							<span class="content--yoshiko" data-content="ПАРОЛЬ">
+								Пароль
+							</span>
+						</label>
+		           </div>
+			        <div *ngIf="f.submitted && !password.valid" class="help-block">Заполните обязательное поле</div>
+		        </div>
+		
+		
+					<!--</form> End form -->
+			</div>
+			<div class="form-wrap">
+				<h5>Юридический адрес</h5>
+				<!--<form class="place--main" action=""> Start form -->
 							
-
-        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-           <div class="input--yoshiko">
-
-              <!--  <label for="username">Username</label>  -->
-
-
-              <input type="text" class="form-control field--yoshiko" id="input141" name="username" [(ngModel)]="model.username" #username="ngModel" (blur)="blurel($event)" required />
-           
-	           
-					<label class="label--yoshiko" for="input141">
-						<span class="content--yoshiko" data-content="ИНН_">
-							ИНН (Ваш личный логин)__
-						</span>
-					</label>
-
-
-              <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-
-           </div>
-        </div>
-
-
-        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-           <div class="input--yoshiko">
-
-	           
-              <input type="text" class="form-control field--yoshiko" id="input152" name="kpp" [(ngModel)]="model.kpp" #kpp="ngModel" (blur)="blurel($event)" required />
-	           
-				<label class="label--yoshiko" for="input152">
-					<span class="content--yoshiko" data-content="КПП_">
-						КПП__
-					</span>
-				</label>
-
-
-              <div *ngIf="f.submitted && !username.valid" class="help-block">КПП is required</div>
-
-           </div>
-        </div>
-
-
-
-
-
-
-
-
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-            <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
-            <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
-        </div>
-
-
-
-
-
-        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-
-           <div class="input--yoshiko">
-
-            <!--  <label for="password">Password</label>  -->
-
-            <input type="password" class="form-control field--yoshiko" id="input151"  name="password" [(ngModel)]="model.password" #password="ngModel" required />
-
-
-										<label class="label--yoshiko" for="input151">
-											<span class="content--yoshiko" data-content="ПАРОЛЬ">
-												Пароль
-											</span>
-										</label>
-
-
-            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-
-           </div>
-        </div>
-
-
-
-
-
-
- 
-
-
-
-
-
-
-							<!--</form> End form -->
+				<div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !cityIndex.valid }">
+					<div class="input--yoshiko">
+						<input class="field--yoshiko" id="input161" type="number" name="cityIndex" required
+						       [(ngModel)]="model.cityIndex"
+						       (blur)="blurel($event)"
+						       #cityIndex="ngModel">
+						<label class="label--yoshiko" for="input161">
+								<span class="content--yoshiko" data-content="ИНДЕКС">
+									Индекс
+								</span>
+						</label>
+					</div>
+					<div *ngIf="f.submitted && !cityIndex.valid" class="help-block">Заполните обязательное поле</div>
+				</div>
+				
+				<div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !cityRegion.valid }">
+					<div class="input--yoshiko">
+						<input class="field--yoshiko" id="input17" type="text" name="cityRegion" required
+						       [(ngModel)]="model.cityRegion"
+						       (blur)="blurel($event)"
+						       #cityRegion="ngModel">
+						<label class="label--yoshiko" for="input17">
+							<span class="content--yoshiko" data-content="ОБЛАСТЬ">
+								Область
+							</span>
+						</label>
+					</div>
+					<div *ngIf="f.submitted && !cityRegion.valid" class="help-block">Заполните обязательное поле</div>
+				</div>
+				
+				<div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
+					<div class="input--yoshiko">
+						<input class="field--yoshiko" id="input18" type="text" name="city" required
+						       [(ngModel)]="model.city"
+						       (blur)="blurel($event)"
+						       #city="ngModel">
+						<label class="label--yoshiko" for="input18">
+							<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
+								Город / Деревня
+							</span>
+						</label>
+					</div>
+					<div *ngIf="f.submitted && !city.valid" class="help-block">Заполните обязательное поле</div>
+				</div>
+				
+				<div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !cityAddress.valid }">
+					<div class="input--yoshiko">
+						<input class="field--yoshiko" id="input19" type="text" name="address" required
+						       [(ngModel)]="model.cityAddress"
+						       (blur)="blurel($event)"
+						       #cityAddress="ngModel">
+						<label class="label--yoshiko" for="input19">
+							<span class="content--yoshiko" data-content="АДРЕС">
+								Адрес
+							</span>
+						</label>
+					</div>
+					<div *ngIf="f.submitted && !cityAddress.valid" class="help-block">Заполните обязательное поле</div>
+				</div>
+					<!--</form> End form -->
+			</div>
+			<div class="form-wrap">
+				<div class="checkbox checked">
+					<input id="cityCheck" type="checkbox" name="cityCheck" checked
+					       [(ngModel)]="model.cityCheck"
+					       (blur)="blurel($event)"
+					       #cityCheck="ngModel">
+					<label for="cityCheck">Совпадает с юридическим адресом</label>
+				</div>
+				<h5>Почтовый адрес</h5>
+				<!--<form class="place--second" action=""> Start form -->
+					<div class="form-item">
+						<div class="input--yoshiko">
+							<input class="field--yoshiko" id="input20" type="number" name="postIndex"
+							       [(ngModel)]="model.postIndex"
+							       (blur)="blurel($event)"
+							       #postIndex="ngModel">
+							<label class="label--yoshiko" for="input20">
+								<span class="content--yoshiko" data-content="ИНДЕКС">
+									Индекс
+								</span>
+							</label>
 						</div>
-						<div class="form-wrap">
-							<h5>Юридический адрес</h5>
-							<!--<form class="place--main" action=""> Start form -->
-							
-							
-							<div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input161" type="number" name="cityindex" required
-									       [(ngModel)]="model.cityindex"  (blur)="blurel($event)" #cityindex="ngModel">
-									<label class="label--yoshiko" for="input161">
-											<span class="content--yoshiko" data-content="ИНДЕКС_">
-												Индекс_
-											</span>
-									</label>
-									<div *ngIf="f.submitted && !cityindex.valid" class="help-block">Заполните
-										обязательное поле</div>
-								</div>
-							</div>
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input17" type="text" name="" value="" required >
-										<label class="label--yoshiko" for="input17">
-											<span class="content--yoshiko" data-content="ОБЛАСТЬ">
-												Область
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input18" type="text" name="" value=""
-										       required>
-										<label class="label--yoshiko" for="input18">
-											<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
-												Город / Деревня
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input19" type="text" name="" value=""
-										       required>
-										<label class="label--yoshiko" for="input19">
-											<span class="content--yoshiko" data-content="АДРЕС">
-												Адрес
-											</span>
-										</label>
-									</div>
-								</div>
-							<!--</form> End form -->
+					</div>
+					
+					<div class="form-item">
+						<div class="input--yoshiko">
+							<input class="field--yoshiko" id="input21" type="text" name="postRegion"
+							       [(ngModel)]="model.postRegion"
+							       (blur)="blurel($event)"
+							       #postRegion="ngModel">
+							<label class="label--yoshiko" for="input21">
+								<span class="content--yoshiko" data-content="ОБЛАСТЬ">
+									Область
+								</span>
+							</label>
 						</div>
-						<div class="form-wrap">
-							<div class="checkbox checked">
-								<input id="checkbox8" type="checkbox" name="" value="" checked>
-								<label for="checkbox8">Совпадает с юридическим адресом</label>
-							</div>
-							<h5>Почтовый адрес</h5>
-							<!--<form class="place--second" action=""> Start form -->
-								<div class="form-item">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input20" type="number" name="" value="">
-										<label class="label--yoshiko" for="input20">
-											<span class="content--yoshiko" data-content="ИНДЕКС">
-												Индекс
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input21" type="text" name="" value="" >
-										<label class="label--yoshiko" for="input21">
-											<span class="content--yoshiko" data-content="ОБЛАСТЬ">
-												Область
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input22" type="text" name="" value="">
-										<label class="label--yoshiko" for="input22">
-											<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
-												Город / Деревня
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input23" type="text" name="" value="">
-										<label class="label--yoshiko" for="input23">
-											<span class="content--yoshiko" data-content="АДРЕС">
-												Адрес
-											</span>
-										</label>
-									</div>
-								</div>
-							<!--</form> End form -->
+					</div>
+					
+					<div class="form-item">
+						<div class="input--yoshiko">
+							<input class="field--yoshiko" id="input22" type="text" name="postCity"
+							       [(ngModel)]="model.postCity"
+							       (blur)="blurel($event)"
+							       #postCity="ngModel">
+							<label class="label--yoshiko" for="input22">
+								<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
+									Город / Деревня
+								</span>
+							</label>
 						</div>
-					</div><!-- End MAIN Form -->
+					</div>
+					
+					<div class="form-item">
+						<div class="input--yoshiko">
+							<input class="field--yoshiko" id="input23" type="text" name="postAddress"
+							       [(ngModel)]="model.postAddress"
+							       (blur)="blurel($event)"
+							       #postAddress="ngModel">
+							<label class="label--yoshiko" for="input23">
+								<span class="content--yoshiko" data-content="АДРЕС">
+									Адрес
+								</span>
+							</label>
+						</div>
+					</div>
+				<!--</form> End form -->
+			</div>
+			</div><!-- End MAIN Form -->
 					
 					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5"><!-- Start Help -->
 						<h4>ПОМОЩЬ ПРИ ЗАПОЛНЕНИИ</h4>
@@ -417,7 +360,10 @@
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="form-item">
 											<div class="input--yoshiko">
-												<input class="field--yoshiko" id="input24" type="text" name="" value="">
+												<input class="field--yoshiko" id="input24" type="text" name="bailee"
+												       [(ngModel)]="model.bailee"
+												       (blur)="blurel($event)"
+												       #bailee="ngModel">
 												<label class="label--yoshiko" for="input24">
 													<span class="content--yoshiko" data-content="И.Ф.О.">
 														И.Ф.О.
@@ -428,7 +374,10 @@
 										
 										<div class="form-item">
 											<div class="input--yoshiko">
-												<input class="field--yoshiko" id="input25" type="tel" name="" value="">
+												<input class="field--yoshiko" id="input25" type="tel" name="phone"
+												       [(ngModel)]="model.phone"
+												       (blur)="blurel($event)"
+												       #phone="ngModel">
 												<label class="label--yoshiko" for="input25">
 													<span class="content--yoshiko" data-content="ТЕЛЕФОН">
 														Телефон
@@ -439,8 +388,11 @@
 										
 										<div class="form-item">
 											<div class="input--yoshiko">
-												<input class="field--yoshiko" id="input26" type="email" name="" value="">
-												<label class="label--yoshiko" for="input26">
+												<input class="field--yoshiko" id="postEmail" type="email" name="postEmail"
+												       [(ngModel)]="model.postEmail"
+												       (blur)="blurel($event)"
+												       #postEmail="ngModel">
+												<label class="label--yoshiko" for="postEmail">
 													<span class="content--yoshiko" data-content="E-mail">
 														E-mail
 													</span>
@@ -450,7 +402,10 @@
 										
 										<div class="form-item">
 											<div class="input--yoshiko">
-												<input class="field--yoshiko" id="input27" type="text" name="" value="">
+												<input class="field--yoshiko" id="input27" type="text" name="accounting"
+												       [(ngModel)]="model.accounting"
+												       (blur)="blurel($event)"
+												       #accounting="ngModel">
 												<label class="label--yoshiko" for="input27">
 													<span class="content--yoshiko" data-content="ТЕЛЕФОН">
 														Контакты бухгалтерии
@@ -462,7 +417,10 @@
 									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<div class="form-item">
 											<div class="input--yoshiko">
-												<textarea class="field--yoshiko" id="input28" name=""></textarea>
+												<textarea class="field--yoshiko" id="input28" name="infAbout"
+												          [(ngModel)]="model.infAbout"
+												          (blur)="blurel($event)"
+												          #infAbout="ngModel"></textarea>
 												<label class="label--yoshiko" for="input28">
 													<span class="content--yoshiko" data-content="Информация о компании (будет отображаться для Соискателей)">
 														Информация о компании
