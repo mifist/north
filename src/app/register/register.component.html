@@ -1,0 +1,600 @@
+﻿<!--
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>Register</h2>
+    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Register</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+-->
+
+
+
+
+
+
+
+
+<form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+
+			<div class="entry-content">
+				<div class="row"><!-- Start row -->
+					<h2 class="entry-title">Форма регистрации</h2>
+					<div class="entry-more">
+						<p>Реквизиты будут использоваться для формирования счетов и других финансовых документов.</p>
+						<p>Пожалуйста, указывайте корректные данные</p>
+					</div>
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7"><!-- Start Form -->
+						<!-- Photo -->
+						<div class="form-wrap">
+							<h5>Ваш логтип</h5>
+							<div class="form-image">
+								<img src="../assets/images/images.jpg" alt="Logotype">
+							</div>
+							<a class="btn _large --download">ЗАГРУЗИТЬ ЛОГОТИП</a>
+						</div>
+						<!-- Main form -->
+						<div class="form-wrap">
+							<p class="entry-warning">
+								<span class="mbri-flag"></span>
+								Этим флажком отмечены поля обязательные к заполнению
+							</p>
+							<h5>Основные данные компании</h5>
+
+
+							<!-- <form class="" action="">     Start form -->
+                                                        <!-- <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>  -->
+                                                        <!-- <form name="form" (ngSubmit)="register()" #f="ngForm" novalidate>  -->
+
+
+								
+								<div class="form-item --requared --simple">
+									<div class="input--yoshiko">
+										<select class="field--yoshiko" id="input12" name="" required>
+											<option value="Москва">Форма собственности 1</option>
+											<option value="Москва">Форма собственности 2</option>
+											<option value="Москва">Форма собственности 3</option>
+										</select>
+										<label class="label--yoshiko" for="input12">
+											<span class="content--yoshiko" data-content="ФОРМА СОБСТВЕННОСТИ:">
+												Форма собственности:
+											</span>
+										</label>
+									</div>
+								</div>
+
+
+
+
+								<div class="form-item --requared --simple">
+								    <div class="input--yoshiko">
+								<!--  <label for="power">Hero Power</label>  -->
+								
+										<select class="field--yoshiko"  id="input121"
+											required
+											[(ngModel)]="model.formown" name="formown" (blur)="blurel($event)">
+												<option *ngFor="let formo of formowns" [value]="formo">{{formo}}</option>
+										</select>
+										
+										<label class="label--yoshiko" for="input121">
+											<span class="content--yoshiko" data-content="ФОРМА СОБСТВЕННОСТИ:">
+												Форма собственности:
+											</span>
+										</label>
+								
+								
+								    </div>
+								</div>
+
+
+
+
+
+<div class="form-item --requared --simple">
+ <!--   <label for="power">Hero Power</label>  -->
+      <div class="input--yoshiko">
+
+
+            <select class="form-control" id="power" (ngModel)="model.formown" required>
+  											<option value="1">Форма собственности 1</option>
+											<option value="2">Форма собственности 2</option>
+											<option value="3">Форма собственности 33</option> 
+
+
+<!-- <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option> -->
+            </select>
+      </div>
+</div>
+
+
+
+
+
+<!--
+<div class="form-item --requared --simple">
+	<div class="input--yoshiko">
+
+
+              <label for="organisation">Organisation
+              <select  class="field--yoshiko" id="input12" [(ngModel)]="model.formown" required>
+											<option value="1">Форма собственности 1</option>
+											<option value="2">Форма собственности 2</option>
+											<option value="3">Форма собственности 3</option>
+              </select>
+              </label>
+
+	</div>
+</div>
+
+
+
+
+<div class="form-group">
+      <label for="organisation">Organisation
+      <select id="organisation" class="form-control" [(ngModel)]="selectedOrgMod" required>
+        <option *ngFor="let org of orgs" [ngValue]="org">{{org.name}}</option>
+      </select>
+      </label>
+</div>
+-->
+							
+							
+
+        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+           <div class="input--yoshiko">
+             <!--  <label for="firstName">First Name</label> -->
+
+             <input type="text" class="form-control field--yoshiko" id="input131" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" (blur)="blurel($event)" (keyup)="onKeyUp($event)" required />
+
+					<label class="label--yoshiko" for="input131">
+						<span class="content--yoshiko" data-content="НАЗВАНИЕ ЮРИДИЧЕСКОГО ЛИЦА_">
+							Название юридического лица__
+						</span>
+					</label>
+
+
+
+             <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+           </div>
+        </div>
+							
+
+        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+           <div class="input--yoshiko">
+
+              <!--  <label for="username">Username</label>  -->
+
+
+              <input type="text" class="form-control field--yoshiko" id="input141" name="username" [(ngModel)]="model.username" #username="ngModel" (blur)="blurel($event)" required />
+           
+	           
+					<label class="label--yoshiko" for="input141">
+						<span class="content--yoshiko" data-content="ИНН_">
+							ИНН (Ваш личный логин)__
+						</span>
+					</label>
+
+
+              <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+
+           </div>
+        </div>
+
+
+        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+           <div class="input--yoshiko">
+
+	           
+              <input type="text" class="form-control field--yoshiko" id="input152" name="kpp" [(ngModel)]="model.kpp" #kpp="ngModel" (blur)="blurel($event)" required />
+	           
+				<label class="label--yoshiko" for="input152">
+					<span class="content--yoshiko" data-content="КПП_">
+						КПП__
+					</span>
+				</label>
+
+
+              <div *ngIf="f.submitted && !username.valid" class="help-block">КПП is required</div>
+
+           </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+        </div>
+
+
+
+
+
+        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+
+           <div class="input--yoshiko">
+
+            <!--  <label for="password">Password</label>  -->
+
+            <input type="password" class="form-control field--yoshiko" id="input151"  name="password" [(ngModel)]="model.password" #password="ngModel" required />
+
+
+										<label class="label--yoshiko" for="input151">
+											<span class="content--yoshiko" data-content="ПАРОЛЬ">
+												Пароль
+											</span>
+										</label>
+
+
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+
+           </div>
+        </div>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+							<!--</form> End form -->
+						</div>
+						<div class="form-wrap">
+							<h5>Юридический адрес</h5>
+							<!--<form class="place--main" action=""> Start form -->
+							
+							
+							<div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input161" type="number" name="cityindex" required
+									       [(ngModel)]="model.cityindex"  (blur)="blurel($event)" #cityindex="ngModel">
+									<label class="label--yoshiko" for="input161">
+											<span class="content--yoshiko" data-content="ИНДЕКС_">
+												Индекс_
+											</span>
+									</label>
+									<div *ngIf="f.submitted && !cityindex.valid" class="help-block">Заполните
+										обязательное поле</div>
+								</div>
+							</div>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+								
+								<div class="form-item --requared">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input17" type="text" name="" value="" required >
+										<label class="label--yoshiko" for="input17">
+											<span class="content--yoshiko" data-content="ОБЛАСТЬ">
+												Область
+											</span>
+										</label>
+									</div>
+								</div>
+								
+								<div class="form-item --requared">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input18" type="text" name="" value=""
+										       required>
+										<label class="label--yoshiko" for="input18">
+											<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
+												Город / Деревня
+											</span>
+										</label>
+									</div>
+								</div>
+								
+								<div class="form-item --requared">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input19" type="text" name="" value=""
+										       required>
+										<label class="label--yoshiko" for="input19">
+											<span class="content--yoshiko" data-content="АДРЕС">
+												Адрес
+											</span>
+										</label>
+									</div>
+								</div>
+							<!--</form> End form -->
+						</div>
+						<div class="form-wrap">
+							<div class="checkbox checked">
+								<input id="checkbox8" type="checkbox" name="" value="" checked>
+								<label for="checkbox8">Совпадает с юридическим адресом</label>
+							</div>
+							<h5>Почтовый адрес</h5>
+							<!--<form class="place--second" action=""> Start form -->
+								<div class="form-item">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input20" type="number" name="" value="">
+										<label class="label--yoshiko" for="input20">
+											<span class="content--yoshiko" data-content="ИНДЕКС">
+												Индекс
+											</span>
+										</label>
+									</div>
+								</div>
+								
+								<div class="form-item">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input21" type="text" name="" value="" >
+										<label class="label--yoshiko" for="input21">
+											<span class="content--yoshiko" data-content="ОБЛАСТЬ">
+												Область
+											</span>
+										</label>
+									</div>
+								</div>
+								
+								<div class="form-item">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input22" type="text" name="" value="">
+										<label class="label--yoshiko" for="input22">
+											<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
+												Город / Деревня
+											</span>
+										</label>
+									</div>
+								</div>
+								
+								<div class="form-item">
+									<div class="input--yoshiko">
+										<input class="field--yoshiko" id="input23" type="text" name="" value="">
+										<label class="label--yoshiko" for="input23">
+											<span class="content--yoshiko" data-content="АДРЕС">
+												Адрес
+											</span>
+										</label>
+									</div>
+								</div>
+							<!--</form> End form -->
+						</div>
+					</div><!-- End MAIN Form -->
+					
+					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5"><!-- Start Help -->
+						<h4>ПОМОЩЬ ПРИ ЗАПОЛНЕНИИ</h4>
+						<p class="text-center --bold">Что дает регистрация?</p>
+						<ol>
+							<li>Сохранять вакансии и просматривать историю своих откликов</li>
+							<li>Управлять рассылками</li>
+							<li>Видеть кто просматривал ваше резюме</li>
+						</ol>
+						<p class="text-center --bold">Зарегистрируйтесь — это просто и бесплатно!</p>
+						<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
+						<p>Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+					</div><!-- End Help -->
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<!-- Start Full width form -->
+						<div class="form-wrap">
+							<h5>Ответственное лицо</h5>
+							<!--<form class="responsible-person" action=""> Start form -->
+								<div class="row">
+									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+										<div class="form-item">
+											<div class="input--yoshiko">
+												<input class="field--yoshiko" id="input24" type="text" name="" value="">
+												<label class="label--yoshiko" for="input24">
+													<span class="content--yoshiko" data-content="И.Ф.О.">
+														И.Ф.О.
+													</span>
+												</label>
+											</div>
+										</div>
+										
+										<div class="form-item">
+											<div class="input--yoshiko">
+												<input class="field--yoshiko" id="input25" type="tel" name="" value="">
+												<label class="label--yoshiko" for="input25">
+													<span class="content--yoshiko" data-content="ТЕЛЕФОН">
+														Телефон
+													</span>
+												</label>
+											</div>
+										</div>
+										
+										<div class="form-item">
+											<div class="input--yoshiko">
+												<input class="field--yoshiko" id="input26" type="email" name="" value="">
+												<label class="label--yoshiko" for="input26">
+													<span class="content--yoshiko" data-content="E-mail">
+														E-mail
+													</span>
+												</label>
+											</div>
+										</div>
+										
+										<div class="form-item">
+											<div class="input--yoshiko">
+												<input class="field--yoshiko" id="input27" type="text" name="" value="">
+												<label class="label--yoshiko" for="input27">
+													<span class="content--yoshiko" data-content="ТЕЛЕФОН">
+														Контакты бухгалтерии
+													</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+										<div class="form-item">
+											<div class="input--yoshiko">
+												<textarea class="field--yoshiko" id="input28" name=""></textarea>
+												<label class="label--yoshiko" for="input28">
+													<span class="content--yoshiko" data-content="Информация о компании (будет отображаться для Соискателей)">
+														Информация о компании
+													</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							<!--</form> End form -->
+						</div>
+					</div><!-- End Full width form -->
+				</div><!-- End row -->
+				
+				<div class="row"><!-- Start row -->
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<!-- Start download video and photo -->
+						<h5>Вы можете добавить до 3-х видеороликов</h5>
+						<div class="form-item --download-file">
+							<div class="main-item">
+								<div class="form-item --simple">
+									<h6>Загрузить видео</h6>
+									<div class="input--yoshiko file-form">
+										<label for="input32"></label>
+										<button type="button" name="" value="" class="btn _small --file">Выбрать</button>
+										<input id="input32" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
+									</div>
+									<span class="about-input --red">*Видеоролики будут видны Соискателям.</span>
+								</div>
+							</div>
+							<div class="file-item">
+								<!-- файлы грузяться сюда -->
+								<div class="item-field">
+									<div id="fileformlabel"></div>
+									<i class="mbri-close --close"></i>
+								</div>
+								<div class="item-field">
+									<div id="fileformlabel"></div>
+									<i class="mbri-close --close"></i>
+								</div>
+							</div>
+						</div>
+						<h5>Вы можете добавить до 5-ти фотографий</h5>
+						<div class="form-item --download-file">
+							<div class="main-item">
+								<div class="form-item --simple">
+									<h6>Загрузить фото</h6>
+									<div class="input--yoshiko file-form">
+										<label for="input29"></label>
+										<button type="button" name="" value="" class="btn _small --file">Выбрать</button>
+										<input id="input29" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
+									</div>
+									<span class="about-input --red">*Фотографии будут видны Соискателям.</span>
+								</div>
+							</div>
+							<div class="file-item">
+								<!-- файлы грузяться сюда -->
+								<div class="item-field">
+									<div id="fileformlabel"></div>
+									<i class="mbri-close --close"></i>
+								</div>
+								<div class="item-field">
+									<div id="fileformlabel"></div>
+									<i class="mbri-close --close"></i>
+								</div>
+							</div>
+						</div>
+					</div><!-- End download video and photo -->
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<!-- Start subscrybe -->
+						<h5>Отметьте сообщения которые желаете получать по почте</h5>
+						<div class="form-item --subscrybe">
+							<div class="checkbox">
+								<input id="checkbox7" type="checkbox" name="" value="">
+								<label for="checkbox7">Новости сайта</label>
+							</div>
+							<div class="checkbox">
+								<input id="checkbox9" type="checkbox" name="" value="">
+								<label for="checkbox9">Уведомления</label>
+							</div>
+							<div class="checkbox">
+								<input id="checkbox10" type="checkbox" name="" value="">
+								<label for="checkbox10">Напоминания</label>
+							</div>
+						</div>
+					</div><!-- End subscrybe -->
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<!-- Start Message -->
+						<div class="form-item --message">
+							<div class="checkbox">
+								<input id="checkbox4" type="checkbox" name="" value="">
+								<label for="checkbox4">Вы подтверждаете достоверность введенной
+									информации</label>
+							</div>
+							<div class="checkbox">
+								<input id="checkbox5" type="checkbox" name="" value="">
+								<label for="checkbox5">Вы даете согласие на обработку персональных
+									данных</label>
+							</div>
+							<div class="checkbox">
+								<input id="checkbox6" type="checkbox" name="" value="">
+								<label for="checkbox6">
+									Вы подтверждаю свое согласие с
+									<a href="#">Условиями пользования</a> сайтом northwork.ru и
+									<a href="#">Политикой конфиденциальности</a>
+								</label>
+							</div>
+						</div>
+
+
+
+						<!-- <a href="#finish" class="btn _large --download">Зарегистрироваься</a>    -->
+
+       <div class="form-group">
+	       <button [disabled]="loading" class="btn _large --download">Зарегистрироваться</button>
+	       <!--<button [disabled]="!f.valid" class="btn _large --download">Зарегистрироваться</button> -->
+		   <!--<button [disabled]="loading" class="btn _large --download">Зарегистрироваться</button> -->
+
+
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            
+        </div>
+
+
+
+
+
+
+					</div><!-- End Message and button -->
+				</div><!-- End row -->
+			</div>
+
+
+</form><!-- End form -->
