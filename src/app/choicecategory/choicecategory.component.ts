@@ -6,12 +6,43 @@ import { AlertService, UserService } from '../_services/index';
 @Component({
     moduleId: module.id,
     templateUrl: 'choicecategory.component.html'
-    //styleUrls: ['choicecategory.component.css']
+   /* styleUrls: ['choicecategory.component.css']*/
 })
+
 
 export class ChoiceCategoryComponent {
     model: any = {};
     loading = false;
+    categores = [
+        {
+            title: 'МЕХАНИЗМЫ И ТРАНСПОРТ',
+            desc: '(авто, гусеничный, ж/д)',
+        },
+        {
+            title: 'СТРОИТЕЛЬСТВО',
+            desc: '',
+        },
+        {
+            title: 'СВАРОЧНОЕ ПРОИЗВОДСТВО',
+            desc: '',
+        },
+        {
+            title: 'ЭЛЕКТРОХОЗЯЙСТВО',
+            desc: '(эксплуатация, ремонт)',
+        },
+        {
+            title: 'СЛУЖБА БЫТА',
+            desc: '',
+        },
+        {
+            title: 'НЕФТЕГАЗОВЫЙ КОМПЛЕКС',
+            desc: '(разведка, бурение, добыча, эксплуатация)',
+        },
+        {
+            title: 'МЕД. ПЕРСОНАЛ',
+            desc: '',
+        }
+    ];
 
     constructor(
         private router: Router,
@@ -19,10 +50,10 @@ export class ChoiceCategoryComponent {
         private alertService: AlertService) { }
 
     blurel(el: any) {
-        //alert(el.target.value.trim()+"1");
-        //console.log(this.model);
+       /* alert(el.target.value.trim()+"1");*/
+        /*console.log(this.model);*/
         console.log(this.model);
-        //console.log(f.value); 
+       /* console.log(f.value); */
         if (el.target.value.trim() == '') {
             el.target.parentNode.classList.remove('input--filled');
         }
@@ -31,13 +62,16 @@ export class ChoiceCategoryComponent {
         }
 
     }
+    FooController(el: any) {
+        console.log(this.model);
 
+    }
 
     register() {
         console.log(this.model);
         this.loading = true;
-        //this.userService.create(this.model);
-        //console.log(this.model);
+       /* this.userService.create(this.model);*/
+       /* console.log(this.model);*/
         console.log('----------');
 
         this.userService.create(this.model)

@@ -9,76 +9,52 @@
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
+				
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap"
+				     *ngFor="let category of categores; let i = index">
 					<a [routerLink]="['/registerapplicants']" class="--category">
-						<h4>МЕХАНИЗМЫ И ТРАНСПОРТ</h4>
-						<span>(авто, гусеничный, ж/д)</span>
+						
+						<h4> {{ category['title'] }} </h4>
+						<span>{{ category['desc'] }} </span>
+					
 					</a>
 				</div>
+				
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
-						<h4>СТРОИТЕЛЬСТВО</h4>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
-						<h4>СВАРОЧНОЕ ПРОИЗВОДСТВО</h4>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
-						<h4>ЭЛЕКТРОХОЗЯЙСТВО</h4>
-						<span>(эксплуатация, ремонт)</span>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
-						<h4>СЛУЖБА БЫТА</h4>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
-						<h4>НЕФТЕГАЗОВЫЙ КОМПЛЕКС</h4>
-						<span>(разведка, бурение, добыча, эксплуатация)</span>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
-						<h4>МЕД. ПЕРСОНАЛ</h4>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
+					<a [routerLink]="['']"  class="--category">
 						<span class="mbri-code"></span>
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a href="page-categoty_more.html" class="--category">
+					<a [routerLink]="['']" class="--category">
 						<span class="mbri-code"></span>
 					</a>
 				</div>
 			</div><!-- End row -->
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<!-- Start pagination -->
-			<div class="pagination-centered">
-				<ul class="pagination">
-					<li>
-						<a class="prev" href="#">
-							<span class="mbri-arrow-prev"></span>
-						</a>
-					</li>
-					<li class="current"><a href="#">1</a></li>
-					<li><a class="" href="#">2</a></li>
-					<li><a class="" href="#">3</a></li>
-					<li>
-						<a class="next" href="#">
-							<span class="mbri-arrow-next"></span>
-						</a>
-					</li>
-				</ul>
-			</div><!-- End pagination -->
-		</div>
+		
+		<!-- Start pagination -->
+			<!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="pagination-centered">
+					<ul class="pagination">
+						<li>
+							<a class="prev" href="#">
+								<span class="mbri-arrow-prev"></span>
+							</a>
+						</li>
+						<li class="current"><a href="#">1</a></li>
+						<li><a class="" href="#">2</a></li>
+						<li><a class="" href="#">3</a></li>
+						<li>
+							<a class="next" href="#">
+								<span class="mbri-arrow-next"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>-->
+		<!-- End pagination -->
+		
 	</div><!-- End row -->
 </div>
 <!-- End content -->
