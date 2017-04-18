@@ -12,6 +12,7 @@ import { AlertService, UserService } from '../_services/index';
 export class ResumeApplicantComponent {
     model: any = {};
     loading = false;
+    accommodations = ['Абаза', 'Абакан', 'Абдулино', 'Москва', 'Санкт-Петербург'];
 
     constructor(
         private router: Router,

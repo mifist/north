@@ -12,72 +12,93 @@
 					
 					<div class="form-item --simple">
 						<div class="input--yoshiko">
-							<input class="field--yoshiko" id="input6" type="date" name="" value="">
-							<label class="label--yoshiko" for="input6">
-											<span class="content--yoshiko" data-content="Дата рождения:">
-												Дата рождения:
-											</span>
+							<input class="field--yoshiko" id="DOB" type="date" name="DOB"
+							       #DOB="ngModel"
+							       [(ngModel)]="model.DOB"
+							       (blur)="blurel($event)">
+							<label class="label--yoshiko" for="DOB">
+								<span class="content--yoshiko" data-content="Дата рождения:">
+									Дата рождения:
+								</span>
 							</label>
 						</div>
+						<div *ngIf="f.submitted && !formown.valid" class="help-block">Заполните обязательное поле</div>
 					</div>
 					
 					<div class="form-item --simple">
 						<div class="input--yoshiko">
-							<select class="field--yoshiko" id="input7" name="">
-								<option value="Москва">Москва</option>
-								<option value="Москва">Москва</option>
-								<option value="Москва">Москва</option>
+							<select class="field--yoshiko" id="accommodation" name="accommodation"
+							        #accommodation="ngModel"
+							        [(ngModel)]="model.accommodation"
+							        (blur)="blurel($event)">
+								<option *ngFor="let accommodation of accommodations" [value]="accommodation">
+									{{ accommodation }}
+								</option>
 							</select>
-							<label class="label--yoshiko" for="input7">
-											<span class="content--yoshiko" data-content="Регион проживания:">
-												Регион проживания:
-											</span>
+							<label class="label--yoshiko" for="accommodation">
+								<span class="content--yoshiko" data-content="Регион проживания:">
+									Регион проживания:
+								</span>
 							</label>
 						</div>
 					</div>
 					
 					<div class="form-item --simple">
 						<div class="input--yoshiko">
-							<textarea class="field--yoshiko" id="input8" type="text" name="" placeholder="(через запятую)"></textarea>
-							<label class="label--yoshiko" for="input8">
-											<span class="content--yoshiko" data-content="Образование:">
-												Образование:
-											</span>
+							<textarea class="field--yoshiko" id="enterEducation" type="text" name="enterEducation"
+							          #enterEducation="ngModel"
+							          [(ngModel)]="model.enterEducation"
+							          (blur)="blurel($event)"
+							          placeholder="(через запятую)"></textarea>
+							<label class="label--yoshiko" for="enterEducation">
+								<span class="content--yoshiko" data-content="Образование:">
+									Образование:
+								</span>
 							</label>
 						</div>
 					</div>
 					
 					<div class="form-item --simple">
 						<div class="input--yoshiko">
-							<textarea class="field--yoshiko" id="input9" name="" placeholder="(через запятую)"></textarea>
-							<label class="label--yoshiko" for="input9">
-											<span class="content--yoshiko" data-content="Предыдущие места работы:">
-												Предыдущие места работы:
-											</span>
+							<textarea class="field--yoshiko" id="previousJobs" name="previousJobs"
+							          #previousJobs="ngModel"
+							          [(ngModel)]="model.previousJobs"
+							          (blur)="blurel($event)"
+							          placeholder="(через запятую)"></textarea>
+							<label class="label--yoshiko" for="previousJobs">
+								<span class="content--yoshiko" data-content="Предыдущие места работы:">
+									Предыдущие места работы:
+								</span>
 							</label>
 						</div>
 					</div>
 					
 					<div class="form-item --simple">
 						<div class="input--yoshiko">
-							<input class="field--yoshiko" id="input10" type="text" name=""
+							<input class="field--yoshiko" id="enterExperience" type="text" name="enterExperience"
+							       #enterExperience="ngModel"
+							       [(ngModel)]="model.enterExperience"
+							       (blur)="blurel($event)"
 							       placeholder="Например, '10 лет'">
-							<label class="label--yoshiko" for="input10">
-											<span class="content--yoshiko" data-content="Общий стаж:">
-												Общий стаж:
-											</span>
+							<label class="label--yoshiko" for="enterExperience">
+								<span class="content--yoshiko" data-content="Общий стаж:">
+									Общий стаж:
+								</span>
 							</label>
 						</div>
 					</div>
 					
 					<div class="form-item --simple">
 						<div class="input--yoshiko">
-										<textarea class="field--yoshiko" id="input11" name=""
-										          placeholder="Введите пожелания"></textarea>
-							<label class="label--yoshiko" for="input11">
-											<span class="content--yoshiko" data-content="Пожелания к будущей работе:">
-												Пожелания к будущей работе:
-											</span>
+							<textarea class="field--yoshiko" id="wishesWork" name="wishesWork"
+							          #wishesWork="ngModel"
+							          [(ngModel)]="model.wishesWork"
+							          (blur)="blurel($event)"
+							          placeholder="Введите пожелания"></textarea>
+							<label class="label--yoshiko" for="wishesWork">
+								<span class="content--yoshiko" data-content="Пожелания к будущей работе:">
+									Пожелания к будущей работе:
+								</span>
 							</label>
 						</div>
 					</div>
@@ -101,18 +122,24 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="form-item --message">
 				<div class="checkbox">
-					<input id="checkbox4" type="checkbox" name="" value="">
-					<label for="checkbox4">Вы подтверждаете достоверность введенной
+					<input id="confirmReliability" type="checkbox" name="confirmReliability"
+					       #confirmReliability="ngModel"
+					       [(ngModel)]="model.confirmReliability">
+					<label for="confirmReliability">Вы подтверждаете достоверность введенной
 						информации</label>
 				</div>
 				<div class="checkbox">
-					<input id="checkbox5" type="checkbox" name="" value="">
-					<label for="checkbox5">Вы даете согласие на обработку персональных
+					<input id="consentProcessing" type="checkbox" name="consentProcessing"
+					       #consentProcessing="ngModel"
+					       [(ngModel)]="model.consentProcessing">
+					<label for="consentProcessing">Вы даете согласие на обработку персональных
 						данных</label>
 				</div>
 				<div class="checkbox">
-					<input id="checkbox6" type="checkbox" name="" value="">
-					<label for="checkbox6">
+					<input id="privacyPolicy" type="checkbox" name="privacyPolicy"
+					       #privacyPolicy="ngModel"
+					       [(ngModel)]="model.privacyPolicy">
+					<label for="privacyPolicy">
 						Вы подтверждаю свое согласие с
 						<a href="#">Условиями пользования</a> сайтом northwork.ru и
 						<a href="#">Политикой конфиденциальности</a>
