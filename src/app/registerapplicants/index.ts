@@ -1,1 +1,1 @@
-export * from './register-applicants.component';
+export * from './registerapplicants.component';
