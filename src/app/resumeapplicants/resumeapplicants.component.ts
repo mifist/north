@@ -5,11 +5,11 @@ import { AlertService, UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'registerapplicants.component.html'
-    //styleUrls: ['registerapplicants.component.css']
+    templateUrl: 'resumeapplicants.component.html'
+    //styleUrls: ['resumeapplicants.component.css']
 })
 
-export class RegisterApplicantComponent {
+export class ResumeApplicantComponent {
     model: any = {};
     loading = false;
 

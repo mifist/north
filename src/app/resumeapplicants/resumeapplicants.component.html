@@ -1,126 +1,134 @@
-﻿
-			<!-- Start content -->
-			<div class="entry-content">
-				<div class="row"><!-- Start row -->
-					<h2 class="entry-title">Форма регистрации</h2>
-					<div class="entry-more">
-						<p>Пожалуйста, указывайте корректные данные</p>
-					</div>
-					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7"><!-- Start Form -->
-						<!-- Photo -->
-						<div class="form-wrap">
-							<a class="btn _small _back" >Назад</a>
-							<h5>Фото профиля</h5>
-							<div class="form-image">
-								<img src="../assets/images/face.png" alt="Profile photo">
-							</div>
-							<a class="btn _small --download">ЗАГРУЗИТь ФОТО</a>
-						</div>
-						<!-- Main form -->
-						<div class="form-wrap">
-							<p class="entry-warning">
-								<span class="mbri-flag"></span>
-								Этим флажком отмечены поля обязательные к заполнению
-							</p>
-							<h5>Личные данные</h5>
-							<form class="" name="registerapplicant" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate><!-- Start form -->
-								
-								<div class="form-item --requared"
-								     [ngClass]="{ 'has-error': f.submitted && !lastNameApl.valid }">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input3" type="text" name="lastNameapl" required
-										       [(ngModel)]="model.lastNameApl"
-										       #lastNameApl="ngModel"
-										       (blur)="blurel($event)" />
-										<label class="label--yoshiko" for="input3">
-											<span class="content--yoshiko" data-content="Фамилия">
-												Фамилия
-											</span>
-										</label>
-									</div>
-									<div *ngIf="f.submitted && !lastNameApl.valid" class="help-block">Заполните
-										обязательное поле</div>
-								</div>
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input4" type="text" name="firstNameApl" required
-										       [(ngModel)]="model.firstNameApl"
-										       #firstNameApl="ngModel"
-										       (blur)="blurel($event)" />
-										<label class="label--yoshiko" for="input4">
-											<span class="content--yoshiko" data-content="Имя">
-												Имя
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input5" type="text" name="" value="" required>
-										<label class="label--yoshiko" for="input5">
-											<span class="content--yoshiko" data-content="Отчество">
-												Отчество
-											</span>
-										</label>
-									</div>
-								</div>
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input6" type="tel" name="" value="" required>
-										<label class="label--yoshiko" for="input6">
-											<span class="content--yoshiko" data-content="Телефон">
-												Телефон
-											</span>
-										</label>
-									</div>
-									<div class="checkbox">
-										<input id="checkbox2" type="checkbox" name="" value="">
-										<label for="checkbox2">Разрешить показ работодателю</label>
-									</div>
-								</div>
-								
-								
-								
-								<div class="form-item --requared">
-									<div class="input--yoshiko">
-										<input class="field--yoshiko" id="input7" type="text" name="" value="" required>
-										<label class="label--yoshiko" for="input7">
-											<span class="content--yoshiko" data-content="ИНН">
-												ИНН (Ваш личный логин)
-											</span>
-										</label>
-									</div>
-									<div class="checkbox">
-										<input id="checkbox3" type="checkbox" name="" value="">
-										<label for="checkbox3">Разрешить показ работодателю</label>
-									</div>
-								</div>
-							</form><!-- End form -->
-						</div>
-					</div><!-- End MAIN Form -->
+﻿<!-- Start content -->
+<div class="entry-content">
+	<div class="row"><!-- Start row -->
+		<h2 class="entry-title">Форма регистрации</h2>
+		<p class="text-center entry-more">Пожалуйста, указывайте корректные данные</p>
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7"><!-- Start Form -->
+			<!-- Main form -->
+			<div class="form-wrap">
+				<a class="btn _small _back" onclick="history.back(); return false;">Назад</a>
+				<h5>Резюме</h5>
+				<form class="" name="resumeapplicant" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate><!-- Start form -->
 					
-					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5"><!-- Start Help -->
-						<h4>ПОМОЩЬ ПРИ ЗАПОЛНЕНИИ</h4>
-						<p class="text-center --bold">Что дает регистрация?</p>
-						<ol>
-							<li>Сохранять вакансии и просматривать историю своих откликов</li>
-							<li>Управлять рассылками</li>
-							<li>Видеть кто просматривал ваше резюме</li>
-						</ol>
-						<p class="text-center --bold">Зарегистрируйтесь — это просто и бесплатно!</p>
-						<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
-						<p>Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
-					</div><!-- End Help -->
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<button datasrc="resume--applicant.html" [disabled]="loading" class="btn _large --download">Далее</button>
-						<!--<button [disabled]="!f.valid" class="btn _large --download">Зарегистрироваться</button> -->
-						<!--<button [disabled]="loading" class="btn _large --download">Зарегистрироваться</button> -->
-						
-						<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+					<div class="form-item --simple">
+						<div class="input--yoshiko">
+							<input class="field--yoshiko" id="input6" type="date" name="" value="">
+							<label class="label--yoshiko" for="input6">
+											<span class="content--yoshiko" data-content="Дата рождения:">
+												Дата рождения:
+											</span>
+							</label>
+						</div>
 					</div>
-				</div><!-- End row -->
+					
+					<div class="form-item --simple">
+						<div class="input--yoshiko">
+							<select class="field--yoshiko" id="input7" name="">
+								<option value="Москва">Москва</option>
+								<option value="Москва">Москва</option>
+								<option value="Москва">Москва</option>
+							</select>
+							<label class="label--yoshiko" for="input7">
+											<span class="content--yoshiko" data-content="Регион проживания:">
+												Регион проживания:
+											</span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-item --simple">
+						<div class="input--yoshiko">
+							<textarea class="field--yoshiko" id="input8" type="text" name="" placeholder="(через запятую)"></textarea>
+							<label class="label--yoshiko" for="input8">
+											<span class="content--yoshiko" data-content="Образование:">
+												Образование:
+											</span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-item --simple">
+						<div class="input--yoshiko">
+							<textarea class="field--yoshiko" id="input9" name="" placeholder="(через запятую)"></textarea>
+							<label class="label--yoshiko" for="input9">
+											<span class="content--yoshiko" data-content="Предыдущие места работы:">
+												Предыдущие места работы:
+											</span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-item --simple">
+						<div class="input--yoshiko">
+							<input class="field--yoshiko" id="input10" type="text" name=""
+							       placeholder="Например, '10 лет'">
+							<label class="label--yoshiko" for="input10">
+											<span class="content--yoshiko" data-content="Общий стаж:">
+												Общий стаж:
+											</span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-item --simple">
+						<div class="input--yoshiko">
+										<textarea class="field--yoshiko" id="input11" name=""
+										          placeholder="Введите пожелания"></textarea>
+							<label class="label--yoshiko" for="input11">
+											<span class="content--yoshiko" data-content="Пожелания к будущей работе:">
+												Пожелания к будущей работе:
+											</span>
+							</label>
+						</div>
+					</div>
+				</form><!-- End form -->
 			</div>
-			<!-- End content -->
+		
+		</div><!-- End MAIN Form -->
+		
+		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5"><!-- Start Help -->
+			<h4>ПОМОЩЬ ПРИ ЗАПОЛНЕНИИ</h4>
+			<p class="text-center --bold">Что дает регистрация?</p>
+			<ol>
+				<li>Сохранять вакансии и просматривать историю своих откликов</li>
+				<li>Управлять рассылками</li>
+				<li>Видеть кто просматривал ваше резюме</li>
+			</ol>
+			<p class="text-center --bold">Зарегистрируйтесь — это просто и бесплатно!</p>
+			<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
+			<p>Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+		</div><!-- End Help -->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="form-item --message">
+				<div class="checkbox">
+					<input id="checkbox4" type="checkbox" name="" value="">
+					<label for="checkbox4">Вы подтверждаете достоверность введенной
+						информации</label>
+				</div>
+				<div class="checkbox">
+					<input id="checkbox5" type="checkbox" name="" value="">
+					<label for="checkbox5">Вы даете согласие на обработку персональных
+						данных</label>
+				</div>
+				<div class="checkbox">
+					<input id="checkbox6" type="checkbox" name="" value="">
+					<label for="checkbox6">
+						Вы подтверждаю свое согласие с
+						<a href="#">Условиями пользования</a> сайтом northwork.ru и
+						<a href="#">Политикой конфиденциальности</a>
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<button [disabled]="loading" class="btn _large --download">Завершить</button>
+				<!--<button [disabled]="!f.valid" class="btn _large --download">Зарегистрироваться</button> -->
+				<!--<button [disabled]="loading" class="btn _large --download">Зарегистрироваться</button> -->
+				
+				
+				<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+			
+			</div>
+		</div>
+	</div><!-- End row -->
+</div>
+<!-- End content -->
