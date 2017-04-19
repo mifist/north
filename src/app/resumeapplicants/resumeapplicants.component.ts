@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AlertService, UserService } from '../_services/index';
+import {DataService, AlertService, UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
@@ -17,11 +17,21 @@ export class ResumeApplicantComponent {
     constructor(
         private router: Router,
         private userService: UserService,
+        private dataService: DataService,
         private alertService: AlertService) { }
+
+   
+    //model = {};
+    //this.model = {};
+    ngOnInit() { 
+        this.model = this.dataService.GetModelPart1();
+    }
+
 
     blurel(el: any) {
         //alert(el.target.value.trim()+"1");
         //console.log(this.model);
+        
         console.log(this.model);
         //console.log(f.value); 
         if (el.target.value.trim() == '') {

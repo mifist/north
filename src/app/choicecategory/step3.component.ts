@@ -145,87 +145,100 @@ export class ChoiceCategoryStep3Component {
             idcat2: '1',
             title: 'Начальник транспортного цеха',
             desc: '',
+            tmodel: false,
         },
         {
             id: '2',
             idcat2: '1',
             title: 'Главный механик',
             desc: '',
+            tmodel: false,
         },
         {
             id: '3',
             idcat2: '1',
             title: 'Механик',
             desc: '',
+            tmodel: false,
         },
         {
             id: '4',
             idcat2: '1',
             title: 'Диспетчер',
             desc: '',
+            tmodel: false,
         },
         {
             id: '5',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '6',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '7',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '8',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '9',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '10',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '11',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '12',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '13',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
         {
             id: '14',
             idcat2: '',
             title: '',
             desc: '',
+            tmodel: false,
         },
     ];
-    private count: number;
     private id: number;
     private subscription: Subscription;
     constructor(
@@ -242,18 +255,21 @@ export class ChoiceCategoryStep3Component {
         this.router.navigate(['/choicecategory']);
         console.log(this.model);
     }
-    categoresStep3Count(el: any) {
-        //let count = 0;
-        return 'model.' +  this.count++;
-
+    onclickcheck() {
+        /*console.log(this.categores_step3);*/
+        for (var item of this.categores_step3) {
+            console.log(item.id);
+            console.log(item.tmodel); 
+        }
+    }
+    trackByIndex(index: number, value: number) {
+       // console.log("ngFor");
+       // console.log(index);
+       // console.log(value);
+        return index;
     }
 
-  /*  increment() {
-        this.model.count++;
-    }
-    decrement() {
-        this.count--;
-    }*/
+
 
 }
 

@@ -61,12 +61,6 @@
 				</p>
 				<h5>Основные данные компании</h5>
 
-
-				<!-- <form class="" action="">     Start form -->
-                                            <!-- <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>  -->
-                                            <!-- <form name="form" (ngSubmit)="register()" #f="ngForm" novalidate>  -->
-				
-
 					<div class="form-item --requared --simple" [ngClass]="{ 'has-error': f.submitted && !formown.valid }">
 					    <div class="input--yoshiko">
 					<!--  <label for="power">Hero Power</label>  -->
@@ -85,46 +79,6 @@
 					    </div>
 						<div *ngIf="f.submitted && !formown.valid" class="help-block">Заполните обязательное поле</div>
 					</div>
-<!--
-<div class="form-item &#45;&#45;requared &#45;&#45;simple">
- &lt;!&ndash;   <label for="power">Hero Power</label>  &ndash;&gt;
-      <div class="input&#45;&#45;yoshiko">
-
-
-            <select class="form-control" id="power" (ngModel)="model.formown" required>
-  											<option value="1">Форма собственности 1</option>
-											<option value="2">Форма собственности 2</option>
-											<option value="3">Форма собственности 33</option> 
-
-
-&lt;!&ndash; <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option> &ndash;&gt;
-            </select>
-      </div>
-</div>-->
-<!--
-<div class="form-item --requared --simple">
-	<div class="input--yoshiko">
-
-
-              <label for="organisation">Organisation
-              <select  class="field--yoshiko" id="input12" [(ngModel)]="model.formown" required>
-											<option value="1">Форма собственности 1</option>
-											<option value="2">Форма собственности 2</option>
-											<option value="3">Форма собственности 3</option>
-              </select>
-              </label>
-
-	</div>
-</div>
-<div class="form-group">
-      <label for="organisation">Organisation
-      <select id="organisation" class="form-control" [(ngModel)]="selectedOrgMod" required>
-        <option *ngFor="let org of orgs" [ngValue]="org">{{org.name}}</option>
-      </select>
-      </label>
-</div>
--->
-				
 		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
 		           <div class="input--yoshiko">
 		             <!--  <label for="firstName">First Name</label> -->
@@ -174,7 +128,8 @@
 		           </div>
 			        <div *ngIf="f.submitted && !kpp.valid" class="help-block">Заполните обязательное поле</div>
 		        </div>
-				
+
+<!--				
 				<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
 					<label for="lastName">Last Name</label>
 					<input type="text" class="form-control" id="lastName" name="lastName" required
@@ -183,6 +138,9 @@
 					       #lastName="ngModel"/>
 					<div *ngIf="f.submitted && !lastName.valid" class="help-block">Заполните обязательное поле</div>
 				</div>
+-->
+
+
 		
 		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 		           <div class="input--yoshiko">

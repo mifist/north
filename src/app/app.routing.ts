@@ -21,6 +21,7 @@ const appRoutes: Routes = [
     { path: 'choicecategory', component: ChoiceCategoryComponent },
     { path: 'step2/:id', component:  ChoiceCategoryStep2Component },
     { path: 'step3/:id', component:  ChoiceCategoryStep3Component },
+    { path: 'home', component:  HomeComponent },
 
 
 

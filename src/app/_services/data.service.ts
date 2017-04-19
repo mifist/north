@@ -5,11 +5,13 @@ import { AppConfig } from '../app.config';
 import { User } from '../_models/index';
 
 @Injectable()
-export class UserService {
+export class DataService {
+
+    model: any = {};////
+
     constructor(private http: Http, private config: AppConfig) { }
 
     getAll() {
-        //console.log(this.http.get(this.config.apiUrl + '/users', this.jwt()).map((response: Response) => response.json()));
         return this.http.get(this.config.apiUrl + '/users', this.jwt()).map((response: Response) => response.json());
     }
 
@@ -30,6 +32,19 @@ export class UserService {
     }
 
     // private helper methods
+
+    SendModelPart1(m: any){
+        this.model = m;
+        console.log(this.model); 
+        //this.data.push(new Phone(name, price));
+    }
+
+    GetModelPart1(){
+        return  this.model;
+        //console.log(this.model); 
+        //this.data.push(new Phone(name, price));
+    }
+
 
     private jwt() {
         // create authorization header with jwt token

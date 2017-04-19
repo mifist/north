@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AlertService, UserService } from '../_services/index';
+import { DataService, AlertService, UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
@@ -16,6 +16,7 @@ export class RegisterApplicantComponent {
     constructor(
         private router: Router,
         private userService: UserService,
+        private dataService: DataService,
         private alertService: AlertService) { }
 
     blurel(el: any) {
@@ -33,13 +34,15 @@ export class RegisterApplicantComponent {
     }
 
 
-    register() {
+    more() {
         console.log(this.model);
         this.loading = true;
         //this.userService.create(this.model);
         //console.log(this.model);
         console.log('----------');
-
+        this.dataService.SendModelPart1(this.model);
+        this.router.navigate(['/resumeapplicants']);
+/*
         this.userService.create(this.model)
             .subscribe(
             data => {
@@ -53,6 +56,7 @@ export class RegisterApplicantComponent {
                     this.alertService.error(error._body);
                     this.loading = false;
                 });
+*/
         
     }
 }

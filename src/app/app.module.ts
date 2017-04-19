@@ -10,7 +10,7 @@ import { AppConfig } from './app.config';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { AlertService, AuthenticationService, UserService, DataService } from './_services/index';
 
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
@@ -21,6 +21,7 @@ import { ResumeApplicantComponent } from './resumeapplicants/index';
 import { ChoiceCategoryComponent } from './choicecategory/index';
 import { ChoiceCategoryStep2Component } from './choicecategory/index';
 import { ChoiceCategoryStep3Component } from './choicecategory/index';
+import { MenuEmployerComponent } from './home/index';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ChoiceCategoryStep3Component } from './choicecategory/index';
     ResumeApplicantComponent,
     ChoiceCategoryComponent,
     ChoiceCategoryStep2Component,
-    ChoiceCategoryStep3Component
+    ChoiceCategoryStep3Component,
+    MenuEmployerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { ChoiceCategoryStep3Component } from './choicecategory/index';
     AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService
+    UserService,
+    DataService 
   ],
   bootstrap: [AppComponent]
 })

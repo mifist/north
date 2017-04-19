@@ -1,5 +1,6 @@
 ﻿
 <!-- Start content -->
+<form class="" name="registerapplicant" (ngSubmit)="f.form.valid && more()" #f="ngForm" novalidate>
 <div class="entry-content">
 	<div class="row"><!-- Start row -->
 		<h2 class="entry-title">Форма регистрации</h2>
@@ -9,7 +10,7 @@
 		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7"><!-- Start Form -->
 			<!-- Photo -->
 			<div class="form-wrap">
-				<a class="btn _small _back" >Назад</a>
+				<a class="btn _small _back" onclick="history.back(); return false;">Назад</a>
 				<h5>Фото профиля</h5>
 				<div class="form-image">
 					<img src="../assets/images/face.png" alt="Profile photo">
@@ -23,13 +24,13 @@
 					Этим флажком отмечены поля обязательные к заполнению
 				</p>
 				<h5>Личные данные</h5>
-				<form class="" name="registerapplicant" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate><!-- Start form -->
+				<!-- <form class="" name="registerapplicant" (ngSubmit)="f.form.valid && more()" #f="ngForm" novalidate>  Start form -->
 					
 					<div class="form-item --requared"
 					     [ngClass]="{ 'has-error': f.submitted && !lastNameApl.valid }">
 						<div class="input--yoshiko">
 							<input class="field--yoshiko" id="lastNameApl" type="text" name="lastNameapl" required
-							       [(ngModel)]="model.lastNameApl"
+							       [(ngModel)]="model.lastName"
 							       #lastNameApl="ngModel"
 							       (blur)="blurel($event)" />
 							<label class="label--yoshiko" for="lastNameApl">
@@ -46,7 +47,7 @@
 					     [ngClass]="{ 'has-error': f.submitted && !firstNameApl.valid }">
 						<div class="input--yoshiko">
 							<input class="field--yoshiko" id="firstNameApl" type="text" name="firstNameApl" required
-							       [(ngModel)]="model.firstNameApl"
+							       [(ngModel)]="model.firstName"
 							       #firstNameApl="ngModel"
 							       (blur)="blurel($event)" />
 							<label class="label--yoshiko" for="firstNameApl">
@@ -106,17 +107,18 @@
 						[ngClass]="{ 'has-error': f.submitted && !innApl.valid }">
 						<div class="input--yoshiko">
 							<input class="field--yoshiko" id="innApl" type="text" name="innApl" required
-							       [(ngModel)]="model.innApl"
+							       [(ngModel)]="model.username"
 							       #innApl="ngModel"
 							       (blur)="blurel($event)" />
 							<label class="label--yoshiko" for="innApl">
-								<span class="content--yoshiko" data-content="ИНН">
+								<span class="content--yoshiko" data-content="ИНН (Ваш личный логин)">
 									ИНН (Ваш личный логин)
 								</span>
 							</label>
 						</div>
 						<div *ngIf="f.submitted && !innApl.valid" class="help-block">Заполните обязательное
 							поле</div>
+
 						<div class="checkbox">
 							<input id="emplShowInn" type="checkbox" name="emplShowInn"
 							       [(ngModel)]="model.emplShowInn"
@@ -124,7 +126,28 @@
 							<label for="emplShowInn">Разрешить показ работодателю</label>
 						</div>
 					</div>
-				</form><!-- End form -->
+ 
+
+		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+		           <div class="input--yoshiko">
+		            <!--  <label for="password">Password</label>  -->
+			            <input type="password" class="form-control field--yoshiko" id="input151"  name="password"
+			                   [(ngModel)]="model.password"
+			                   (blur)="blurel($event)"
+			                   #password="ngModel" required />
+						<label class="label--yoshiko" for="input151">
+							<span class="content--yoshiko" data-content="ПАРОЛЬ">
+								Пароль
+							</span>
+						</label>
+		           </div>
+			        <div *ngIf="f.submitted && !password.valid" class="help-block">Заполните обязательное поле</div>
+		        </div>
+
+
+
+
+				<!--</form><!-- End form -->
 			</div>
 		</div><!-- End MAIN Form -->
 		
@@ -141,11 +164,16 @@
 			<p>Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
 		</div><!-- End Help -->
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<button [routerLink]="['/resumeapplicants']" [disabled]="!f.valid" class="btn _large --download">Далее</button>
+			<!--<button [routerLink]="['/resumeapplicants']" [disabled]="!f.valid" class="btn _large --download">Далее</button>-->
+
+                        
+
+                        <button [disabled]="!f.valid" class="btn _large --download">Далее</button>
 			<!--<button [disabled]="!f.valid" class="btn _large --download">Зарегистрироваться</button> -->
 			<!--<button [disabled]="loading" class="btn _large --download">Зарегистрироваться</button> -->
 			<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 		</div>
 	</div><!-- End row -->
 </div>
+</form>
 <!-- End content -->
