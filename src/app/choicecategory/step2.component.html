@@ -7,33 +7,48 @@
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<a class="btn _small _back --category" onclick="history.back(); return false;">Назад</a>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="row">
-				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap"
-				     *ngFor="let category of categores">
-					<a [routerLink]="['/step2/', category.id ]"
-					   class="--category">
-						
-						<h4> {{category['id'] }}. {{ category['title'] }} </h4>
-						<span>{{ category['desc'] }} </span>
-					
+				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+					<a class="btn _small _back --category"
+					   onclick="history.back(); return false;">Назад
 					</a>
 				</div>
-				
+				<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+					<!-- Start breadcrumbs -->
+					<!-- Start breadcrumbs -->
+					<div class="breadcrumbs">
+						<ul class="breadcrumbs-list">
+							<li><a (click)="goHome()">Категории</a></li>
+							<li><span>{{ categores[id-1].title }}</span></li>
+						</ul>
+					</div> <!-- End breadcrumbs -->
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h2>{{ categores[id-1].title }}</h2>
+			
+			<div class="row">
+				<div  *ngFor="let category_step2 of categores_step2">
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap"
+					     *ngIf="category_step2.idcat == id">
+					
+						<a [routerLink]="['/step3/', category_step2.id ]"
+						   class="--category">
+							
+							<h4> {{category_step2.id }} -> {{ category_step2.idcat }} {{ category_step2['title'] }} </h4>
+							<span>{{ category_step2['desc'] }} </span>
+						
+						</a>
+					</div>
+				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
 					<a [routerLink]="['']"  class="--category">
 						<span class="mbri-code"></span>
 					</a>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 category-wrap">
-					<a [routerLink]="['']" class="--category">
-						<span class="mbri-code"></span>
-					</a>
-				</div>
-			</div><!-- End row -->
+			</div>
+			
 		</div>
 		
 		<!-- Start pagination -->

@@ -1,0 +1,19 @@
+.entry-more {
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 15px;
+}
+.category-wrap {
+	margin-bottom: 30px;
+}
+.breadcrumbs-list li {
+	cursor: pointer;
+}
+.breadcrumbs-list li span {
+	display: block;
+	background: transparent;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	cursor: default;
+}
