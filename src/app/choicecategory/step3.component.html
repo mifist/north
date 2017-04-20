@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="entry-more">
-				<p>Пожалуйста, выберите нужный раздел 333</p>
+				<p>Пожалуйста, выберите нужный раздел</p>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -18,7 +18,11 @@
 						<ul class="breadcrumbs-list">
 							<li><a (click)="goHome()">Категории</a></li>
 							
-							<li><span>{{ categores[id-1].title }}</span></li>
+							<li>
+								<a (click)="goHome()">
+									{{ categores[categores_step2[id-1].idcat-1].title }}
+								</a>
+							</li>
 							<li><span>{{ categores_step2[id-1].title }}</span></li>
 							
 						</ul>
@@ -34,13 +38,17 @@
 			<h2>{{ categores_step2[id-1].title }}</h2>
 			
 			<div class="form-item --message">
-				<div *ngFor="let category_step3 of categores_step3; let i = index" class="checkbox">
-					<div *ngIf="category_step3.idcat2 == categores_step2[id-1].id">
+				<div *ngFor="let category_step3 of categores_step3; let i = index" class="checkbox-wrap">
+					
+					<div  *ngIf="category_step3.idcat2 == categores_step2[id-1].id" class="checkbox">
+						
 						
 						<input id="checkbox_step3-{{ i+1 }}" type="checkbox" name="checkbox_step3" 
 								[(ngModel)]="category_step3.tmodel"
 		                        (click)="onclickcheck()" />
-						<label for="checkbox_step3-{{ i+1 }}">{{category_step3.title}}{{category_step3.desc }}</label>
+						<label for="checkbox_step3-{{ i+1 }}">
+							{{category_step3.title}} {{category_step3.desc }}
+						</label>
 						
 					</div>
 				</div>

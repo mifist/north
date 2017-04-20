@@ -16,7 +16,10 @@ export class HomeComponent implements OnInit {
 
     constructor(private userService: UserService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        //console.log(this.currentUser);
     }
+
+
     blurelCheck(el: any) {
         console.log(this.model);
         if (el.target.value.trim() == '') {
@@ -29,6 +32,9 @@ export class HomeComponent implements OnInit {
     }
     ngOnInit() {
         this.loadAllUsers();
+
+        this.loadUser(this.currentUser._id);
+        //console.log(this.model)
     }
 
     deleteUser(_id: string) {
@@ -36,7 +42,14 @@ export class HomeComponent implements OnInit {
     }
 
     private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; console.log(users)});
+        this.userService.getAll().subscribe(users => { this.users = users});
 
     }
+
+
+    private loadUser(_id: string) {
+        this.userService.getById(_id).subscribe(user => { this.model = user });
+
+    }
+
 }

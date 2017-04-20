@@ -9,12 +9,15 @@ export class UserService {
     constructor(private http: Http, private config: AppConfig) { }
 
     getAll() {
-        //console.log(this.http.get(this.config.apiUrl + '/users', this.jwt()).map((response: Response) => response.json()));
+        //console.log(this.config.apiUrl + '/users');
         return this.http.get(this.config.apiUrl + '/users', this.jwt()).map((response: Response) => response.json());
     }
 
     getById(_id: string) {
-        return this.http.get(this.config.apiUrl + '/users/' + _id, this.jwt()).map((response: Response) => response.json());
+        //console.log(_id);
+        //console.log(this.config.apiUrl + '/users/' + _id);
+        //return this.http.get(this.config.apiUrl + '/users/' + _id, this.jwt()).map((response: Response) => response.json());
+        return this.http.get(this.config.apiUrl + '/users/current' , this.jwt()).map((response: Response) => response.json());
     }
 
     create(user: User) {

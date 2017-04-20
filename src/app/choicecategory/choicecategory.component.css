@@ -17,3 +17,7 @@
 	text-transform: uppercase;
 	cursor: default;
 }
+.checkbox-wrap {
+	display: block;
+	width: 100%;
+}
