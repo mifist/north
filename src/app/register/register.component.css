@@ -17,3 +17,7 @@
 .has-error.checkbox-inline label {
 	color: #ff0000;
 }
+.help-block.--inn,
+.help-block {
+	color: #ff0000;
+}

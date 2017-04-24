@@ -87,7 +87,8 @@
 		                    [(ngModel)]="model.firstName"
 		                    #firstName="ngModel"
 		                    (blur)="blurel($event)"
-		                    (keyup)="onKeyUp($event)" required />
+		                    (keyup)="onKeyUp($event)" 
+                            required />
 						<label class="label--yoshiko" for="input131">
 							<span class="content--yoshiko" data-content="НАЗВАНИЕ ЮРИДИЧЕСКОГО ЛИЦА">
 								Название юридического лица
@@ -101,16 +102,20 @@
 		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
 		           <div class="input--yoshiko">
 		              <!--  <label for="username">Username</label>  -->
-		              <input type="text" class="form-control field--yoshiko" id="input141" name="username"
+		              <input type="text" class="form-control field--yoshiko" id="inputusername" name="username"
 		                     [(ngModel)]="model.username"
 		                     #username="ngModel"
-		                     (blur)="blurel($event)" required />
-						<label class="label--yoshiko" for="input141">
+		                     (blur)="blurel($event)" 
+                             (keyup)="keyupel($event)"
+                             required
+                              />
+						<label class="label--yoshiko" for="inputusername">
 							<span class="content--yoshiko" data-content="ИНН (Ваш личный логин)">
 								ИНН (Ваш личный логин)
 							</span>
 						</label>
 		           </div>
+			        <div class="help-block --inn"> {{ errorINN }} </div>
 			        <div *ngIf="f.submitted && !username.valid" class="help-block">Заполните обязательное поле</div>
 		        </div>
 		
@@ -348,7 +353,8 @@
 												<input class="field--yoshiko" id="postEmail" type="email" name="postEmail"
 												       [(ngModel)]="model.postEmail"
 												       (blur)="blurel($event)"
-												       #postEmail="ngModel">
+												       #postEmail="ngModel"
+                                                       >
 												<label class="label--yoshiko" for="postEmail">
 													<span class="content--yoshiko" data-content="E-mail">
 														E-mail
