@@ -109,15 +109,20 @@
 							<input class="field--yoshiko" id="innApl" type="text" name="innApl" required
 							       [(ngModel)]="model.username"
 							       #innApl="ngModel"
-							       (blur)="blurel($event)" />
+							       (blur)="blurel($event)"
+                                   (keyup)="keyupel($event)" 
+                                   />
 							<label class="label--yoshiko" for="innApl">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{errorINN}}
 								<span class="content--yoshiko" data-content="ИНН (Ваш личный логин)">
 									ИНН (Ваш личный логин)
 								</span>
 							</label>
 						</div>
-						<div *ngIf="f.submitted && !innApl.valid" class="help-block">Заполните обязательное
-							поле</div>
+						<div *ngIf="f.submitted && !innApl.valid" class="help-block">{{helpblockvalue}}</div>
 
 						<div class="checkbox">
 							<input id="emplShowInn" type="checkbox" name="emplShowInn"
