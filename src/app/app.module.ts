@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {Routes, RouterModule} from '@angular/router';
 import { routing } from './app.routing';
 import { AppConfig } from './app.config';
 
@@ -11,7 +12,7 @@ import { AppConfig } from './app.config';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService, DataService } from './_services/index';
-import { Categores } from './_services/categores'
+import { Categores } from './_services/categores';
 
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
@@ -24,8 +25,8 @@ import { ChoiceCategoryStep2Component } from './choicecategory/index';
 import { ChoiceCategoryStep3Component } from './choicecategory/index';
 import { MenuEmployerComponent } from './home/index';
 import { HeadEmployerComponent } from './home/index';
-import { AreaEmployerComponent } from './home/index';
-import { VaccineEmployerComponent } from './home/index';
+import { AreaEmployerComponent } from './home/employer.area.component';
+import { VaccineEmployerComponent } from './home/employer.vaccine.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { VaccineEmployerComponent } from './home/index';
     ChoiceCategoryStep3Component,
     MenuEmployerComponent,
     HeadEmployerComponent,
+    // определение дочерних маршрутов
     AreaEmployerComponent,
     VaccineEmployerComponent
   ],
@@ -49,7 +51,8 @@ import { VaccineEmployerComponent } from './home/index';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+
   ],
   providers: [
     AppConfig,
@@ -58,7 +61,7 @@ import { VaccineEmployerComponent } from './home/index';
     AuthenticationService,
     UserService,
     DataService,
-    Categores 
+    Categores,
   ],
   bootstrap: [AppComponent]
 })

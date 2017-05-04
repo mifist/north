@@ -10,10 +10,28 @@
     <p><a [routerLink]="['/login']">Выйти</a></p>
 </div>
 
-<!-- Start Private Area -->
-<app-area-employer></app-area-employer>
-<!-- End Private Area -->
 
-<!-- Start Create Vaccine -->
-<app-vaccine-employer></app-vaccine-employer>
-<!-- End Create Vaccine -->
+
+<!-- Start content -->
+<div class="entry-content">
+    {{ id }}
+    <!-- Start Small Head -->
+    <app-head-employer></app-head-employer>
+    <!-- End Small Head -->
+    
+    <div class="row">
+        <!-- Start Left Menu -->
+        <app-menu-area-employer></app-menu-area-employer>
+        <!-- End Left Menu -->
+    
+        <!-- Start Main Employers Page -->
+        <router-outlet></router-outlet>
+        <!-- End Main Employers Page -->
+    
+    </div><!-- End row -->
+</div>
+<!-- End content -->
+
+
+
+
