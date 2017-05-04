@@ -11,6 +11,7 @@ import { AppConfig } from './app.config';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService, DataService } from './_services/index';
+import { Categores } from './_services/categores'
 
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
@@ -22,6 +23,9 @@ import { ChoiceCategoryComponent } from './choicecategory/index';
 import { ChoiceCategoryStep2Component } from './choicecategory/index';
 import { ChoiceCategoryStep3Component } from './choicecategory/index';
 import { MenuEmployerComponent } from './home/index';
+import { HeadEmployerComponent } from './home/index';
+import { AreaEmployerComponent } from './home/index';
+import { VaccineEmployerComponent } from './home/index';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { MenuEmployerComponent } from './home/index';
     ChoiceCategoryComponent,
     ChoiceCategoryStep2Component,
     ChoiceCategoryStep3Component,
-    MenuEmployerComponent
+    MenuEmployerComponent,
+    HeadEmployerComponent,
+    AreaEmployerComponent,
+    VaccineEmployerComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,8 @@ import { MenuEmployerComponent } from './home/index';
     AlertService,
     AuthenticationService,
     UserService,
-    DataService 
+    DataService,
+    Categores 
   ],
   bootstrap: [AppComponent]
 })

@@ -7,16 +7,54 @@ import { UserService } from '../_services/index';
     moduleId: module.id,
     selector: 'app-menu-area-employer',
     template: `
-	    <ul class="menu-area">
-		    <li><a class="btn _large active" [routerLink]="['/home' ]">Карточка компании</a></li>
-		    <li><a class="btn _large" href="vaccine_create--employer.html">Создать вакнсию</a></li>
-		    <li><a class="btn _large" href="vaccine-employer.html">Мои вакансии<span class="badge">42</span></a> </li>
-		    <li><a class="btn _large" href="choice-pay.html">Оплатить абонемент</a></li>
-		    <li><a class="btn _large --off" href="#">Черный список соискателей</a></li>
-		    <li><a class="btn _large" href="question.html">Вопросы к администрации сайта</a></li>
-		    <li><a class="btn _large" href="wishes.html">Пожелания по улучшению сайта</a></li>
-		    <li><a class="btn _large --off" href="#">Чат с соискателями</a></li>
-	    </ul>
+	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+		<h4>Личный кабинет</h4>
+	
+		<ul class="menu-area">
+			<li><a 
+					class="btn _large" 
+					[routerLink]="[ '/cabinet' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Карточка компании</a></li>
+			<li><a 
+					class="btn _large" 
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Создать вакнсию</a></li>
+			<li><a 
+					class="btn _large"
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Мои вакансии<span class="badge">42</span></a> </li>
+			<li><a 
+					class="btn _large"
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Оплатить абонемент</a></li>
+			<li><a 
+					class="btn _large --off"
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Черный список соискателей</a></li>
+			<li><a 
+					class="btn _large"
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Вопросы к администрации сайта</a></li>
+			<li><a 
+					class="btn _large"
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</a></li>
+			<li><a 
+					class="btn _large --off"
+					[routerLink]="[ '/vaccine' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Чат с соискателями</a></li>
+		</ul>
+
+	</div>
+	   
     `
 })
 

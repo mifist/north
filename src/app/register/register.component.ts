@@ -20,6 +20,7 @@ export class RegisterComponent {
         private userService: UserService,
         private alertService: AlertService) {
     }
+
     loadel(ss: string) {
         /* alert(ss);
          console.log((<HTMLInputElement>document.getElementById(ss)).value);*/
@@ -58,8 +59,6 @@ export class RegisterComponent {
     }
 
 
-
-
     checkINN(inputNumber: any) {
        /* преобразуем в строку*/
         inputNumber = "" + inputNumber;
@@ -75,9 +74,11 @@ export class RegisterComponent {
             return false;
         }
     }
+
     onKeyUp() {
         /*console.log(this.model);*/
     }
+
     register() {
         console.log(this.model);
         this.loading = true;
@@ -96,6 +97,7 @@ export class RegisterComponent {
                     this.loading = false;
                 });
     }
+
     keyupel(el) {
         if (el.target.id === 'inputusername') {
             if (!this.checkINN(el.target.value)) {

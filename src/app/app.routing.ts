@@ -10,6 +10,8 @@ import { ResumeApplicantComponent } from './resumeapplicants/index';
 import { ChoiceCategoryComponent } from './choicecategory/index';
 import { ChoiceCategoryStep2Component } from './choicecategory/index';
 import { ChoiceCategoryStep3Component } from './choicecategory/index';
+import { AreaEmployerComponent } from './home/index';
+import { VaccineEmployerComponent } from './home/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -22,6 +24,8 @@ const appRoutes: Routes = [
     { path: 'step2/:id', component:  ChoiceCategoryStep2Component },
     { path: 'step3/:id', component:  ChoiceCategoryStep3Component },
     { path: 'home', component:  HomeComponent },
+    { path: 'cabinet', component:  AreaEmployerComponent},
+    { path: 'vaccine', component:  VaccineEmployerComponent},
 
 
 
