@@ -26,7 +26,13 @@ import { ChoiceCategoryStep3Component } from './choicecategory/index';
 import { MenuEmployerComponent } from './home/index';
 import { HeadEmployerComponent } from './home/index';
 import { AreaEmployerComponent } from './home/employer.area.component';
-import { VaccineEmployerComponent } from './home/employer.vaccine.component';
+import { VacancyEmployerComponent } from './home/employer. vacancy.component';
+import { ShowvacancyEmployerComponent } from './home/employer.showvacancy.component';
+import { SortingComponent } from './home/index';
+import { PaginationComponent } from './home/index';
+import { InfvacancyComponent } from './home/index';
+import { ButtonemplComponent } from './home/index';
+import { QuestionEmployerComponent } from './home/employer.question.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +49,15 @@ import { VaccineEmployerComponent } from './home/employer.vaccine.component';
     ChoiceCategoryStep3Component,
     MenuEmployerComponent,
     HeadEmployerComponent,
+    QuestionEmployerComponent,
     // определение дочерних маршрутов
     AreaEmployerComponent,
-    VaccineEmployerComponent
+    VacancyEmployerComponent,
+    ShowvacancyEmployerComponent,
+    SortingComponent,
+    PaginationComponent,
+    InfvacancyComponent,
+    ButtonemplComponent
   ],
   imports: [
     BrowserModule,

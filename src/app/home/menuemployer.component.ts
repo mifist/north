@@ -11,46 +11,48 @@ import { UserService } from '../_services/index';
 		<h4>Личный кабинет</h4>
 	
 		<ul class="menu-area">
-			<li><a 
+			<li><button 
 					class="btn _large" 
-					[routerLink]="[ 'home/:id/cabinet' ]"
+					[routerLink]="[ '/home/0/cabinet' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Карточка компании</a></li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Карточка компании</button></li>
+			<li><button 
 					class="btn _large" 
-					[routerLink]="[ 'home/:id/vaccine' ]"
+					[routerLink]="[ '/home/0/vacancy' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Создать вакнсию</a></li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Создать вакнсию</button></li>
+			<li><button 
 					class="btn _large"
-					[routerLink]="[ 'home/vaccine' ]"
+					[routerLink]="[ '/home/0/showvacancy' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Мои вакансии<span class="badge">42</span></a> </li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Мои вакансии<span class="badge">42</span></button> </li>
+			<li><button 
 					class="btn _large"
-					[routerLink]="[ 'home/vaccine' ]"
+					[routerLink]="[ '/home/0/vaccine' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Оплатить абонемент</a></li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Оплатить абонемент</button></li>
+			<li><button 
+					disabled
 					class="btn _large --off"
-					[routerLink]="[ 'home/vaccine' ]"
+					[routerLink]="[ '/home/0/vaccine' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Черный список соискателей</a></li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Черный список соискателей</button></li>
+			<li><button 
 					class="btn _large"
-					[routerLink]="[ 'home/vaccine' ]"
+					[routerLink]="[ '/home/0/question' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Вопросы к администрации сайта</a></li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Вопросы к администрации сайта</button></li>
+			<li><button 
 					class="btn _large"
-					[routerLink]="[ 'home/vaccine' ]"
+					[routerLink]="[ '/home/0/vaccine' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</a></li>
-			<li><a 
+					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</button></li>
+			<li><button
+					disabled
 					class="btn _large --off"
-					[routerLink]="[ 'home/vaccine' ]"
+					[routerLink]="[ '/home/0/vaccine' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Чат с соискателями</a></li>
+					[routerLinkActiveOptions]="{ exact:true }">Чат с соискателями</button></li>
 		</ul>
 
 	</div>

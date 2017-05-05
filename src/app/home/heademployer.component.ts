@@ -53,10 +53,6 @@ export class HeadEmployerComponent implements OnInit {
 		 console.log(this.model)*/
 	}
 
-
-
-
-
 	deleteUser(_id: string) {
 		this.userService.delete(_id).subscribe(() => { this.loadAllUsers(); });
 	}

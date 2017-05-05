@@ -8,7 +8,7 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-vaccine-employer',
+    selector: 'app-vacancy-employer',
     template: `
 	    <!-- Start Create Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -126,7 +126,7 @@ import { UserService } from '../_services/index';
 	    <!-- End Create Vaccine -->
 	`
 })
-export class VaccineEmployerComponent implements OnInit {
+export class VacancyEmployerComponent implements OnInit {
 	model: any = {};
 	currentUser: User;
 	users: User[] = [];
@@ -175,7 +175,8 @@ private timer;
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);
 	}
-	timerf() {
+    timerf() {
+        /*
 		this.loadel('formown');
 		this.loadel('input13');
 		this.loadel('input14');
@@ -194,6 +195,7 @@ private timer;
 		this.loadel('postEmail');
 		this.loadel('accounting');
 		this.loadel('infAbout');
+        */
 	}
 	deleteUser(_id: string) {
 		this.userService.delete(_id).subscribe(() => { this.loadAllUsers(); });
