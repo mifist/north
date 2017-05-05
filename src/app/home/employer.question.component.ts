@@ -10,33 +10,36 @@ import { UserService } from '../_services/index';
     moduleId: module.id,
     selector: 'app-question-employer',
     template: `
-	    <!-- Start Show Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <app-sorting></app-sorting>
-		    <!-- Start vaccine -->
-		    <article class="form-wrap">
-			    <header class="wrap__name">
-				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
-				    <h6>Помощник бурильщика</h6>
-			    </header>
-				
-			    <app-infvacancy></app-infvacancy>
-				
-			    <div class="wrap__text">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			    </div>
-			    <app-buttonempl></app-buttonempl>
-		    </article><!-- End vaccine -->
-			
-		    <app-pagination></app-pagination>
-			
+		    <!-- Start question -->
+		    <div class="form-wrap">
+			    <h4>Ваш вопрос?</h4>
+			    <form name="question_employer" #f="ngForm" novalidate>
+				    <div class="form-item">
+					    <div class="input--yoshiko">
+						    <textarea class="field--yoshiko" id="questionemployer"  
+									  (blur)="blurelCheck($event)"
+						              name="questionemployer"
+						              [(ngModel)]="model.questionemployer"></textarea>
+						    <label class="label--yoshiko" for="questionemployer">
+								<span class="content--yoshiko" data-content="Введите ваш вопрос">
+									Ваш вопрос
+								</span>
+						    </label>
+					    </div>
+				    </div>
+				    <button [disabled]="loading" class="btn _large">Отправить</button>
+			    </form>
+		
+		    </div><!-- End choice pay -->
+	
 	    </div>
-	    <!-- End Show Vaccine -->
 	`
 })
 export class QuestionEmployerComponent implements OnInit {
 	model: any = {};
 	currentUser: User;
+	loading = false;
 	users: User[] = [];
 	private timer;
 	constructor(

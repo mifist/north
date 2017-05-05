@@ -10,7 +10,6 @@ import { Categores } from './categores';
 
 @Injectable()
 export class DataService {
- 
     model: any = {};
 
     constructor(private cat: Categores

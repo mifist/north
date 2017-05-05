@@ -13,16 +13,26 @@ import { ChoiceCategoryStep3Component } from './choicecategory/index';
 
 // импорт дочерних маршрутов
 import { AreaEmployerComponent } from './home/employer.area.component';
-import { VacancyEmployerComponent } from './home/employer. vacancy.component';
+import { VacancyEmployerComponent } from './home/employer.vacancy.component';
 import { ShowvacancyEmployerComponent } from './home/employer.showvacancy.component';
 import { QuestionEmployerComponent } from './home/employer.question.component';
+import { WishesEmployerComponent } from './home/employer.wishes.component';
+import { BillEmployerComponent } from './home/employer.bill.component';
+import { OnlinebillillEmployerComponent } from './home/employer.onlinebill.component';
+import { SubscriptionEmployerComponent } from './home/employer.subscription.component';
+import { DetailsEmployerComponent } from './home/employer.details.component';
 
 // определение дочерних маршрутов
 const itemRoutes: Routes = [
     { path: 'cabinet', component:  AreaEmployerComponent },
     { path: 'vacancy', component:  VacancyEmployerComponent },
     { path: 'showvacancy', component:  ShowvacancyEmployerComponent },
+    { path: 'showvacancy/details', component:  DetailsEmployerComponent },
     { path: 'question', component:  QuestionEmployerComponent },
+    { path: 'wishes', component:  WishesEmployerComponent },
+    { path: 'subscription', component:  SubscriptionEmployerComponent },
+    { path: 'subscription/bill', component:  BillEmployerComponent },
+    { path: 'subscription/onlinebill', component:  OnlinebillillEmployerComponent },
 ];
 
 const appRoutes: Routes = [

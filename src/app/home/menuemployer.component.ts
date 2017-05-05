@@ -28,13 +28,13 @@ import { UserService } from '../_services/index';
 					[routerLinkActiveOptions]="{ exact:true }">Мои вакансии<span class="badge">42</span></button> </li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home/0/vaccine' ]"
+					[routerLink]="[ '/home/0/subscription' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Оплатить абонемент</button></li>
 			<li><button 
 					disabled
 					class="btn _large --off"
-					[routerLink]="[ '/home/0/vaccine' ]"
+					[routerLink]="[ '' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Черный список соискателей</button></li>
 			<li><button 
@@ -44,13 +44,13 @@ import { UserService } from '../_services/index';
 					[routerLinkActiveOptions]="{ exact:true }">Вопросы к администрации сайта</button></li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home/0/vaccine' ]"
+					[routerLink]="[ '/home/0/wishes' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</button></li>
 			<li><button
 					disabled
 					class="btn _large --off"
-					[routerLink]="[ '/home/0/vaccine' ]"
+					[routerLink]="[ '' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Чат с соискателями</button></li>
 		</ul>

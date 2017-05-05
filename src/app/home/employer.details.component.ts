@@ -8,12 +8,10 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-showvacancy-employer',
+    selector: 'app-details-employer',
     template: `
-	    <!-- Start Show Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <app-sorting></app-sorting>
-		    <!-- Start vaccine -->
+		    <!-- Start single vaccine -->
 		    <article class="form-wrap">
 			    <header class="wrap__name">
 				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
@@ -23,20 +21,27 @@ import { UserService } from '../_services/index';
 			    <app-infvacancy></app-infvacancy>
 				
 			    <div class="wrap__text">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 			    </div>
 				
-			    <app-buttonempl></app-buttonempl>
+			    <app-applicantlist></app-applicantlist>
 				
-		    </article><!-- End vaccine -->
-			
-		    <app-pagination></app-pagination>
-			
+			    <footer class="wrap__button">
+				    <div class="row">
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <a class="btn _large --like" onclick="history.back(); return false;">Назад</a>
+					    </div>
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <a href="#" class="btn _large --dislike">Удалить вакансию</a>
+					    </div>
+				    </div>
+			    </footer>
+		    </article><!-- End single vaccine -->
+	
 	    </div>
-	    <!-- End Show Vaccine -->
 	`
 })
-export class ShowvacancyEmployerComponent implements OnInit {
+export class DetailsEmployerComponent implements OnInit {
 	model: any = {};
 	currentUser: User;
 	users: User[] = [];

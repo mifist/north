@@ -8,36 +8,55 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-showvacancy-employer',
+    selector: 'app-bill-employer',
     template: `
-	    <!-- Start Show Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <app-sorting></app-sorting>
-		    <!-- Start vaccine -->
-		    <article class="form-wrap">
-			    <header class="wrap__name">
-				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
-				    <h6>Помощник бурильщика</h6>
-			    </header>
-				
-			    <app-infvacancy></app-infvacancy>
-				
-			    <div class="wrap__text">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		    <!-- Start bill -->
+		    <div class="form-wrap">
+			    <h4>Абонентская плата для юридичиского лица</h4>
+			    <div class="entry-meta">
+				    <p>Публикация вакансий неограничено</p>
 			    </div>
+			    <div class="form-item --bill">
+				    <div class="radio">
+					    <input id="bill1" type="radio" name="bill1"
+					           [(ngModel)]="model.bill1"
+					           (blur)="blurel($event)"
+					           #bill1="ngModel">
+					    <label for="bill1">1 месяц - 8000,00 рублей</label>
 				
-			    <app-buttonempl></app-buttonempl>
-				
-		    </article><!-- End vaccine -->
-			
-		    <app-pagination></app-pagination>
-			
+				    </div>
+				    <div class="radio">
+					    <input id="bill2" type="radio" name="bill2"
+					           [(ngModel)]="model.bill2"
+					           (blur)="blurel($event)"
+					           #bill2="ngModel">
+					    <label for="bill2">3 месяца - 8000,00 рублей</label>
+				    </div>
+				    <div class="radio">
+					    <input id="bill3" type="radio" name="bill3"
+					           [(ngModel)]="model.bill3"
+					           (blur)="blurel($event)"
+					           #bill3="ngModel">
+					    <label for="bill3">6 месяцев - 8000,00 рублей</label>
+				    </div>
+				    <div class="radio">
+					    <input id="bill4" type="radio" name="bill4"
+					           [(ngModel)]="model.bill4"
+					           (blur)="blurel($event)"
+					           #bill4="ngModel">
+					    <label for="bill4">12 месяцев - 8000,00 рублей</label>
+				    </div>
+			    </div>
+				<button class="btn _large">Сформировать счет</button>
+		    </div><!-- End bill -->
+	
 	    </div>
-	    <!-- End Show Vaccine -->
 	`
 })
-export class ShowvacancyEmployerComponent implements OnInit {
+export class BillEmployerComponent implements OnInit {
 	model: any = {};
+	loading = false;
 	currentUser: User;
 	users: User[] = [];
 	private timer;
@@ -74,13 +93,7 @@ export class ShowvacancyEmployerComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-		/*  this.loadel('input14');
-		 document.getElementById('input14').textContent
-		 document.getElementById('input14').parentElement.classList.add('input--filled');
-		 document.getElementById('input15').parentElement.classList.add('input--filled');
-		 el.target.parentNode.classList.add('input--filled');
-		 el.target.focus();id = "input14"
-		 console.log(this.model)*/
+
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);

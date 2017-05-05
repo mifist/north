@@ -8,36 +8,44 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-showvacancy-employer',
+    selector: 'app-onlinebill-employer',
     template: `
-	    <!-- Start Show Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <app-sorting></app-sorting>
-		    <!-- Start vaccine -->
-		    <article class="form-wrap">
-			    <header class="wrap__name">
-				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
-				    <h6>Помощник бурильщика</h6>
-			    </header>
-				
-			    <app-infvacancy></app-infvacancy>
-				
-			    <div class="wrap__text">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		    <!-- Start bill -->
+		    <div class="form-wrap">
+			    <h4>Абонентская плата для юридичиского лица</h4>
+			    <div class="entry-meta">
+				    <p>Публикация вакансий неограничено</p>
+				    <p>Онлайн оплата</p>
 			    </div>
+			    <div class="form-item --bill">
+				    <div class="radio">
+					    <input id="radio1" type="radio" name="bill" value="1month" checked>
+					    <label for="radio1">1 месяц - 8000,00 рублей</label>
 				
-			    <app-buttonempl></app-buttonempl>
-				
-		    </article><!-- End vaccine -->
-			
-		    <app-pagination></app-pagination>
-			
+				    </div>
+				    <div class="radio">
+					    <input id="radio2" type="radio" name="bill" value="3month">
+					    <label for="radio2">3 месяца - 8000,00 рублей</label>
+				    </div>
+				    <div class="radio">
+					    <input id="radio3" type="radio" name="bill" value="6month">
+					    <label for="radio3">6 месяцев - 8000,00 рублей</label>
+				    </div>
+				    <div class="radio">
+					    <input id="radio4" type="radio" name="bill" value="12month">
+					    <label for="radio4">12 месяцев - 8000,00 рублей</label>
+				    </div>
+			    </div>
+			    <a href="#" class="btn _large">Оплатить онлайн</a>
+		    </div><!-- End bill -->
+	
 	    </div>
-	    <!-- End Show Vaccine -->
 	`
 })
-export class ShowvacancyEmployerComponent implements OnInit {
+export class OnlinebillillEmployerComponent implements OnInit {
 	model: any = {};
+	loading = false;
 	currentUser: User;
 	users: User[] = [];
 	private timer;
@@ -74,13 +82,7 @@ export class ShowvacancyEmployerComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-		/*  this.loadel('input14');
-		 document.getElementById('input14').textContent
-		 document.getElementById('input14').parentElement.classList.add('input--filled');
-		 document.getElementById('input15').parentElement.classList.add('input--filled');
-		 el.target.parentNode.classList.add('input--filled');
-		 el.target.focus();id = "input14"
-		 console.log(this.model)*/
+
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);

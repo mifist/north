@@ -136,7 +136,8 @@
 		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 		           <div class="input--yoshiko">
 		            <!--  <label for="password">Password</label>  -->
-			            <input type="password" class="form-control field--yoshiko" id="input151"  name="password"
+			            <input type="password" class="form-control field--yoshiko" id="input151"
+			                   name="password"
 			                   [(ngModel)]="model.password"
 			                   (blur)="blurel($event)"
 			                   #password="ngModel" required />

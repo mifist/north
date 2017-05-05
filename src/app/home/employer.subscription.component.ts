@@ -8,36 +8,29 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-showvacancy-employer',
+    selector: 'app-subscription-employer',
     template: `
-	    <!-- Start Show Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <app-sorting></app-sorting>
-		    <!-- Start vaccine -->
+		    <!-- Start choice pay -->
 		    <article class="form-wrap">
-			    <header class="wrap__name">
-				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
-				    <h6>Помощник бурильщика</h6>
-			    </header>
-				
-			    <app-infvacancy></app-infvacancy>
-				
-			    <div class="wrap__text">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			    </div>
-				
-			    <app-buttonempl></app-buttonempl>
-				
-		    </article><!-- End vaccine -->
-			
-		    <app-pagination></app-pagination>
-			
+			    <footer class="wrap__button">
+				    <div class="row">
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <a [routerLink]="[ 'bill' ]" class="btn _large">Выписать счет</a>
+					    </div>
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <a [routerLink]="[ 'onlinebill' ]" class="btn _large">Онлайн оплата</a>
+					    </div>
+				    </div>
+			    </footer>
+		    </article><!-- End choice pay -->
+	
 	    </div>
-	    <!-- End Show Vaccine -->
 	`
 })
-export class ShowvacancyEmployerComponent implements OnInit {
+export class SubscriptionEmployerComponent implements OnInit {
 	model: any = {};
+	loading = false;
 	currentUser: User;
 	users: User[] = [];
 	private timer;
@@ -74,13 +67,7 @@ export class ShowvacancyEmployerComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-		/*  this.loadel('input14');
-		 document.getElementById('input14').textContent
-		 document.getElementById('input14').parentElement.classList.add('input--filled');
-		 document.getElementById('input15').parentElement.classList.add('input--filled');
-		 el.target.parentNode.classList.add('input--filled');
-		 el.target.focus();id = "input14"
-		 console.log(this.model)*/
+
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);

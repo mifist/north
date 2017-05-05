@@ -3,7 +3,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 
 import { User } from '../_models/index';
 
-import { UserService } from '../_services/index';
+import { UserService, DataService } from '../_services/index';
 
 
 @Component({
@@ -18,37 +18,53 @@ import { UserService } from '../_services/index';
 				    <div class="form-wrap">
 					    <h5>Создание вакансии</h5>
 					    <form class="" action=""><!-- Start form -->
-						    <div class="form-item --simple">
+						    <div class="form-item">
 							    <div class="input--yoshiko">
-								    <select class="field--yoshiko" id="input123" name="">
-									    <option value="Направление 1">Направление 1</option>
-									    <option value="Направление 2">Направление 2</option>
+								    <select class="field--yoshiko" id="categores"
+								            #categores="ngModel"
+								            [(ngModel)]="model.categores" 
+											name="categores"
+								            (blur)="blurelCheck($event)">
+									    <option *ngFor="let category of categores" 
+												[value]="category.title">{{ category.title }}</option>
 								    </select>
-								    <label class="label--yoshiko" for="input123">
+								    <label class="label--yoshiko" for="categores">
 											<span class="content--yoshiko" data-content="Выберите направление:">
 												Выберите направление:
 											</span>
 								    </label>
 							    </div>
 						    </div>
-						    <div class="form-item">
+						    <div class="form-item ">
 							    <div class="input--yoshiko">
-								    <select class="field--yoshiko" id="input124" name="">
-									    <option value="Категория 1">Категория 1</option>
-									    <option value="Категория 2">Категория 2</option>
+								    <select class="field--yoshiko" id="categores2"
+								            #categores_step2="ngModel"
+								            [(ngModel)]="model.categores_step2"
+								            name="categores_step2"
+								            (blur)="blurelCheck($event)">
+									    <option *ngFor="let category2 of categores_step2"
+									            [value]="category2.title">
+											{{ category2.title }}
+										</option>
 								    </select>
-								    <label class="label--yoshiko" for="input124">
-											<span class="content--yoshiko" data-content="Выберите категорию из списка:">
-												Выберите категорию из списка:
-											</span>
+								    <label class="label--yoshiko" for="categores2">
+										<span class="content--yoshiko" data-content="Выберите категорию из списка:">
+											Выберите категорию из списка:
+										</span>
 								    </label>
 							    </div>
 						    </div>
 						    <div class="form-item">
 							    <div class="input--yoshiko">
-								    <select class="field--yoshiko" id="input125" name="">
-									    <option value="Подкатегория 1">Подкатегория 1</option>
-									    <option value="Подкатегория 2">Подкатегория 2</option>
+								    <select class="field--yoshiko" id="categores3"
+								            #categores_step3="ngModel"
+								            [(ngModel)]="model.categores_step3"
+								            name="categores_step3"
+								            (blur)="blurelCheck($event)">
+									    <option *ngFor="let category3 of categores_step3"
+									            [value]="category3.title">
+										    {{ category3.title }}
+									    </option>
 								    </select>
 								    <label class="label--yoshiko" for="input125">
 											<span class="content--yoshiko" data-content="Выберите подкатегорию:">
@@ -59,20 +75,26 @@ import { UserService } from '../_services/index';
 						    </div>
 						    <div class="form-item">
 							    <div class="input--yoshiko">
-								    <input class="field--yoshiko" id="input151" type="text" name=""
-								           value="">
-								    <label class="label--yoshiko" for="input151">
-											<span class="content--yoshiko" data-content="Укажите заработную плату от">
-												Укажите заработную плату от
-											</span>
+								    <input class="field--yoshiko" id="wagesFrom" type="text" 
+										   (blur)="blurelCheckCheck($event)"
+								           name="wagesFrom"
+								           #wagesFrom="ngModel"
+								           [(ngModel)]="model.wagesFrom">
+								    <label class="label--yoshiko" for="wagesFrom">
+										<span class="content--yoshiko" data-content="Укажите заработную плату от">
+											Укажите заработную плату от
+										</span>
 								    </label>
 							    </div>
 						    </div>
 						    <div class="form-item">
 							    <div class="input--yoshiko">
-								    <input class="field--yoshiko" id="input152" type="text" name=""
-								           value="">
-								    <label class="label--yoshiko" for="input152">
+								    <input class="field--yoshiko" id="wagesTo" type="text"  
+										   (blur)="blurelCheckCheck($event)"
+								           name="wagesTo"
+								           #wagesTo="ngModel"
+								           [(ngModel)]="model.wagesTo">
+								    <label class="label--yoshiko" for="wagesTo">
 											<span class="content--yoshiko" data-content="Укажите заработную плату до">
 												Укажите заработную плату до
 											</span>
@@ -81,11 +103,15 @@ import { UserService } from '../_services/index';
 						    </div>
 						    <div class="form-item">
 							    <div class="input--yoshiko">
-								    <textarea class="field--yoshiko" id="input281" name=""></textarea>
-								    <label class="label--yoshiko" for="input281">
-													<span class="content--yoshiko" data-content="Описание вакансии (будет отображаться для Соискателей)">
-														Описание вакансии
-													</span>
+								    <textarea class="field--yoshiko" id="vacanDesc"
+								              (blur)="blurelCheckCheck($event)"
+								              name="vacanDesc"
+								              #vacanDesc="ngModel"
+								              [(ngModel)]="model.vacanDesc"></textarea>
+								    <label class="label--yoshiko" for="vacanDesc">
+										<span class="content--yoshiko" data-content="Описание вакансии (будет отображаться для Соискателей)">
+											Описание вакансии
+										</span>
 								    </label>
 							    </div>
 						    </div>
@@ -102,9 +128,14 @@ import { UserService } from '../_services/index';
 					    <div class="main-item">
 						    <div class="form-item --simple">
 							    <div class="input--yoshiko file-form">
-								    <label for="input32"></label>
+								    <label for="uplvacanEmlImg"></label>
 								    <button type="button" name="" value="" class="btn _small --file">Выбрать</button>
-								    <input id="input32" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
+								    <input id="uplvacanEmlImg" class="field--yoshiko" type="file"
+								           (blur)="blurelCheckCheck($event)"
+								           name="uplvacanEmlImg"
+								           #uplvacanEmlImg="ngModel"
+								           [(ngModel)]="model.uplvacanEmlImg"
+										   onchange="getName(this.value);">
 							    </div>
 							    <span class="about-input --red">*Фотографии будут видны Соискателям.</span>
 						    </div>
@@ -119,7 +150,7 @@ import { UserService } from '../_services/index';
 				    </div>
 			    </div><!-- End download video and photo -->
 			    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				    <a href="#finish" class="btn _large">Опубликовать</a>
+					<button class="btn _large">Опубликовать</button>
 			    </div><!-- End button -->
 		    </div><!-- End row -->
 	    </div>
@@ -128,12 +159,17 @@ import { UserService } from '../_services/index';
 })
 export class VacancyEmployerComponent implements OnInit {
 	model: any = {};
+	loading = false;
 	currentUser: User;
 	users: User[] = [];
-private timer;
+	categores = [];
+	categores_step2 = [];
+	categores_step3 = [];
+	private timer;
 	constructor(
 		private router: Router,
 		private userService: UserService,
+		private dataService: DataService,
 		private alertService: ActivatedRoute) {
 		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		/*console.log(this.currentUser);*/
@@ -164,13 +200,9 @@ private timer;
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-		/*  this.loadel('input14');
-		 document.getElementById('input14').textContent
-		 document.getElementById('input14').parentElement.classList.add('input--filled');
-		 document.getElementById('input15').parentElement.classList.add('input--filled');
-		 el.target.parentNode.classList.add('input--filled');
-		 el.target.focus();id = "input14"
-		 console.log(this.model)*/
+		this.categores = this.dataService.GetСategores();
+		this.categores_step2 = this.dataService.GetСategores_step2();
+		this.categores_step3 = this.dataService.GetСategores_step3();
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);

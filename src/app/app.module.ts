@@ -26,13 +26,19 @@ import { ChoiceCategoryStep3Component } from './choicecategory/index';
 import { MenuEmployerComponent } from './home/index';
 import { HeadEmployerComponent } from './home/index';
 import { AreaEmployerComponent } from './home/employer.area.component';
-import { VacancyEmployerComponent } from './home/employer. vacancy.component';
+import { VacancyEmployerComponent } from './home/employer.vacancy.component';
 import { ShowvacancyEmployerComponent } from './home/employer.showvacancy.component';
 import { SortingComponent } from './home/index';
 import { PaginationComponent } from './home/index';
 import { InfvacancyComponent } from './home/index';
 import { ButtonemplComponent } from './home/index';
 import { QuestionEmployerComponent } from './home/employer.question.component';
+import { WishesEmployerComponent } from './home/employer.wishes.component';
+import { BillEmployerComponent } from './home/employer.bill.component';
+import { OnlinebillillEmployerComponent } from './home/employer.onlinebill.component';
+import { SubscriptionEmployerComponent } from './home/employer.subscription.component';
+import { DetailsEmployerComponent } from './home/employer.details.component';
+import { ApplicantlistComponent } from './home/index';
 
 @NgModule({
   declarations: [
@@ -50,6 +56,7 @@ import { QuestionEmployerComponent } from './home/employer.question.component';
     MenuEmployerComponent,
     HeadEmployerComponent,
     QuestionEmployerComponent,
+    ApplicantlistComponent,
     // определение дочерних маршрутов
     AreaEmployerComponent,
     VacancyEmployerComponent,
@@ -57,7 +64,12 @@ import { QuestionEmployerComponent } from './home/employer.question.component';
     SortingComponent,
     PaginationComponent,
     InfvacancyComponent,
-    ButtonemplComponent
+    ButtonemplComponent,
+    WishesEmployerComponent,
+    BillEmployerComponent,
+    OnlinebillillEmployerComponent,
+    SubscriptionEmployerComponent,
+    DetailsEmployerComponent
   ],
   imports: [
     BrowserModule,
