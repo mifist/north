@@ -20,12 +20,12 @@ import { UserService } from '../_services/index';
 					class="btn _large" 
 					[routerLink]="[ '/home2/00/vacancy_applicant' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Создать вакансию</button></li>
+					[routerLinkActiveOptions]="{ exact:true }">Посмотреть вакансии</button></li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home2/00/showvacancy' ]"
+					[routerLink]="[ '/home2/00/showemployer' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Мои вакансии<span class="badge">42</span></button> </li>
+					[routerLinkActiveOptions]="{ exact:true }">Мои работодатели<span class="badge">42</span></button> </li>
 			<li><button 
 					class="btn _large"
 					[routerLink]="[ '/home2/00/subscription_applicant' ]"

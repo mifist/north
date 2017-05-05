@@ -49,6 +49,13 @@ import { QuestionApplicantComponent } from './home2/applicant.question.component
 import { WishesApplicantComponent } from './home2/applicant.wishes.component';
 import { AreaApplicantComponent } from './home2/applicant.area.component';
 import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
+import { ShowvemployerApplicantComponent } from './home2/applicant.showemployer.component';
+import { DetailsApplicantComponent } from './home2/applicant.details.component';
+import { InfvacancyapplComponent } from './home2/index';
+import { ButtonapplComponent } from './home2/index';
+import { MenuApplicantComponent } from './home2/index';
+import { HeadApplicantComponent } from './home2/index';
+import { Home2Component } from './home2/index';
 
 @NgModule({
   declarations: [
@@ -88,7 +95,14 @@ import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
     QuestionApplicantComponent,
     WishesApplicantComponent,
     AreaApplicantComponent,
-    VacancyApplicantComponent
+    VacancyApplicantComponent,
+    ShowvemployerApplicantComponent,
+    DetailsApplicantComponent,
+    InfvacancyapplComponent,
+    ButtonapplComponent,
+    MenuApplicantComponent,
+    Home2Component,
+    HeadApplicantComponent
   ],
   imports: [
     BrowserModule,

@@ -12,380 +12,226 @@ import { UserService } from '../_services/index';
     template: `		
 		<!-- Start Private Area -->
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-			<div class="row">
-				<div class="col-xs-12 12 col-md-12 col-lg-12">
+			<div class="row"><!-- Start row -->
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 left-card"><!-- Start Form -->
 					<!-- Photo -->
 					<div class="form-wrap">
-						<h5>Логотип компании </h5>
-						<div class="form-image logo">
-							<img src="../assets/images/images.jpg" alt="Logotype">
+						<h5>Фото профиля</h5>
+						<div class="form-image">
+							<img src="../assets/images/face.png" alt="Profile photo">
 						</div>
-						<a class="btn _large --download">Изменить ЛОГОТИП</a>
+						<a class="btn _small --download">Изменить ФОТО</a>
 					</div>
-					<!-- Start Full width form -->
+					<!-- Main form -->
 					<div class="form-wrap">
-						<h5>Основные данные компании</h5>
+						<h5>Личные данные</h5>
 						<form class="" action=""><!-- Start form -->
-						
-							<div class="form-item --simple">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="formown" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="formown"
-										   [(ngModel)]="model.formown">
-									<label class="label--yoshiko" for="formown">
-									<span class="content--yoshiko" data-content="ФОРМА СОБСТВЕННОСТИ:">
-										Форма собственности:
-									</span>
-									</label>
-								</div>
-							</div>
-						
+							
 							<div class="form-item">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input13" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="firstName"
-										   [(ngModel)]="model.firstName">
-									<label class="label--yoshiko" for="input13">
-									<span class="content--yoshiko" data-content="НАЗВАНИЕ ЮРИДИЧЕСКОГО ЛИЦА">
-										Название юридического лица
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input14" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="username"
-										   [(ngModel)]="model.username">
-									<label class="label--yoshiko" for="input14">
-									<span class="content--yoshiko" data-content="ИНН">
-										ИНН (Ваш личный логин)
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input15" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="kpp"
-										   [(ngModel)]="model.kpp">
-									<label class="label--yoshiko" for="input15">
-									<span class="content--yoshiko" data-content="КПП">
-										КПП
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input type="password" class="form-control field--yoshiko" id="password"
-										   (blur)="blurelCheck($event)"
-										   name="password"
-										   [(ngModel)]="model.password" />
-									<label class="label--yoshiko" for="password">
-								<span class="content--yoshiko" data-content="ПАРОЛЬ">
-									Пароль
-								</span>
-									</label>
-								</div>
-							</div>
-						</form><!-- End form -->
-					</div>
-				
-					<div class="form-wrap">
-						<h5>Юридический адрес</h5>
-						<form class="place--main" action=""><!-- Start form -->
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="cityIndex" type="number"
-										   [(ngModel)]="model.cityIndex"
-										   (blur)="blurelCheck($event)"
-										   name="cityIndex">
-									<label class="label--yoshiko" for="cityIndex">
-									<span class="content--yoshiko" data-content="ИНДЕКС">
-										Индекс
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="cityRegion" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="cityRegion"
-										   [(ngModel)]="model.cityRegion">
-									<label class="label--yoshiko" for="cityRegion">
-									<span class="content--yoshiko" data-content="ОБЛАСТЬ">
-										Область
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="city" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="city"
-										   [(ngModel)]="model.city">
-									<label class="label--yoshiko" for="city">
-									<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
-										Город / Деревня
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="cityAddress" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="cityAddress"
-										   [(ngModel)]="model.cityAddress">
-									<label class="label--yoshiko" for="cityAddress">
-									<span class="content--yoshiko" data-content="АДРЕС">
-										Адрес
-									</span>
-									</label>
-								</div>
-							</div>
-						</form><!-- End form -->
-					</div>
-					<div class="form-wrap">
-						<div class="checkbox checked">
-							<input id="cityCheck" type="checkbox"
-								   (blur)="blurelCheck($event)"
-								   name="cityCheck"
-								   [(ngModel)]="model.cityCheck">
-							<label for="cityCheck">Совпадает с юридическим адресом</label>
-						</div>
-						<h5>Почтовый адрес</h5>
-						<form class="place--second" action=""><!-- Start form -->
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="postIndex" type="number"
-										   (blur)="blurelCheck($event)"
-										   name="postIndex"
-										   [(ngModel)]="model.postIndex">
-									<label class="label--yoshiko" for="postIndex">
-									<span class="content--yoshiko" data-content="ИНДЕКС">
-										Индекс
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="postRegion" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="postRegion"
-										   [(ngModel)]="model.postRegion">
-									<label class="label--yoshiko" for="postRegion">
-									<span class="content--yoshiko" data-content="ОБЛАСТЬ">
-										Область
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="postCity" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="postCity"
-										   [(ngModel)]="model.postCity">
-									<label class="label--yoshiko" for="postCity">
-									<span class="content--yoshiko" data-content="ГОРОД / ДЕРЕВНЯ">
-										Город / Деревня
-									</span>
-									</label>
-								</div>
-							</div>
-						
-							<div class="form-item">
-								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="postAddress" type="text"
-										   (blur)="blurelCheck($event)"
-										   name="postAddress"
-										   [(ngModel)]="model.postAddress">
-									<label class="label--yoshiko" for="postAddress">
-									<span class="content--yoshiko" data-content="АДРЕС">
-										Адрес
-									</span>
-									</label>
-								</div>
-							</div>
-						</form><!-- End form -->
-					</div>
-					<div class="form-wrap">
-						<h5>Ответственное лицо</h5>
-						<form class="responsible-person" action=""><!-- Start form -->
-							<div class="row">
-								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-									<div class="form-item">
-										<div class="input--yoshiko">
-											<input class="field--yoshiko" id="bailee" type="text"
-												   (blur)="blurelCheck($event)"
-												   name="bailee"
-												   [(ngModel)]="model.bailee">
-											<label class="label--yoshiko" for="bailee">
-											<span class="content--yoshiko" data-content="И.Ф.О.">
-												И.Ф.О.
+									<input class="field--yoshiko" id="input3" type="text" name="" value="">
+									<label class="label--yoshiko" for="input3">
+											<span class="content--yoshiko" data-content="Фамилия">
+												Фамилия
 											</span>
-											</label>
-										</div>
-									</div>
-								
-									<div class="form-item">
-										<div class="input--yoshiko">
-											<input class="field--yoshiko" id="baileephone" type="tel"
-												   (blur)="blurelCheck($event)"
-												   name="baileephone"
-												   [(ngModel)]="model.phone">
-											<label class="label--yoshiko" for="baileephone">
-											<span class="content--yoshiko" data-content="ТЕЛЕФОН">
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input4" type="text" name="" value="">
+									<label class="label--yoshiko" for="input4">
+											<span class="content--yoshiko" data-content="Имя">
+												Имя
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input5" type="text" name="" value="">
+									<label class="label--yoshiko" for="input5">
+											<span class="content--yoshiko" data-content="Отчество">
+												Отчество
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input30" type="tel" name="" value="">
+									<label class="label--yoshiko" for="input30">
+											<span class="content--yoshiko" data-content="Телефон">
 												Телефон
 											</span>
-											</label>
-										</div>
-									</div>
-								
-									<div class="form-item">
-										<div class="input--yoshiko">
-											<input class="field--yoshiko" id="postEmail" type="email"
-												   (blur)="blurelCheck($event)"
-												   name="postEmail"
-												   [(ngModel)]="model.postEmail"
-											>
-											<label class="label--yoshiko" for="postEmail">
-											<span class="content--yoshiko" data-content="E-mail">
-												E-mail
-											</span>
-											</label>
-										</div>
-									</div>
-								
-									<div class="form-item">
-										<div class="input--yoshiko">
-											<input class="field--yoshiko" id="accounting" type="text"
-												   (blur)="blurelCheck($event)"
-												   name="accounting"
-												   [(ngModel)]="model.accounting">
-											<label class="label--yoshiko" for="accounting">
-											<span class="content--yoshiko" data-content="ТЕЛЕФОН">
-												Контакты бухгалтерии
-											</span>
-											</label>
-										</div>
-									</div>
-									<div class="form-item">
-										<div class="input--yoshiko">
-									<textarea class="field--yoshiko" id="infAbout"
-											  (blur)="blurelCheck($event)"
-											  name="infAbout"
-											  [(ngModel)]="model.infAbout" >
-										
-									</textarea>
-											<label class="label--yoshiko" for="infAbout">
-											<span class="content--yoshiko" data-content="Информация о компании (будет отображаться для Соискателей)">
-												Информация о компании
-											</span>
-											</label>
-										</div>
-									</div>
+									</label>
+								</div>
+								<div class="checkbox">
+									<input id="checkbox2" type="checkbox" name="" value="">
+									<label for="checkbox2">Разрешить показ работодателю</label>
 								</div>
 							</div>
-					
+							
+							
+							
+							<div class="form-item">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input31" type="text" name="" value="">
+									<label class="label--yoshiko" for="input31">
+											<span class="content--yoshiko" data-content="ИНН">
+												ИНН (Ваш личный логин)
+											</span>
+									</label>
+								</div>
+								<div class="checkbox">
+									<input id="checkbox3" type="checkbox" name="" value="">
+									<label for="checkbox3">Разрешить показ работодателю</label>
+								</div>
+							</div>
 						</form><!-- End form -->
+						<a class="btn _small --download">Изменить</a>
 					</div>
-					<!-- End Full width form -->
+				</div><!-- End LEFT Form -->
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 right-card"><!-- Start Form -->
+					<!-- Main form -->
+					<div class="form-wrap">
+						<h5>Резюме</h5>
+						<form class="" action=""><!-- Start form -->
+							
+							<div class="form-item --simple">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input6" type="date" name="" value="">
+									<label class="label--yoshiko" for="input6">
+											<span class="content--yoshiko" data-content="Дата рождения:">
+												Дата рождения:
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item --simple">
+								<div class="input--yoshiko">
+									<select class="field--yoshiko" id="input7" name="">
+										<option value="Москва">Москва</option>
+										<option value="Москва">Москва</option>
+										<option value="Москва">Москва</option>
+									</select>
+									<label class="label--yoshiko" for="input7">
+											<span class="content--yoshiko" data-content="Регион проживания:">
+												Регион проживания:
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item --simple">
+								<div class="input--yoshiko">
+									<textarea class="field--yoshiko" id="input8" type="text" name="" placeholder="(через запятую)"></textarea>
+									<label class="label--yoshiko" for="input8">
+											<span class="content--yoshiko" data-content="Образование:">
+												Образование:
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item --simple">
+								<div class="input--yoshiko">
+									<textarea class="field--yoshiko" id="input9" name="" placeholder="(через запятую)"></textarea>
+									<label class="label--yoshiko" for="input9">
+											<span class="content--yoshiko" data-content="Предыдущие места работы:">
+												Предыдущие места работы:
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item --simple">
+								<div class="input--yoshiko">
+									<input class="field--yoshiko" id="input10" type="text" name=""
+									       placeholder="Например, '10 лет'">
+									<label class="label--yoshiko" for="input10">
+											<span class="content--yoshiko" data-content="Общий стаж:">
+												Общий стаж:
+											</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-item --simple">
+								<div class="input--yoshiko">
+										<textarea class="field--yoshiko" id="input11" name=""
+										          placeholder="Введите пожелания"></textarea>
+									<label class="label--yoshiko" for="input11">
+											<span class="content--yoshiko" data-content="Пожелания к будущей работе:">
+												Пожелания к будущей работе:
+											</span>
+									</label>
+								</div>
+							</div>
+						</form><!-- End form -->
+						<a class="btn _small --download">Изменить</a>
+					</div>
+				
+				</div><!-- End RIGHT Form -->
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<h4>МОИ УДОСТОВЕРЕНИЯ</h4>
+					<div class="form-item --download-file --certifications">
+						<div class="main-item">
+							<div class="form-item --simple">
+								<div class="checkbox">
+									<input id="checkbox25" type="checkbox" name="" value="" checked>
+									<label for="checkbox25">DIE Небольшие автобусы с прицепом</label>
+								</div>
+								<div class="input--yoshiko file-form">
+									<label id="fileformlabel" class="item-field" for="input33"></label>
+									<button type="button" name="" value="" class="btn _small --file">Выбрать</button>
+									<input id="input33" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
+								</div>
+							</div>
+						</div>
+						
+						<div class="main-item">
+							<div class="form-item --simple">
+								<div class="checkbox">
+									<input id="checkbox26" type="checkbox" name="" value="" checked>
+									<label for="checkbox26">DIE Небольшие автобусы с прицепом</label>
+								</div>
+								<div class="input--yoshiko file-form">
+									<label id="fileformlabel" class="item-field" for="input34"></label>
+									<button type="button" name="" value="" class="btn _small --file">Выбрать</button>
+									<input id="input34" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
+								</div>
+							</div>
+						</div>
+						
+						<a href="#add_certifications" class="btn _large --download">ЗАГРУЗИТЬ ЕЩЕ</a>
+					</div>
 				</div>
-			</div><!-- End row -->
-		
-			<div class="row"><!-- Start row -->
+				
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<!-- Start subscrybe -->
-					<h5>Отметьте сообщения которые желаете получать по почте</h5>
-					<div class="form-item --subscrybe">
+					<h4>ДАННЫЕ ОБ АТТЕСТАЦИИ</h4>
+					<div class="form-item --attestation">
 						<div class="checkbox">
-							<input id="checkbox7" type="checkbox" name="" value="">
-							<label for="checkbox7">Новости сайта</label>
+							<input id="checkbox15" type="checkbox" name="" value="">
+							<label for="checkbox15">Д.1. Гидротехнические сооружения объектов промышленности</label>
 						</div>
 						<div class="checkbox">
-							<input id="checkbox9" type="checkbox" name="" value="">
-							<label for="checkbox9">Уведомления</label>
+							<input id="checkbox16" type="checkbox" name="" value="">
+							<label for="checkbox16">Д.2. Гидротехнические сооружения объектов энергетики</label>
 						</div>
 						<div class="checkbox">
-							<input id="checkbox10" type="checkbox" name="" value="">
-							<label for="checkbox10">Напоминания</label>
+							<input id="checkbox17" type="checkbox" name="" value="">
+							<label for="checkbox17">Д.3. Гидротехнические сооружения объектов водохозяйственного</label>
 						</div>
 					</div>
-				</div><!-- End subscrybe -->
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<!-- Start download video and photo -->
-					<h5>Вы можете добавить до 3-х видеороликов</h5>
-					<div class="form-item --download-file">
-						<div class="main-item">
-							<div class="form-item --simple">
-								<h6>Загрузить видео</h6>
-								<div class="input--yoshiko file-form">
-									<label for="input32"></label>
-									<button type="button" name="" value="" class="btn _small --file">Выбрать</button>
-									<input id="input32" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
-								</div>
-								<span class="about-input --red">*Видеоролики будут видны Соискателям.</span>
-							</div>
-						</div>
-						<div class="file-item">
-							<!-- файлы грузяться сюда -->
-							<div class="item-field">
-								<div id="fileformlabel"></div>
-								<i class="mbri-close --close"></i>
-							</div>
-							<div class="item-field">
-								<div id="fileformlabel"></div>
-								<i class="mbri-close --close"></i>
-							</div>
-						</div>
-					</div>
-					<h5>Вы можете добавить до 5-ти фотографий</h5>
-					<div class="form-item --download-file">
-						<div class="main-item">
-							<div class="form-item --simple">
-								<h6>Загрузить фото</h6>
-								<div class="input--yoshiko file-form">
-									<label for="input29"></label>
-									<button type="button" name="" value="" class="btn _small --file">Выбрать</button>
-									<input id="input29" class="field--yoshiko" type="file" name="fileupload" value="fileupload" onchange="getName(this.value);">
-								</div>
-								<span class="about-input --red">*Фотографии будут видны Соискателям.</span>
-							</div>
-						</div>
-						<div class="file-item">
-							<!-- файлы грузяться сюда -->
-							<div class="item-field">
-								<div id="fileformlabel"></div>
-								<i class="mbri-close --close"></i>
-							</div>
-							<div class="item-field">
-								<div id="fileformlabel"></div>
-								<i class="mbri-close --close"></i>
-							</div>
-						</div>
-					</div>
-				</div><!-- End download video and photo -->
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<a href="#finish" class="btn _large">Изменить</a>
-				</div><!-- End button -->
+					<a href="#" class="btn _large --download">ДОБАВИТЬ</a>
+				</div>
 			</div><!-- End row -->
 		</div>
 		<!-- End Private Area -->

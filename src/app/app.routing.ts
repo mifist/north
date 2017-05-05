@@ -32,6 +32,9 @@ import { WishesApplicantComponent } from './home2/applicant.wishes.component';
 import { AreaApplicantComponent } from './home2/applicant.area.component';
 import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
 
+import { ShowvemployerApplicantComponent } from './home2/applicant.showemployer.component';
+import { DetailsApplicantComponent } from './home2/applicant.details.component';
+
 // определение дочерних маршрутов для работодателя
 const itemRoutes: Routes = [
     { path: 'cabinet', component:  AreaEmployerComponent },
@@ -50,9 +53,8 @@ const itemRoutes: Routes = [
 const itemRoutesAppl: Routes = [
     { path: 'cabinet_applicant', component:  AreaApplicantComponent },
     { path: 'vacancy_applicant', component:  VacancyApplicantComponent },
-    /*{ path: 'showvacancy', component:  ShowvacancyEmployerComponent },
-    { path: 'showvacancy/details', component:  DetailsEmployerComponent },
-    { path: 'showvacancy/details/view_applicant', component:  CardapplEmployerComponent },*/
+    { path: 'showemployer', component:  ShowvemployerApplicantComponent },
+    { path: 'showemployer/details', component:  DetailsApplicantComponent },
     { path: 'question_applicant', component:  QuestionApplicantComponent },
     { path: 'wishes_applicant', component:  WishesApplicantComponent },
     { path: 'subscription_applicant', component:  SubscriptionApplicantComponent },

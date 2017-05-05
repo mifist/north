@@ -8,7 +8,7 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-showvacancy-applicant',
+    selector: 'app-showemployer-applicant',
     template: `
 	    <!-- Start Show Vaccine -->
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -36,7 +36,7 @@ import { UserService } from '../_services/index';
 	    <!-- End Show Vaccine -->
 	`
 })
-export class ShowvacancyApplicantComponent implements OnInit {
+export class ShowvemployerApplicantComponent implements OnInit {
 	model: any = {};
 	currentUser: User;
 	users: User[] = [];

@@ -5,7 +5,7 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-infvacancy',
+    selector: 'app-infvacancyappl',
     template: `
 	    <div class="wrap__information">
 		    <div class="row">
@@ -40,7 +40,7 @@ import { UserService } from '../_services/index';
     `
 })
 
-export class InfvacancyComponent {
+export class InfvacancyapplComponent {
     constructor(
         private router: Router,
         private userService: UserService,

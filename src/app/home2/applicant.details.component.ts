@@ -24,7 +24,7 @@ import { UserService } from '../_services/index';
 				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 			    </div>
 				
-			    <app-applicantlist></app-applicantlist>
+			   
 				
 			    <footer class="wrap__button">
 				    <div class="row">
@@ -41,7 +41,7 @@ import { UserService } from '../_services/index';
 	    </div>
 	`
 })
-export class DetailsEmployerComponent implements OnInit {
+export class DetailsApplicantComponent implements OnInit {
 	model: any = {};
 	currentUser: User;
 	users: User[] = [];
