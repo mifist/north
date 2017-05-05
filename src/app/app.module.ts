@@ -52,10 +52,22 @@ import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
 import { ShowvemployerApplicantComponent } from './home2/applicant.showemployer.component';
 import { DetailsApplicantComponent } from './home2/applicant.details.component';
 import { InfvacancyapplComponent } from './home2/index';
-import { ButtonapplComponent } from './home2/index';
+import { InfEmployersApplicantComponent } from './home2/index';
+import {  InfJobApplicantComponent } from './home2/index';
+import { ButtonApplicantComponent } from './home2/index';
 import { MenuApplicantComponent } from './home2/index';
 import { HeadApplicantComponent } from './home2/index';
+import { ButtonJobApplicantComponent } from './home2/index';
+import { TitleJobApplicantComponent } from './home2/index';
+
 import { Home2Component } from './home2/index';
+import { SortingapplComponent } from './home2/index';
+import { VacancyDetailsApplicantComponent } from './home2/applicant.vacancydetails.component';
+import { EmployerJobApplicantComponent } from './home2/applicant.employerjob.component';
+import { AssistanceApplicantComponent } from './home2/applicant.assistance.component';
+import { TrainingApplicantComponent } from './home2/training.assistance.component';
+
+
 
 @NgModule({
   declarations: [
@@ -99,10 +111,18 @@ import { Home2Component } from './home2/index';
     ShowvemployerApplicantComponent,
     DetailsApplicantComponent,
     InfvacancyapplComponent,
-    ButtonapplComponent,
+    ButtonApplicantComponent,
     MenuApplicantComponent,
     Home2Component,
-    HeadApplicantComponent
+    HeadApplicantComponent,
+    SortingapplComponent,
+    VacancyDetailsApplicantComponent,
+    InfEmployersApplicantComponent,
+    EmployerJobApplicantComponent,
+    ButtonJobApplicantComponent,
+    TitleJobApplicantComponent,
+    InfJobApplicantComponent,
+    AssistanceApplicantComponent
   ],
   imports: [
     BrowserModule,

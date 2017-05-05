@@ -5,11 +5,11 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-inf-vacancy-appl',
-    template: `		
+    selector: 'app-inf-employer-appl',
+    template: `
 	    <div class="wrap__information">
 		    <div class="row">
-			    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+			    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 				    <div class="wrap__likes">
 					    <div class="row">
 						    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -31,18 +31,15 @@ import { UserService } from '../_services/index';
 					    </div>
 				    </div>
 			    </div>
-			    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-				    <p>З/П:</p>
-				    <div class="wrap__date">
-					    <span>30000</span> - <span>60000 руб</span>
-				    </div>
+			    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				    <div class="wrap__city"><span>г. Усинск</span></div>
 			    </div>
 		    </div>
 	    </div>
     `
 })
 
-export class InfvacancyapplComponent {
+export class InfEmployersApplicantComponent {
     constructor(
         private router: Router,
         private userService: UserService,

@@ -25,70 +25,95 @@ import { UserService } from '../_services/index';
 					<!-- Main form -->
 					<div class="form-wrap">
 						<h5>Личные данные</h5>
-						<form class="" action=""><!-- Start form -->
+						<form name="registerapplicant"><!-- Start form -->
 							
 							<div class="form-item">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input3" type="text" name="" value="">
-									<label class="label--yoshiko" for="input3">
-											<span class="content--yoshiko" data-content="Фамилия">
-												Фамилия
-											</span>
+									<input class="field--yoshiko" id="lastNameApl" type="text" 
+										   name="lastNameapl"
+									       [(ngModel)]="model.lastNameApl"
+									       (blur)="blurelCheck($event)" />
+									<label class="label--yoshiko" for="lastNameApl">
+								<span class="content--yoshiko" data-content="Фамилия">
+									Фамилия
+								</span>
 									</label>
 								</div>
 							</div>
 							
 							<div class="form-item">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input4" type="text" name="" value="">
-									<label class="label--yoshiko" for="input4">
-											<span class="content--yoshiko" data-content="Имя">
-												Имя
-											</span>
+									<input class="field--yoshiko" id="firstNameApl" type="text" 
+										   name="firstNameApl"
+									       [(ngModel)]="model.firstNameApl"
+									       (blur)="blurelCheck($event)" />
+									<label class="label--yoshiko" for="firstNameApl">
+										<span class="content--yoshiko" data-content="Имя">
+											Имя
+										</span>
 									</label>
 								</div>
+								
 							</div>
 							
 							<div class="form-item">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input5" type="text" name="" value="">
-									<label class="label--yoshiko" for="input5">
-											<span class="content--yoshiko" data-content="Отчество">
-												Отчество
-											</span>
+									<input class="field--yoshiko" id="middleNameApl" type="text" 
+										   name="middleNameApl"
+									       [(ngModel)]="model.middleNameApl"
+									       (blur)="blurelCheck($event)" />
+									<label class="label--yoshiko" for="middleNameApl">
+										<span class="content--yoshiko" data-content="Отчество">
+											Отчество
+										</span>
 									</label>
 								</div>
+								
 							</div>
 							
-							<div class="form-item">
+							<div class="form-item --requared">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input30" type="tel" name="" value="">
-									<label class="label--yoshiko" for="input30">
-											<span class="content--yoshiko" data-content="Телефон">
-												Телефон
-											</span>
+									<input class="field--yoshiko" id="phoneApl" type="tel" 
+										   name="phoneApl"
+									       [(ngModel)]="model.phoneApl"
+									       (blur)="blurelCheck($event)" />
+									<label class="label--yoshiko" for="phoneApl">
+										<span class="content--yoshiko" data-content="Телефон">
+											Телефон
+										</span>
 									</label>
 								</div>
 								<div class="checkbox">
-									<input id="checkbox2" type="checkbox" name="" value="">
-									<label for="checkbox2">Разрешить показ работодателю</label>
+									<input id="applShowPhone" type="checkbox" 
+										   name="applShowPhone"
+									       [(ngModel)]="model.applShowPhone">
+									<label for="applShowPhone">Разрешить показ работодателю</label>
 								</div>
+							
 							</div>
 							
 							
 							
 							<div class="form-item">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input31" type="text" name="" value="">
-									<label class="label--yoshiko" for="input31">
-											<span class="content--yoshiko" data-content="ИНН">
-												ИНН (Ваш личный логин)
-											</span>
+									<input class="field--yoshiko" id="innApl" type="text" 
+										   name="innApl"
+									       [(ngModel)]="model.username"
+									       (blur)="blurelCheck($event)"
+									       (keyup)="keyupel($event)"
+									/>
+									<label class="label--yoshiko" for="innApl">
+										<span class="content--yoshiko" data-content="ИНН (Ваш личный логин)">
+											ИНН (Ваш личный логин)
+										</span>
 									</label>
 								</div>
+								
 								<div class="checkbox">
-									<input id="checkbox3" type="checkbox" name="" value="">
-									<label for="checkbox3">Разрешить показ работодателю</label>
+									<input id="applShowInn" type="checkbox" 
+										   name="applShowInn"
+									       [(ngModel)]="model.applShowInn">
+									<label for="applShowInn">Разрешить показ работодателю</label>
 								</div>
 							</div>
 						</form><!-- End form -->
@@ -100,79 +125,99 @@ import { UserService } from '../_services/index';
 					<!-- Main form -->
 					<div class="form-wrap">
 						<h5>Резюме</h5>
-						<form class="" action=""><!-- Start form -->
-							
+						<form name="resumeapplicant"><!-- Start form -->
 							<div class="form-item --simple">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input6" type="date" name="" value="">
-									<label class="label--yoshiko" for="input6">
-											<span class="content--yoshiko" data-content="Дата рождения:">
-												Дата рождения:
-											</span>
+									<input class="field--yoshiko" id="DOB" type="date" 
+										   name="DOB"
+									       [(ngModel)]="model.DOB"
+									       (blur)="blurelCheck($event)">
+									<label class="label--yoshiko" for="DOB">
+										<span class="content--yoshiko" data-content="Дата рождения:">
+											Дата рождения:
+										</span>
 									</label>
 								</div>
 							</div>
 							
 							<div class="form-item --simple">
 								<div class="input--yoshiko">
-									<select class="field--yoshiko" id="input7" name="">
-										<option value="Москва">Москва</option>
-										<option value="Москва">Москва</option>
-										<option value="Москва">Москва</option>
+									<select class="field--yoshiko" id="accommodation" 
+											name="accommodation"
+									        [(ngModel)]="model.accommodation"
+									        (blur)="blurelCheck($event)">
+										<option *ngFor="let accommodation of accommodations" [value]="accommodation">
+											{{ accommodation }}
+										</option>
 									</select>
-									<label class="label--yoshiko" for="input7">
-											<span class="content--yoshiko" data-content="Регион проживания:">
-												Регион проживания:
-											</span>
+									<label class="label--yoshiko" for="accommodation">
+										<span class="content--yoshiko" data-content="Регион проживания:">
+											Регион проживания:
+										</span>
 									</label>
 								</div>
 							</div>
 							
 							<div class="form-item --simple">
 								<div class="input--yoshiko">
-									<textarea class="field--yoshiko" id="input8" type="text" name="" placeholder="(через запятую)"></textarea>
-									<label class="label--yoshiko" for="input8">
-											<span class="content--yoshiko" data-content="Образование:">
-												Образование:
-											</span>
+							<textarea class="field--yoshiko" id="enterEducation" type="text" 
+									  name="enterEducation"
+							          [(ngModel)]="model.enterEducation"
+							          (blur)="blurelCheck($event)"
+							          placeholder="(через запятую)"></textarea>
+									<label class="label--yoshiko" for="enterEducation">
+										<span class="content--yoshiko" data-content="Образование:">
+											Образование:
+										</span>
 									</label>
 								</div>
 							</div>
 							
 							<div class="form-item --simple">
 								<div class="input--yoshiko">
-									<textarea class="field--yoshiko" id="input9" name="" placeholder="(через запятую)"></textarea>
-									<label class="label--yoshiko" for="input9">
-											<span class="content--yoshiko" data-content="Предыдущие места работы:">
-												Предыдущие места работы:
-											</span>
+							<textarea class="field--yoshiko" id="previousJobs" 
+									  name="previousJobs"
+							          [(ngModel)]="model.previousJobs"
+							          (blur)="blurelCheck($event)"
+							          placeholder="(через запятую)"></textarea>
+									<label class="label--yoshiko" for="previousJobs">
+										<span class="content--yoshiko" data-content="Предыдущие места работы:">
+											Предыдущие места работы:
+										</span>
 									</label>
 								</div>
 							</div>
 							
 							<div class="form-item --simple">
 								<div class="input--yoshiko">
-									<input class="field--yoshiko" id="input10" type="text" name=""
+									<input class="field--yoshiko" id="enterExperience" type="text" 
+										   name="enterExperience"
+									       [(ngModel)]="model.enterExperience"
+									       (blur)="blurelCheck($event)"
 									       placeholder="Например, '10 лет'">
-									<label class="label--yoshiko" for="input10">
-											<span class="content--yoshiko" data-content="Общий стаж:">
-												Общий стаж:
-											</span>
+									<label class="label--yoshiko" for="enterExperience">
+										<span class="content--yoshiko" data-content="Общий стаж:">
+											Общий стаж:
+										</span>
 									</label>
 								</div>
 							</div>
 							
 							<div class="form-item --simple">
 								<div class="input--yoshiko">
-										<textarea class="field--yoshiko" id="input11" name=""
-										          placeholder="Введите пожелания"></textarea>
-									<label class="label--yoshiko" for="input11">
-											<span class="content--yoshiko" data-content="Пожелания к будущей работе:">
-												Пожелания к будущей работе:
-											</span>
+							<textarea class="field--yoshiko" id="wishesWork" 
+									  name="wishesWork"
+							          [(ngModel)]="model.wishesWork"
+							          (blur)="blurelCheck($event)"
+							          placeholder="Введите пожелания"></textarea>
+									<label class="label--yoshiko" for="wishesWork">
+										<span class="content--yoshiko" data-content="Пожелания к будущей работе:">
+											Пожелания к будущей работе:
+										</span>
 									</label>
 								</div>
 							</div>
+						
 						</form><!-- End form -->
 						<a class="btn _small --download">Изменить</a>
 					</div>
@@ -262,22 +307,7 @@ export class AreaApplicantComponent implements OnInit {
 
 		/* this.loadel('input14');*/
 	}
-
-/*	loadel(ss: string) {
-		/!* alert(ss);
-		 console.log((<HTMLInputElement>document.getElementById(ss)).value);*!/
-		let yyy: HTMLInputElement;
-
-		if ((<HTMLInputElement>document.getElementById(ss)).value.trim() === '') {
-			/!* el.parentElement.classList.remove('input--filled');*!/
-			document.getElementById(ss).parentElement.classList.remove('input--filled');
-		}
-		else {
-			/!* el.parentElement.classList.add('input--filled');*!/
-			document.getElementById(ss).parentElement.classList.add('input--filled');
-		}
-
-	}*/
+	loadel(ss: string) { let yyy: HTMLInputElement; if ((<HTMLInputElement>document.getElementById(ss)).value.trim() === '') { document.getElementById(ss).parentElement.classList.remove('input--filled'); } else { document.getElementById(ss).parentElement.classList.add('input--filled'); } }
 
 
 	ngOnInit() {
@@ -290,36 +320,28 @@ export class AreaApplicantComponent implements OnInit {
 		 el.target.parentNode.classList.add('input--filled');
 		 el.target.focus();id = "input14"
 		 console.log(this.model)*/
-	}
-/*
-
+	};
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);
-	}
-
-
+	};
 	timerf() {
-		this.loadel('formown');
-		this.loadel('input13');
-		this.loadel('input14');
-		this.loadel('input15');
-		this.loadel('password');
-		this.loadel('cityIndex');
-		this.loadel('cityRegion');
-		this.loadel('city');
-		this.loadel('cityAddress');
-		this.loadel('postIndex');
-		this.loadel('postRegion');
-		this.loadel('postCity');
-		this.loadel('postAddress');
-		this.loadel('bailee');
-		this.loadel('baileephone');
-		this.loadel('postEmail');
-		this.loadel('accounting');
-		this.loadel('infAbout');
-	}
-*/
+		this.loadel('lastNameApl');
+		this.loadel('firstNameApl');
+		this.loadel('middleNameApl');
+		this.loadel('phoneApl');
+		this.loadel('applShowPhone');
+		this.loadel('innApl');
+		this.loadel('applShowInn');
+		this.loadel('passwordAppl');
 
+		this.loadel('DOB');
+		this.loadel('accommodation');
+		this.loadel('enterEducation');
+		this.loadel('previousJobs');
+		this.loadel('enterExperience');
+		this.loadel('wishesWork');
+
+	}
 
 	deleteUser(_id: string) {
 		this.userService.delete(_id).subscribe(() => { this.loadAllUsers(); });
@@ -327,12 +349,10 @@ export class AreaApplicantComponent implements OnInit {
 
 	private loadAllUsers() {
 		this.userService.getAll().subscribe(users => { this.users = users; });
-
 	}
 
 
 	private loadUser(_id: string) {
 		this.userService.getById(_id).subscribe(user => { this.model = user; });
-
 	}
 }

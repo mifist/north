@@ -35,6 +35,11 @@ import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
 import { ShowvemployerApplicantComponent } from './home2/applicant.showemployer.component';
 import { DetailsApplicantComponent } from './home2/applicant.details.component';
 import { Home2Component } from './home2/index';
+import { VacancyDetailsApplicantComponent } from './home2/applicant.vacancydetails.component';
+import { EmployerJobApplicantComponent } from './home2/applicant.employerjob.component';
+import { AssistanceApplicantComponent } from './home2/applicant.assistance.component';
+import { TrainingApplicantComponent } from './home2/training.assistance.component';
+
 // определение дочерних маршрутов для работодателя
 const itemRoutes: Routes = [
     { path: 'cabinet', component:  AreaEmployerComponent },
@@ -53,13 +58,17 @@ const itemRoutes: Routes = [
 const itemRoutesAppl: Routes = [
     { path: 'cabinet_applicant', component:  AreaApplicantComponent },
     { path: 'vacancy_applicant', component:  VacancyApplicantComponent },
+    { path: 'vacancy_applicant/vacancy_details', component: VacancyDetailsApplicantComponent },
     { path: 'showemployer', component:  ShowvemployerApplicantComponent },
     { path: 'showemployer/details', component:  DetailsApplicantComponent },
+    { path: 'showemployer/all_job', component:  EmployerJobApplicantComponent },
     { path: 'question_applicant', component:  QuestionApplicantComponent },
     { path: 'wishes_applicant', component:  WishesApplicantComponent },
     { path: 'subscription_applicant', component:  SubscriptionApplicantComponent },
     { path: 'subscription_applicant/bill', component:  BillApplicantComponent },
     { path: 'subscription_applicant/onlinebill', component:  OnlinebillApplicantComponent },
+    { path: 'assistance', component:  AssistanceApplicantComponent },
+    { path: 'training', component:  TrainingApplicantComponent },
 ];
 const appRoutes: Routes = [
    /* { path: '', component: HomeComponent, canActivate: [AuthGuard] },*/

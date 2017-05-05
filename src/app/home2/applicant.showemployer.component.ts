@@ -16,17 +16,32 @@ import { UserService } from '../_services/index';
 		    <!-- Start vaccine -->
 		    <article class="form-wrap">
 			    <header class="wrap__name">
-				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
-				    <h6>Помощник бурильщика</h6>
+				    <div class="row wrap__line">
+					    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						    <h6>ООО "НЕФТЕГАЗСТРОЙ"</h6>
+					    </div>
+				    </div>
 			    </header>
-				
-			    <app-infvacancy></app-infvacancy>
+			
+			    <app-inf-employer-appl></app-inf-employer-appl>
 				
 			    <div class="wrap__text">
 				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 			    </div>
-				
-			    <app-buttonempl></app-buttonempl>
+			
+			    <footer class="wrap__button">
+				    <div class="row">
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <div class="btn _large --event">
+							    <span>Новых событий:</span> <span>2</span>
+						    </div>
+					    </div>
+					    <div class="col-xs-12 col-sm-6 col-lg-6">
+						    <a [routerLink]="[ 'all_job' ]" class="btn _large --like">Подробнее
+						    </a>
+					    </div>
+				    </div>
+			    </footer>
 				
 		    </article><!-- End vaccine -->
 			

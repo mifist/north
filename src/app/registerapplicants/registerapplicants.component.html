@@ -30,7 +30,7 @@
 					     [ngClass]="{ 'has-error': f.submitted && !lastNameApl.valid }">
 						<div class="input--yoshiko">
 							<input class="field--yoshiko" id="lastNameApl" type="text" name="lastNameapl" required
-							       [(ngModel)]="model.lastName"
+							       [(ngModel)]="model.lastNameApl"
 							       #lastNameApl="ngModel"
 							       (blur)="blurel($event)" />
 							<label class="label--yoshiko" for="lastNameApl">
@@ -47,7 +47,7 @@
 					     [ngClass]="{ 'has-error': f.submitted && !firstNameApl.valid }">
 						<div class="input--yoshiko">
 							<input class="field--yoshiko" id="firstNameApl" type="text" name="firstNameApl" required
-							       [(ngModel)]="model.firstName"
+							       [(ngModel)]="model.firstNameApl"
 							       #firstNameApl="ngModel"
 							       (blur)="blurel($event)" />
 							<label class="label--yoshiko" for="firstNameApl">
@@ -93,10 +93,10 @@
 						<div *ngIf="f.submitted && !phoneApl.valid" class="help-block">Заполните обязательное
 							поле</div>
 						<div class="checkbox">
-							<input id="emplShowPhone" type="checkbox" name="emplShowPhone"
-							       [(ngModel)]="model.emplShowPhone"
-							       #emplShowPhone="ngModel">
-							<label for="emplShowPhone">Разрешить показ работодателю</label>
+							<input id="applShowPhone" type="checkbox" name="applShowPhone"
+							       [(ngModel)]="model.applShowPhone"
+							       #applShowPhone="ngModel">
+							<label for="applShowPhone">Разрешить показ работодателю</label>
 						</div>
 						
 					</div>
@@ -125,10 +125,10 @@
 						<div *ngIf="f.submitted && !innApl.valid" class="help-block">{{helpblockvalue}}</div>
 
 						<div class="checkbox">
-							<input id="emplShowInn" type="checkbox" name="emplShowInn"
-							       [(ngModel)]="model.emplShowInn"
-							       #emplShowInn="ngModel">
-							<label for="emplShowInn">Разрешить показ работодателю</label>
+							<input id="applShowInn" type="checkbox" name="applShowInn"
+							       [(ngModel)]="model.applShowInn"
+							       #applShowInn="ngModel">
+							<label for="applShowInn">Разрешить показ работодателю</label>
 						</div>
 					</div>
  
@@ -136,12 +136,12 @@
 		        <div class="form-item --requared" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 		           <div class="input--yoshiko">
 		            <!--  <label for="password">Password</label>  -->
-			            <input type="password" class="form-control field--yoshiko" id="input151"
+			            <input type="password" class="form-control field--yoshiko" id="passwordAppl"
 			                   name="password"
-			                   [(ngModel)]="model.password"
+			                   [(ngModel)]="model.passwordAppl"
 			                   (blur)="blurel($event)"
-			                   #password="ngModel" required />
-						<label class="label--yoshiko" for="input151">
+			                   #passwordAppl="ngModel" required />
+						<label class="label--yoshiko" for="passwordAppl">
 							<span class="content--yoshiko" data-content="ПАРОЛЬ">
 								Пароль
 							</span>

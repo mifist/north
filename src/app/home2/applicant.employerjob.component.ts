@@ -3,22 +3,25 @@ import { Router, ActivatedRoute} from '@angular/router';
 
 import { User } from '../_models/index';
 
-import { UserService, DataService } from '../_services/index';
+import { UserService } from '../_services/index';
 
 
 @Component({
     moduleId: module.id,
-    selector: 'app-vacancy-applicant',
+    selector: 'app-employer-all-job-applicant',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <app-sortingappl></app-sortingappl>
 		
-		    <!-- Start vaccine application -->
+		   
+		    <app-title-job-applicant></app-title-job-applicant>
+		    <h3 class="title-details">Все вакансии этого работодателя на которые Вы откликнулись</h3>
+		
+		    <!-- Start applicant - about employer works -->
 		    <article class="form-wrap">
 			    <header class="wrap__name">
-				    <div class="row name__line">
+				    <div class="row wrap__line">
 					    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
+						    <h6>Помощник бурильщика</h6>
 					    </div>
 					    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						    <div class="wrap__city"><span>г. Усинск</span></div>
@@ -26,49 +29,29 @@ import { UserService, DataService } from '../_services/index';
 					    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						    <div class="wrap__date"><span>Дата:</span> 28.01.2017</div>
 					    </div>
-				
 				    </div>
-					
-				    <h6>Помощник бурильщика</h6>
-					
 			    </header>
-			
-			    <app-inf-vacancy-appl></app-inf-vacancy-appl>
-			
-			    <div class="wrap__text">
-				    <p>Some text</p>
-			    </div>
-			
-			    <footer class="wrap__button">
-				    <div class="row">
-					    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						    <a [routerLink]="[ 'vacancy_details' ]" class="btn _large --like">Подробнее
-						    </a>
-					    </div>
-				    </div>
-			    </footer>
+				
+			    <app-inf-employer-job-appl></app-inf-employer-job-appl>
+				
+			    <app-button-job-applicant></app-button-job-applicant>
+				
+		    </article><!-- End applicant - about employer works -->
 		
-		    </article><!-- End vaccine application -->
-			
+		
 		    <app-pagination></app-pagination>
-	
-	
+			
 	    </div>
 	`
 })
-export class VacancyApplicantComponent implements OnInit {
+export class EmployerJobApplicantComponent implements OnInit {
 	model: any = {};
-	loading = false;
 	currentUser: User;
 	users: User[] = [];
-	categores = [];
-	categores_step2 = [];
-	categores_step3 = [];
 	private timer;
 	constructor(
 		private router: Router,
 		private userService: UserService,
-		private dataService: DataService,
 		private alertService: ActivatedRoute) {
 		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		/*console.log(this.currentUser);*/
@@ -99,9 +82,13 @@ export class VacancyApplicantComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-		this.categores = this.dataService.GetСategores();
-		this.categores_step2 = this.dataService.GetСategores_step2();
-		this.categores_step3 = this.dataService.GetСategores_step3();
+		/*  this.loadel('input14');
+		 document.getElementById('input14').textContent
+		 document.getElementById('input14').parentElement.classList.add('input--filled');
+		 document.getElementById('input15').parentElement.classList.add('input--filled');
+		 el.target.parentNode.classList.add('input--filled');
+		 el.target.focus();id = "input14"
+		 console.log(this.model)*/
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);

@@ -28,6 +28,11 @@ import { UserService } from '../_services/index';
 					[routerLinkActiveOptions]="{ exact:true }">Мои работодатели<span class="badge">42</span></button> </li>
 			<li><button 
 					class="btn _large"
+					[routerLink]="[ 'assistance' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Юридическая помощь</button> </li>
+			<li><button 
+					class="btn _large"
 					[routerLink]="[ '/home2/00/subscription_applicant' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Оплатить абонемент</button></li>
@@ -36,7 +41,7 @@ import { UserService } from '../_services/index';
 					class="btn _large --off"
 					[routerLink]="[ '' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Черный список соискателей</button></li>
+					[routerLinkActiveOptions]="{ exact:true }">Черный список работодателей</button></li>
 			<li><button 
 					class="btn _large"
 					[routerLink]="[ '/home2/00/question_applicant' ]"
@@ -46,13 +51,18 @@ import { UserService } from '../_services/index';
 					class="btn _large"
 					[routerLink]="[ '/home2/00/wishes_applicant' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</button></li>
+					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</button></li>		
+			<li><button 
+					class="btn _large"
+					[routerLink]="[ 'training' ]"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact:true }">Учебные центры</button></li>
 			<li><button
 					disabled
 					class="btn _large --off"
 					[routerLink]="[ '' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Чат с соискателями</button></li>
+					[routerLinkActiveOptions]="{ exact:true }">Чат с работодателями</button></li>
 		</ul>
 
 	</div>

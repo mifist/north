@@ -8,36 +8,42 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-details-employer',
+    selector: 'app-details-applicant',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <!-- Start single vaccine -->
-		    <article class="form-wrap">
+		    <!-- Start vaccine application -->
+		    <article class="form-wrap 11">
 			    <header class="wrap__name">
-				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
-				    <h6>Помощник бурильщика</h6>
-			    </header>
+				    <div class="row name__line">
+					    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
+					    </div>
+					    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						    <div class="wrap__city"><span>г. Усинск</span></div>
+					    </div>
+					    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						    <div class="wrap__date"><span>Дата:</span> 28.01.2017</div>
+					    </div>
 				
-			    <app-infvacancy></app-infvacancy>
+				    </div>
+				
+				    <h6>Помощник бурильщика</h6>
+			
+			    </header>
+			
+			    <app-inf-vacancy-appl></app-inf-vacancy-appl>
 				
 			    <div class="wrap__text">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+				    <p>Some text</p>
 			    </div>
+			
+			    <app-button-applicant></app-button-applicant>
 				
-			   
-				
-			    <footer class="wrap__button">
-				    <div class="row">
-					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						    <a class="btn _large --like" onclick="history.back(); return false;">Назад</a>
-					    </div>
-					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						    <a href="#" class="btn _large --dislike">Удалить вакансию</a>
-					    </div>
-				    </div>
-			    </footer>
-		    </article><!-- End single vaccine -->
-	
+		    </article><!-- End vaccine application -->
+			
+			
+		   
+			
 	    </div>
 	`
 })

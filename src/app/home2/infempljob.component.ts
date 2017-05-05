@@ -5,8 +5,8 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-inf-vacancy-appl',
-    template: `		
+    selector: 'app-inf-employer-job-appl',
+    template: `
 	    <div class="wrap__information">
 		    <div class="row">
 			    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -42,7 +42,7 @@ import { UserService } from '../_services/index';
     `
 })
 
-export class InfvacancyapplComponent {
+export class InfJobApplicantComponent {
     constructor(
         private router: Router,
         private userService: UserService,

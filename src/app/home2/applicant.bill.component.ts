@@ -19,32 +19,32 @@ import { UserService } from '../_services/index';
 			    </div>
 			    <div class="form-item --bill">
 				    <div class="radio">
-					    <input id="bill1" type="radio" name="bill1"
-					           [(ngModel)]="model.bill1"
+					    <input id="bill1" type="radio" name="bill_appl"
+					           [(ngModel)]="model.bill_appl1"
 					           (blur)="blurel($event)"
-					           #bill1="ngModel">
+					           #bill_appl1="ngModel">
 					    <label for="bill1">1 месяц - 8000,00 рублей</label>
 				
 				    </div>
 				    <div class="radio">
-					    <input id="bill2" type="radio" name="bill2"
-					           [(ngModel)]="model.bill2"
+					    <input id="bill2" type="radio" name="bill_appl"
+					           [(ngModel)]="model.bill_appl2"
 					           (blur)="blurel($event)"
-					           #bill2="ngModel">
+					           #bill_appl2="ngModel">
 					    <label for="bill2">3 месяца - 8000,00 рублей</label>
 				    </div>
 				    <div class="radio">
-					    <input id="bill3" type="radio" name="bill3"
-					           [(ngModel)]="model.bill3"
+					    <input id="bill3" type="radio" name="bill_appl"
+					           [(ngModel)]="model.bill_appl3"
 					           (blur)="blurel($event)"
-					           #bill3="ngModel">
+					           #bill_appl3="ngModel">
 					    <label for="bill3">6 месяцев - 8000,00 рублей</label>
 				    </div>
 				    <div class="radio">
-					    <input id="bill4" type="radio" name="bill4"
-					           [(ngModel)]="model.bill4"
+					    <input id="bill4" type="radio" name="bill_appl"
+					           [(ngModel)]="model.bill_appl4"
 					           (blur)="blurel($event)"
-					           #bill4="ngModel">
+					           #bill_appl4="ngModel">
 					    <label for="bill4">12 месяцев - 8000,00 рублей</label>
 				    </div>
 			    </div>

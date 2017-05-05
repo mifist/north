@@ -8,56 +8,63 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-bill-employer',
+    selector: 'app-assistance-applicant',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <!-- Start bill -->
+		    <h4>Юридическая помощь</h4>
 		    <div class="form-wrap">
-			    <h4>Абонентская плата для юридичиского лица</h4>
-			    <div class="entry-meta">
-				    <p>Публикация вакансий неограничено</p>
+			    <!-- Start Legal assistance -->
+			    <h6>Юридическая фирма "любая"</h6>
+			    <div class="training__address">
+				    <p>Адрес:</p>
+				    <p>г. Усинск, ул. Нефтянников, 33</p>
 			    </div>
-			    <div class="form-item --bill">
-				    <div class="radio">
-					    <input id="bill1" type="radio" name="bill"
-					           [(ngModel)]="model.bill1"
-					           (blur)="blurel($event)"
-					           #bill1="ngModel">
-					    <label for="bill1">1 месяц - 8000,00 рублей</label>
-				
-				    </div>
-				    <div class="radio">
-					    <input id="bill2" type="radio" name="bill"
-					           [(ngModel)]="model.bill2"
-					           (blur)="blurel($event)"
-					           #bill2="ngModel">
-					    <label for="bill2">3 месяца - 8000,00 рублей</label>
-				    </div>
-				    <div class="radio">
-					    <input id="bill3" type="radio" name="bill"
-					           [(ngModel)]="model.bill3"
-					           (blur)="blurel($event)"
-					           #bill3="ngModel">
-					    <label for="bill3">6 месяцев - 8000,00 рублей</label>
-				    </div>
-				    <div class="radio">
-					    <input id="bill4" type="radio" name="bill"
-					           [(ngModel)]="model.bill4"
-					           (blur)="blurel($event)"
-					           #bill4="ngModel">
-					    <label for="bill4">12 месяцев - 8000,00 рублей</label>
-				    </div>
+			    <div class="training__tel">
+				    <p>Телефон:</p>
+				    <ul>
+					    <li><a href="tel:+7(912)9568035">+7(912)956 80 35</a></li>
+					    <li><a href="tel:+7(82144)29987">+7(82144)2 99 87</a></li>
+					    <li><a href="tel:+7(82144)64954">+7(82144)6 49 54</a></li>
+					    <li><a href="tel:+7(82144)68035">+7(82144)6 80 35</a></li>
+					    <li><a href="tel:+7(82144)27744">+7(82144)2 77 44</a></li>
+				    </ul>
 			    </div>
-				<button class="btn _large">Сформировать счет</button>
-		    </div><!-- End bill -->
-	
+			    <div class="training__watch">
+				    <p>Часы работы:</p>
+				    <p>Пн. - Пт.: 9:00 - 18:00</p>
+				    <p>Перерыв: 13:00 - 14:00</p>
+			    </div>
+		    </div><!-- End Legal assistance -->
+		    <div class="form-wrap">
+			    <!-- Start Legal assistance -->
+			    <h6>Юридическая фирма "любая"</h6>
+			    <div class="training__address">
+				    <p>Адрес:</p>
+				    <p>г. Усинск, ул. Нефтянников, 33</p>
+			    </div>
+			    <div class="training__tel">
+				    <p>Телефон:</p>
+				    <ul>
+					    <li><a href="tel:+7(912)9568035">+7(912)956 80 35</a></li>
+					    <li><a href="tel:+7(82144)29987">+7(82144)2 99 87</a></li>
+					    <li><a href="tel:+7(82144)64954">+7(82144)6 49 54</a></li>
+					    <li><a href="tel:+7(82144)68035">+7(82144)6 80 35</a></li>
+					    <li><a href="tel:+7(82144)27744">+7(82144)2 77 44</a></li>
+				    </ul>
+			    </div>
+			    <div class="training__watch">
+				    <p>Часы работы:</p>
+				    <p>Пн. - Пт.: 9:00 - 18:00</p>
+				    <p>Перерыв: 13:00 - 14:00</p>
+			    </div>
+		    </div><!-- End Legal assistance -->
 	    </div>
 	`
 })
-export class BillEmployerComponent implements OnInit {
+export class AssistanceApplicantComponent implements OnInit {
 	model: any = {};
-	loading = false;
 	currentUser: User;
+	loading = false;
 	users: User[] = [];
 	private timer;
 	constructor(
@@ -93,7 +100,13 @@ export class BillEmployerComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-
+		/*  this.loadel('input14');
+		 document.getElementById('input14').textContent
+		 document.getElementById('input14').parentElement.classList.add('input--filled');
+		 document.getElementById('input15').parentElement.classList.add('input--filled');
+		 el.target.parentNode.classList.add('input--filled');
+		 el.target.focus();id = "input14"
+		 console.log(this.model)*/
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);
