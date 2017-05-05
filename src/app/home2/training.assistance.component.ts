@@ -11,10 +11,44 @@ import { UserService } from '../_services/index';
     selector: 'app-training-applicant',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <h4>Юридическая помощь</h4>
+		    <!-- Start training cents -->
 		    <div class="form-wrap">
-			    <!-- Start Legal assistance -->
-			    <h6>Юридическая фирма "любая"</h6>
+			    <h4>Учебные центы России</h4>
+			    <form action="">
+				    <div class="form-item --simple">
+					    <div class="input--yoshiko">
+						    <select class="field--yoshiko" id="input72" name="">
+							    <option value="Москва">Москва</option>
+							    <option value="Москва">Москва</option>
+							    <option value="Москва">Москва</option>
+						    </select>
+						    <label class="label--yoshiko" for="input72">
+											<span class="content--yoshiko" data-content="Выберите желаемую область:">
+												Выберите желаемую область:
+											</span>
+						    </label>
+					    </div>
+				    </div>
+				    <div class="form-item --simple">
+					    <div class="input--yoshiko">
+						    <select class="field--yoshiko" id="input73" name="">
+							    <option value="Москва">Москва</option>
+							    <option value="Москва">Москва</option>
+							    <option value="Москва">Москва</option>
+						    </select>
+						    <label class="label--yoshiko" for="input73">
+											<span class="content--yoshiko" data-content="Выберите желаемый город:">
+												Выберите желаемый город:
+											</span>
+						    </label>
+					    </div>
+				    </div>
+				    <button href="#" class="btn _large">Подобрать</button>
+			    </form>
+		    </div><!-- End training cents -->
+		
+		    <div class="form-wrap">
+			    <h6>Учебный центр "любой"</h6>
 			    <div class="training__address">
 				    <p>Адрес:</p>
 				    <p>г. Усинск, ул. Нефтянников, 33</p>
@@ -34,30 +68,8 @@ import { UserService } from '../_services/index';
 				    <p>Пн. - Пт.: 9:00 - 18:00</p>
 				    <p>Перерыв: 13:00 - 14:00</p>
 			    </div>
-		    </div><!-- End Legal assistance -->
-		    <div class="form-wrap">
-			    <!-- Start Legal assistance -->
-			    <h6>Юридическая фирма "любая"</h6>
-			    <div class="training__address">
-				    <p>Адрес:</p>
-				    <p>г. Усинск, ул. Нефтянников, 33</p>
-			    </div>
-			    <div class="training__tel">
-				    <p>Телефон:</p>
-				    <ul>
-					    <li><a href="tel:+7(912)9568035">+7(912)956 80 35</a></li>
-					    <li><a href="tel:+7(82144)29987">+7(82144)2 99 87</a></li>
-					    <li><a href="tel:+7(82144)64954">+7(82144)6 49 54</a></li>
-					    <li><a href="tel:+7(82144)68035">+7(82144)6 80 35</a></li>
-					    <li><a href="tel:+7(82144)27744">+7(82144)2 77 44</a></li>
-				    </ul>
-			    </div>
-			    <div class="training__watch">
-				    <p>Часы работы:</p>
-				    <p>Пн. - Пт.: 9:00 - 18:00</p>
-				    <p>Перерыв: 13:00 - 14:00</p>
-			    </div>
-		    </div><!-- End Legal assistance -->
+		    </div>
+	
 	    </div>
 	`
 })

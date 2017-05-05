@@ -122,7 +122,8 @@ import { TrainingApplicantComponent } from './home2/training.assistance.componen
     ButtonJobApplicantComponent,
     TitleJobApplicantComponent,
     InfJobApplicantComponent,
-    AssistanceApplicantComponent
+    AssistanceApplicantComponent,
+    TrainingApplicantComponent
   ],
   imports: [
     BrowserModule,

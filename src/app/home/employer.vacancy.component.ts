@@ -20,15 +20,15 @@ import { UserService, DataService } from '../_services/index';
 					    <form class="" action=""><!-- Start form -->
 						    <div class="form-item">
 							    <div class="input--yoshiko">
-								    <select class="field--yoshiko" id="categores"
-								            #categores="ngModel"
-								            [(ngModel)]="model.categores" 
+								    <select class="field--yoshiko" id="categor"
+								            #categor="ngModel"
+								            [(ngModel)]="model.categor" 
 											name="categores"
 								            (blur)="blurelCheck($event)">
 									    <option *ngFor="let category of categores" 
 												[value]="category.title">{{ category.title }}</option>
 								    </select>
-								    <label class="label--yoshiko" for="categores">
+								    <label class="label--yoshiko" for="categor">
 											<span class="content--yoshiko" data-content="Выберите направление:">
 												Выберите направление:
 											</span>
@@ -38,7 +38,7 @@ import { UserService, DataService } from '../_services/index';
 						    <div class="form-item ">
 							    <div class="input--yoshiko">
 								    <select class="field--yoshiko" id="categores2"
-								            #categores_step2="ngModel"
+								            #categor_step2="ngModel"
 								            [(ngModel)]="model.categores_step2"
 								            name="categores_step2"
 								            (blur)="blurelCheck($event)">
@@ -57,7 +57,7 @@ import { UserService, DataService } from '../_services/index';
 						    <div class="form-item">
 							    <div class="input--yoshiko">
 								    <select class="field--yoshiko" id="categores3"
-								            #categores_step3="ngModel"
+								            #categor_step3="ngModel"
 								            [(ngModel)]="model.categores_step3"
 								            name="categores_step3"
 								            (blur)="blurelCheck($event)">
