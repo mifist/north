@@ -5,7 +5,7 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-menu-area-employer',
+    selector: 'app-menu-area-applicant',
     template: `
 	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 		<h4>Личный кабинет</h4>
@@ -13,22 +13,22 @@ import { UserService } from '../_services/index';
 		<ul class="menu-area">
 			<li><button 
 					class="btn _large" 
-					[routerLink]="[ '/home/0/cabinet' ]"
+					[routerLink]="[ '/home2/00/cabinet_applicant' ]"
 					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact:true }">Карточка компании</button></li>
+					[routerLinkActiveOptions]="{ exact:true }">Моя карточка</button></li>
 			<li><button 
 					class="btn _large" 
-					[routerLink]="[ '/home/0/vacancy' ]"
+					[routerLink]="[ '/home2/00/vacancy_applicant' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Создать вакансию</button></li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home/0/showvacancy' ]"
+					[routerLink]="[ '/home2/00/showvacancy' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Мои вакансии<span class="badge">42</span></button> </li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home/0/subscription' ]"
+					[routerLink]="[ '/home2/00/subscription_applicant' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Оплатить абонемент</button></li>
 			<li><button 
@@ -39,12 +39,12 @@ import { UserService } from '../_services/index';
 					[routerLinkActiveOptions]="{ exact:true }">Черный список соискателей</button></li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home/0/question' ]"
+					[routerLink]="[ '/home2/00/question_applicant' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Вопросы к администрации сайта</button></li>
 			<li><button 
 					class="btn _large"
-					[routerLink]="[ '/home/0/wishes' ]"
+					[routerLink]="[ '/home2/00/wishes_applicant' ]"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact:true }">Пожелания по улучшению сайта</button></li>
 			<li><button
@@ -59,7 +59,7 @@ import { UserService } from '../_services/index';
     `
 })
 
-export class MenuEmployerComponent {
+export class MenuApplicantComponent {
     constructor(
         private router: Router,
         private userService: UserService,

@@ -18,14 +18,24 @@ import { ShowvacancyEmployerComponent } from './home/employer.showvacancy.compon
 import { QuestionEmployerComponent } from './home/employer.question.component';
 import { WishesEmployerComponent } from './home/employer.wishes.component';
 import { BillEmployerComponent } from './home/employer.bill.component';
-import { OnlinebillillEmployerComponent } from './home/employer.onlinebill.component';
+import { OnlinebillEmployerComponent } from './home/employer.onlinebill.component';
 import { SubscriptionEmployerComponent } from './home/employer.subscription.component';
 import { DetailsEmployerComponent } from './home/employer.details.component';
 import { CardapplEmployerComponent } from './home/employer.cardapplicantempl.component';
 
-// определение дочерних маршрутов
+// Applicants
+import { BillApplicantComponent } from './home2/applicant.bill.component';
+import { OnlinebillApplicantComponent } from './home2/applicant.onlinebill.component';
+import { SubscriptionApplicantComponent } from './home2/applicant.subscription.component';
+import { QuestionApplicantComponent } from './home2/applicant.question.component';
+import { WishesApplicantComponent } from './home2/applicant.wishes.component';
+import { AreaApplicantComponent } from './home2/applicant.area.component';
+import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
+
+// определение дочерних маршрутов для работодателя
 const itemRoutes: Routes = [
     { path: 'cabinet', component:  AreaEmployerComponent },
+    { path: 'vacancy', component:  VacancyApplicantComponent },
     { path: 'vacancy', component:  VacancyEmployerComponent },
     { path: 'showvacancy', component:  ShowvacancyEmployerComponent },
     { path: 'showvacancy/details', component:  DetailsEmployerComponent },
@@ -34,9 +44,21 @@ const itemRoutes: Routes = [
     { path: 'wishes', component:  WishesEmployerComponent },
     { path: 'subscription', component:  SubscriptionEmployerComponent },
     { path: 'subscription/bill', component:  BillEmployerComponent },
-    { path: 'subscription/onlinebill', component:  OnlinebillillEmployerComponent },
+    { path: 'subscription/onlinebill', component:  OnlinebillEmployerComponent },
 ];
-
+// определение дочерних маршрутов для соискателя
+const itemRoutesAppl: Routes = [
+    { path: 'cabinet_applicant', component:  AreaApplicantComponent },
+    { path: 'vacancy_applicant', component:  VacancyApplicantComponent },
+    /*{ path: 'showvacancy', component:  ShowvacancyEmployerComponent },
+    { path: 'showvacancy/details', component:  DetailsEmployerComponent },
+    { path: 'showvacancy/details/view_applicant', component:  CardapplEmployerComponent },*/
+    { path: 'question_applicant', component:  QuestionApplicantComponent },
+    { path: 'wishes_applicant', component:  WishesApplicantComponent },
+    { path: 'subscription_applicant', component:  SubscriptionApplicantComponent },
+    { path: 'subscription_applicant/bill', component:  BillApplicantComponent },
+    { path: 'subscription_applicant/onlinebill', component:  OnlinebillApplicantComponent },
+];
 const appRoutes: Routes = [
    /* { path: '', component: HomeComponent, canActivate: [AuthGuard] },*/
     { path: '', redirectTo: '/home/0/cabinet', pathMatch: 'full' },
@@ -50,6 +72,8 @@ const appRoutes: Routes = [
     { path: 'step3/:id', component:  ChoiceCategoryStep3Component },
     { path: 'home/', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'home/:id', component: HomeComponent, canActivate: [AuthGuard] , children: itemRoutes },
+    { path: 'home2/', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'home2/:id', component: HomeComponent, canActivate: [AuthGuard] , children: itemRoutesAppl },
 
 
 

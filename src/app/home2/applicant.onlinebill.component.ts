@@ -8,7 +8,7 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-onlinebill-employer',
+    selector: 'app-onlinebill-applicant',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 		    <!-- Start bill -->
@@ -43,7 +43,7 @@ import { UserService } from '../_services/index';
 	    </div>
 	`
 })
-export class OnlinebillEmployerComponent implements OnInit {
+export class OnlinebillApplicantComponent implements OnInit {
 	model: any = {};
 	loading = false;
 	currentUser: User;
@@ -56,7 +56,7 @@ export class OnlinebillEmployerComponent implements OnInit {
 		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		/*console.log(this.currentUser);*/
 	}
-	blurelCheckCheck(el: any) {
+	blurelCheck(el: any) {
 		/*console.log(this.model);*/
 		if (el.target.value.trim() === '') {
 			el.target.parentNode.classList.remove('input--filled');

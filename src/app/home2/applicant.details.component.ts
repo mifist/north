@@ -8,44 +8,41 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-onlinebill-employer',
+    selector: 'app-details-employer',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <!-- Start bill -->
-		    <div class="form-wrap">
-			    <h4>Абонентская плата для юридичиского лица</h4>
-			    <div class="entry-meta">
-				    <p>Публикация вакансий неограничено</p>
-				    <p>Онлайн оплата</p>
-			    </div>
-			    <div class="form-item --bill">
-				    <div class="radio">
-					    <input id="radio1" type="radio" name="bill" value="1month" checked>
-					    <label for="radio1">1 месяц - 8000,00 рублей</label>
+		    <!-- Start single vaccine -->
+		    <article class="form-wrap">
+			    <header class="wrap__name">
+				    <h5>ООО "НЕФТЕГАЗСТРОЙ"</h5>
+				    <h6>Помощник бурильщика</h6>
+			    </header>
 				
-				    </div>
-				    <div class="radio">
-					    <input id="radio2" type="radio" name="bill" value="3month">
-					    <label for="radio2">3 месяца - 8000,00 рублей</label>
-				    </div>
-				    <div class="radio">
-					    <input id="radio3" type="radio" name="bill" value="6month">
-					    <label for="radio3">6 месяцев - 8000,00 рублей</label>
-				    </div>
-				    <div class="radio">
-					    <input id="radio4" type="radio" name="bill" value="12month">
-					    <label for="radio4">12 месяцев - 8000,00 рублей</label>
-				    </div>
+			    <app-infvacancy></app-infvacancy>
+				
+			    <div class="wrap__text">
+				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 			    </div>
-			    <a href="#" class="btn _large">Оплатить онлайн</a>
-		    </div><!-- End bill -->
+				
+			    <app-applicantlist></app-applicantlist>
+				
+			    <footer class="wrap__button">
+				    <div class="row">
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <a class="btn _large --like" onclick="history.back(); return false;">Назад</a>
+					    </div>
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <a href="#" class="btn _large --dislike">Удалить вакансию</a>
+					    </div>
+				    </div>
+			    </footer>
+		    </article><!-- End single vaccine -->
 	
 	    </div>
 	`
 })
-export class OnlinebillEmployerComponent implements OnInit {
+export class DetailsEmployerComponent implements OnInit {
 	model: any = {};
-	loading = false;
 	currentUser: User;
 	users: User[] = [];
 	private timer;
@@ -56,7 +53,7 @@ export class OnlinebillEmployerComponent implements OnInit {
 		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		/*console.log(this.currentUser);*/
 	}
-	blurelCheckCheck(el: any) {
+	blurelCheck(el: any) {
 		/*console.log(this.model);*/
 		if (el.target.value.trim() === '') {
 			el.target.parentNode.classList.remove('input--filled');
@@ -82,7 +79,13 @@ export class OnlinebillEmployerComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-
+		/*  this.loadel('input14');
+		 document.getElementById('input14').textContent
+		 document.getElementById('input14').parentElement.classList.add('input--filled');
+		 document.getElementById('input15').parentElement.classList.add('input--filled');
+		 el.target.parentNode.classList.add('input--filled');
+		 el.target.focus();id = "input14"
+		 console.log(this.model)*/
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);

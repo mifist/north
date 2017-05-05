@@ -35,11 +35,20 @@ import { ButtonemplComponent } from './home/index';
 import { QuestionEmployerComponent } from './home/employer.question.component';
 import { WishesEmployerComponent } from './home/employer.wishes.component';
 import { BillEmployerComponent } from './home/employer.bill.component';
-import { OnlinebillillEmployerComponent } from './home/employer.onlinebill.component';
+import { OnlinebillEmployerComponent } from './home/employer.onlinebill.component';
 import { SubscriptionEmployerComponent } from './home/employer.subscription.component';
 import { DetailsEmployerComponent } from './home/employer.details.component';
 import { ApplicantlistComponent } from './home/index';
 import { CardapplEmployerComponent } from './home/employer.cardapplicantempl.component';
+
+// Applicants
+import { BillApplicantComponent } from './home2/applicant.bill.component';
+import { OnlinebillApplicantComponent } from './home2/applicant.onlinebill.component';
+import { SubscriptionApplicantComponent } from './home2/applicant.subscription.component';
+import { QuestionApplicantComponent } from './home2/applicant.question.component';
+import { WishesApplicantComponent } from './home2/applicant.wishes.component';
+import { AreaApplicantComponent } from './home2/applicant.area.component';
+import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
 
 @NgModule({
   declarations: [
@@ -68,10 +77,18 @@ import { CardapplEmployerComponent } from './home/employer.cardapplicantempl.com
     ButtonemplComponent,
     WishesEmployerComponent,
     BillEmployerComponent,
-    OnlinebillillEmployerComponent,
+    OnlinebillEmployerComponent,
     SubscriptionEmployerComponent,
     DetailsEmployerComponent,
-    CardapplEmployerComponent
+    CardapplEmployerComponent,
+      // Applicant
+    BillApplicantComponent,
+    OnlinebillApplicantComponent,
+    SubscriptionApplicantComponent,
+    QuestionApplicantComponent,
+    WishesApplicantComponent,
+    AreaApplicantComponent,
+    VacancyApplicantComponent
   ],
   imports: [
     BrowserModule,

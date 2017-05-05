@@ -8,45 +8,38 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-onlinebill-employer',
+    selector: 'app-question-applicant',
     template: `
 	    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		    <!-- Start bill -->
+		    <!-- Start question -->
 		    <div class="form-wrap">
-			    <h4>Абонентская плата для юридичиского лица</h4>
-			    <div class="entry-meta">
-				    <p>Публикация вакансий неограничено</p>
-				    <p>Онлайн оплата</p>
-			    </div>
-			    <div class="form-item --bill">
-				    <div class="radio">
-					    <input id="radio1" type="radio" name="bill" value="1month" checked>
-					    <label for="radio1">1 месяц - 8000,00 рублей</label>
-				
+			    <h4>Ваш вопрос?</h4>
+			    <form name="question_employer" #f="ngForm" novalidate>
+				    <div class="form-item">
+					    <div class="input--yoshiko">
+						    <textarea class="field--yoshiko" id="questionemployer"  
+									  (blur)="blurelCheck($event)"
+						              name="questionemployer"
+						              [(ngModel)]="model.questionemployer"></textarea>
+						    <label class="label--yoshiko" for="questionemployer">
+								<span class="content--yoshiko" data-content="Введите ваш вопрос">
+									Ваш вопрос
+								</span>
+						    </label>
+					    </div>
 				    </div>
-				    <div class="radio">
-					    <input id="radio2" type="radio" name="bill" value="3month">
-					    <label for="radio2">3 месяца - 8000,00 рублей</label>
-				    </div>
-				    <div class="radio">
-					    <input id="radio3" type="radio" name="bill" value="6month">
-					    <label for="radio3">6 месяцев - 8000,00 рублей</label>
-				    </div>
-				    <div class="radio">
-					    <input id="radio4" type="radio" name="bill" value="12month">
-					    <label for="radio4">12 месяцев - 8000,00 рублей</label>
-				    </div>
-			    </div>
-			    <a href="#" class="btn _large">Оплатить онлайн</a>
-		    </div><!-- End bill -->
+				    <button [disabled]="loading" class="btn _large">Отправить</button>
+			    </form>
+		
+		    </div><!-- End choice pay -->
 	
 	    </div>
 	`
 })
-export class OnlinebillEmployerComponent implements OnInit {
+export class QuestionApplicantComponent implements OnInit {
 	model: any = {};
-	loading = false;
 	currentUser: User;
+	loading = false;
 	users: User[] = [];
 	private timer;
 	constructor(
@@ -56,7 +49,7 @@ export class OnlinebillEmployerComponent implements OnInit {
 		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		/*console.log(this.currentUser);*/
 	}
-	blurelCheckCheck(el: any) {
+	blurelCheck(el: any) {
 		/*console.log(this.model);*/
 		if (el.target.value.trim() === '') {
 			el.target.parentNode.classList.remove('input--filled');
@@ -82,7 +75,13 @@ export class OnlinebillEmployerComponent implements OnInit {
 	ngOnInit() {
 		this.loadAllUsers();
 		this.loadUser(this.currentUser._id);
-
+		/*  this.loadel('input14');
+		 document.getElementById('input14').textContent
+		 document.getElementById('input14').parentElement.classList.add('input--filled');
+		 document.getElementById('input15').parentElement.classList.add('input--filled');
+		 el.target.parentNode.classList.add('input--filled');
+		 el.target.focus();id = "input14"
+		 console.log(this.model)*/
 	}
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);
