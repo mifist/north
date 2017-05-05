@@ -21,6 +21,7 @@ import { BillEmployerComponent } from './home/employer.bill.component';
 import { OnlinebillillEmployerComponent } from './home/employer.onlinebill.component';
 import { SubscriptionEmployerComponent } from './home/employer.subscription.component';
 import { DetailsEmployerComponent } from './home/employer.details.component';
+import { CardapplEmployerComponent } from './home/employer.cardapplicantempl.component';
 
 // определение дочерних маршрутов
 const itemRoutes: Routes = [
@@ -28,6 +29,7 @@ const itemRoutes: Routes = [
     { path: 'vacancy', component:  VacancyEmployerComponent },
     { path: 'showvacancy', component:  ShowvacancyEmployerComponent },
     { path: 'showvacancy/details', component:  DetailsEmployerComponent },
+    { path: 'showvacancy/details/view_applicant', component:  CardapplEmployerComponent },
     { path: 'question', component:  QuestionEmployerComponent },
     { path: 'wishes', component:  WishesEmployerComponent },
     { path: 'subscription', component:  SubscriptionEmployerComponent },

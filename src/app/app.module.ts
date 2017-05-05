@@ -39,6 +39,7 @@ import { OnlinebillillEmployerComponent } from './home/employer.onlinebill.compo
 import { SubscriptionEmployerComponent } from './home/employer.subscription.component';
 import { DetailsEmployerComponent } from './home/employer.details.component';
 import { ApplicantlistComponent } from './home/index';
+import { CardapplEmployerComponent } from './home/employer.cardapplicantempl.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ApplicantlistComponent } from './home/index';
     BillEmployerComponent,
     OnlinebillillEmployerComponent,
     SubscriptionEmployerComponent,
-    DetailsEmployerComponent
+    DetailsEmployerComponent,
+    CardapplEmployerComponent
   ],
   imports: [
     BrowserModule,

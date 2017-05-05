@@ -10,8 +10,8 @@ import { UserService } from '../_services/index';
 	    <div class="wrap__applicants-list">
 		    <h5>Список предложений:</h5>
 		    <ul>
-			    <li><a [routerLink]="[ '' ]">Иванов Иван Иванович 1</a></li>
-			    <li><a [routerLink]="[ '' ]">Иванов Иван Иванович 2</a></li>
+			    <li><a [routerLink]="[ 'view_applicant' ]">Иванов Иван Иванович 1</a></li>
+			    <li><a [routerLink]="[ 'view_applicant' ]">Иванов Иван Иванович 2</a></li>
 		    </ul>
 	    </div>
     `
