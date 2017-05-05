@@ -76,7 +76,7 @@ import { UserService, DataService } from '../_services/index';
 						    <div class="form-item">
 							    <div class="input--yoshiko">
 								    <input class="field--yoshiko" id="wagesFrom" type="text" 
-										   (blur)="blurelCheckCheck($event)"
+										   (blur)="blurelCheck($event)"
 								           name="wagesFrom"
 								           #wagesFrom="ngModel"
 								           [(ngModel)]="model.wagesFrom">
@@ -90,7 +90,7 @@ import { UserService, DataService } from '../_services/index';
 						    <div class="form-item">
 							    <div class="input--yoshiko">
 								    <input class="field--yoshiko" id="wagesTo" type="text"  
-										   (blur)="blurelCheckCheck($event)"
+										   (blur)="blurelCheck($event)"
 								           name="wagesTo"
 								           #wagesTo="ngModel"
 								           [(ngModel)]="model.wagesTo">
@@ -104,7 +104,7 @@ import { UserService, DataService } from '../_services/index';
 						    <div class="form-item">
 							    <div class="input--yoshiko">
 								    <textarea class="field--yoshiko" id="vacanDesc"
-								              (blur)="blurelCheckCheck($event)"
+								              (blur)="blurelCheck($event)"
 								              name="vacanDesc"
 								              #vacanDesc="ngModel"
 								              [(ngModel)]="model.vacanDesc"></textarea>
@@ -131,7 +131,7 @@ import { UserService, DataService } from '../_services/index';
 								    <label for="uplvacanEmlImg"></label>
 								    <button type="button" name="" value="" class="btn _small --file">Выбрать</button>
 								    <input id="uplvacanEmlImg" class="field--yoshiko" type="file"
-								           (blur)="blurelCheckCheck($event)"
+								           (blur)="blurelCheck($event)"
 								           name="uplvacanEmlImg"
 								           #uplvacanEmlImg="ngModel"
 								           [(ngModel)]="model.uplvacanEmlImg"
