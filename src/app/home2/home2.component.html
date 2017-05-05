@@ -1,17 +1,4 @@
-﻿<div class="row">
-    <h2>Вы вошли на сайт "Работа на севере"!</h2>
-    <h3>Все зарегистрированные пользовватели:</h3>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}}) {{user.formown}}
-            - <a (click)="deleteUser(user._id)">Удалить</a>
-        </li>
-    </ul>
-    <p><a [routerLink]="['/login']">Выйти</a></p>
-</div>
-
-
-
+﻿
 <!-- Start content -->
 <div class="entry-content">
     <!-- Start Small Head -->

@@ -34,7 +34,7 @@ import { VacancyApplicantComponent } from './home2/applicant.vacancy.component';
 
 import { ShowvemployerApplicantComponent } from './home2/applicant.showemployer.component';
 import { DetailsApplicantComponent } from './home2/applicant.details.component';
-
+import { Home2Component } from './home2/index';
 // определение дочерних маршрутов для работодателя
 const itemRoutes: Routes = [
     { path: 'cabinet', component:  AreaEmployerComponent },
@@ -63,7 +63,7 @@ const itemRoutesAppl: Routes = [
 ];
 const appRoutes: Routes = [
    /* { path: '', component: HomeComponent, canActivate: [AuthGuard] },*/
-    { path: '', redirectTo: '/home/0/cabinet', pathMatch: 'full' },
+    { path: '', redirectTo: '/home2/00/cabinet_applicant', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'choicelogin', component: ChoiceloginComponent },
@@ -74,8 +74,8 @@ const appRoutes: Routes = [
     { path: 'step3/:id', component:  ChoiceCategoryStep3Component },
     { path: 'home/', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'home/:id', component: HomeComponent, canActivate: [AuthGuard] , children: itemRoutes },
-    { path: 'home2/', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'home2/:id', component: HomeComponent, canActivate: [AuthGuard] , children: itemRoutesAppl },
+    { path: 'home2/', component: Home2Component, canActivate: [AuthGuard] },
+    { path: 'home2/:id', component: Home2Component, canActivate: [AuthGuard] , children: itemRoutesAppl },
 
 
 

@@ -263,21 +263,21 @@ export class AreaApplicantComponent implements OnInit {
 		/* this.loadel('input14');*/
 	}
 
-	loadel(ss: string) {
-		/* alert(ss);
-		 console.log((<HTMLInputElement>document.getElementById(ss)).value);*/
+/*	loadel(ss: string) {
+		/!* alert(ss);
+		 console.log((<HTMLInputElement>document.getElementById(ss)).value);*!/
 		let yyy: HTMLInputElement;
 
 		if ((<HTMLInputElement>document.getElementById(ss)).value.trim() === '') {
-			/* el.parentElement.classList.remove('input--filled');*/
+			/!* el.parentElement.classList.remove('input--filled');*!/
 			document.getElementById(ss).parentElement.classList.remove('input--filled');
 		}
 		else {
-			/* el.parentElement.classList.add('input--filled');*/
+			/!* el.parentElement.classList.add('input--filled');*!/
 			document.getElementById(ss).parentElement.classList.add('input--filled');
 		}
 
-	}
+	}*/
 
 
 	ngOnInit() {
@@ -291,6 +291,7 @@ export class AreaApplicantComponent implements OnInit {
 		 el.target.focus();id = "input14"
 		 console.log(this.model)*/
 	}
+/*
 
 	ngAfterViewInit() {
 		this.timer = setTimeout(() => this.timerf(), 500);
@@ -317,6 +318,7 @@ export class AreaApplicantComponent implements OnInit {
 		this.loadel('accounting');
 		this.loadel('infAbout');
 	}
+*/
 
 
 	deleteUser(_id: string) {
