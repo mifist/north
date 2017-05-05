@@ -43,7 +43,6 @@ import { TrainingApplicantComponent } from './home2/training.assistance.componen
 // определение дочерних маршрутов для работодателя
 const itemRoutes: Routes = [
     { path: 'cabinet', component:  AreaEmployerComponent },
-    { path: 'vacancy', component:  VacancyApplicantComponent },
     { path: 'vacancy', component:  VacancyEmployerComponent },
     { path: 'showvacancy', component:  ShowvacancyEmployerComponent },
     { path: 'showvacancy/details', component:  DetailsEmployerComponent },
@@ -71,8 +70,9 @@ const itemRoutesAppl: Routes = [
     { path: 'training', component:  TrainingApplicantComponent },
 ];
 const appRoutes: Routes = [
-   /* { path: '', component: HomeComponent, canActivate: [AuthGuard] },*/
-    { path: '', redirectTo: '/home2/00/cabinet_applicant', pathMatch: 'full' },
+    // { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    // { path: '', redirectTo: '/home2/00/cabinet_applicant', pathMatch: 'full' },
+    { path: '', redirectTo: '/home/0/cabinet', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'choicelogin', component: ChoiceloginComponent },
