@@ -1120,7 +1120,7 @@
         },
         {
             id: '139',
-            idcat1: '7',
+            idcat2: '17',
             title: 'Старшая медсестра',
             desc: '',
             tmodel: false,

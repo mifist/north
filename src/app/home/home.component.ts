@@ -42,6 +42,10 @@ export class HomeComponent implements OnDestroy {
     ngOnInit() {
         this.loadAllUsers();
         this.loadUser(this.currentUser._id);
+
+
+        
+
         /*  this.loadel('input14');
           document.getElementById('input14').textContent
           document.getElementById('input14').parentElement.classList.add('input--filled');
@@ -63,7 +67,12 @@ export class HomeComponent implements OnDestroy {
 
 
     private loadUser(_id: string) {
-        this.userService.getById(_id).subscribe(user => { this.model = user; });
+        this.userService.getById(_id).subscribe(user => {
+            if (!("kpp" in user)) this.router.navigate(['/home2/00/cabinet_applicant']);
+
+            this.model = user;
+
+        });
 
     }
 

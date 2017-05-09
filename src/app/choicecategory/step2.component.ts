@@ -28,6 +28,20 @@ export class ChoiceCategoryStep2Component {
     ngOnInit() {
         this.categores = this.dataService.GetСategores();
         this.categores_step2 = this.dataService.GetСategores_step2();
+
+        this.dataService.SetFlagskipstep2(false);
+        //alert(this.dataService.GetFlagskipstep2());
+        
+        
+        let arr = this.categores_step2.filter(category => category.idcat === this.id);
+        if (arr.length === 1) {
+            //alert(arr.length);
+            this.dataService.SetFlagskipstep2(true);
+            let forstep3id = arr[0].id;
+            //alert(forstep3id);
+            this.router.navigate(['/step3/' + forstep3id]);
+        }
+        
     } 
 
     ngOnDestroy() {

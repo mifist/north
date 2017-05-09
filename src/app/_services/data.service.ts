@@ -11,6 +11,7 @@ import { Categores } from './categores';
 @Injectable()
 export class DataService {
     model: any = {};
+    flagskipstep2 = false;
 
     constructor(private cat: Categores
         /*private http: Http, private config: AppConfig*/) { }
@@ -35,5 +36,14 @@ export class DataService {
     GetСategores_step3() {
         return this.cat.categores_step3;
     }
+
+    GetFlagskipstep2() {
+        return this.flagskipstep2;
+    }
+
+    SetFlagskipstep2(flag: boolean) {
+        this.flagskipstep2 = flag;
+    }
+
 
 }

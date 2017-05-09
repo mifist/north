@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 
+
 import { User } from '../_models/index';
 
 import { UserService, DataService } from '../_services/index';
@@ -24,9 +25,10 @@ import { UserService, DataService } from '../_services/index';
 								            #categor="ngModel"
 								            [(ngModel)]="model.categor" 
 											name="categores"
-								            (blur)="blurelCheck($event)">
-									    <option *ngFor="let category of categores" 
-												[value]="category.title">{{ category.title }}</option>
+								            (blur)="blurelCheck($event)"
+								            (change)="changecategoryid($event)">
+									    <option *ngFor="let category of categores"
+												[value]="category.id">{{ category.title }}</option>
 								    </select>
 								    <label class="label--yoshiko" for="categor">
 											<span class="content--yoshiko" data-content="Выберите направление:">
@@ -38,14 +40,19 @@ import { UserService, DataService } from '../_services/index';
 						    <div class="form-item ">
 							    <div class="input--yoshiko">
 								    <select class="field--yoshiko" id="categores2"
-								            #categor_step2="ngModel"
+								            #categor_step2222="ngModel"
 								            [(ngModel)]="model.categores_step2"
 								            name="categores_step2"
-								            (blur)="blurelCheck($event)">
-									    <option *ngFor="let category2 of categores_step2"
-									            [value]="category2.title">
-											{{ category2.title }}
-										</option>
+								            (blur)="blurelCheck($event)" 
+											(change)="changecategoryid2($event)">
+									
+									    <ng-container *ngFor="let category_step2 of categores_step2" >
+										    <option *ngIf="category_step2.idcat === categoresid"
+										            [ngValue]="category_step2.id">
+											    {{ category_step2.title }}
+										    </option>
+									    </ng-container>
+								
 								    </select>
 								    <label class="label--yoshiko" for="categores2">
 										<span class="content--yoshiko" data-content="Выберите категорию из списка:">
@@ -61,10 +68,13 @@ import { UserService, DataService } from '../_services/index';
 								            [(ngModel)]="model.categores_step3"
 								            name="categores_step3"
 								            (blur)="blurelCheck($event)">
-									    <option *ngFor="let category3 of categores_step3"
-									            [value]="category3.title">
-										    {{ category3.title }}
-									    </option>
+									    <ng-container *ngFor="let category_step3 of categores_step3" >
+										    <option *ngIf="category_step3.idcat2 === categoresid"
+										            [ngValue]="category_step3.id">
+											    {{ category_step3.title }}
+										    </option>
+									    </ng-container>
+									   
 								    </select>
 								    <label class="label--yoshiko" for="input125">
 											<span class="content--yoshiko" data-content="Выберите подкатегорию:">
@@ -162,6 +172,8 @@ export class VacancyEmployerComponent implements OnInit {
 	loading = false;
 	currentUser: User;
 	users: User[] = [];
+	categoresid : number;
+
 	categores = [];
 	categores_step2 = [];
 	categores_step3 = [];
@@ -184,6 +196,17 @@ export class VacancyEmployerComponent implements OnInit {
 		}
 		/* this.loadel('input14');*/
 	}
+
+	changecategoryid(eventel: any) {
+		let id = eventel.target.value;
+		this.categoresid = this.categores[id-1].id;
+	}
+	changecategoryid2(eventel: any) {
+		let id = eventel.target.value;
+		this.categoresid = this.categores_step2[id-1].id;
+	}
+
+
 	loadel(ss: string) {
 		/* alert(ss);
 		 console.log((<HTMLInputElement>document.getElementById(ss)).value);*/
