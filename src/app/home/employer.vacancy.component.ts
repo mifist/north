@@ -48,7 +48,7 @@ import { UserService, DataService } from '../_services/index';
 									
 									    <ng-container *ngFor="let category_step2 of categores_step2" >
 										    <option *ngIf="category_step2.idcat === categoresid"
-										            [ngValue]="category_step2.id">
+										            [value]="category_step2.id">
 											    {{ category_step2.title }}
 										    </option>
 									    </ng-container>
@@ -69,8 +69,8 @@ import { UserService, DataService } from '../_services/index';
 								            name="categores_step3"
 								            (blur)="blurelCheck($event)">
 									    <ng-container *ngFor="let category_step3 of categores_step3" >
-										    <option *ngIf="category_step3.idcat2 === categoresid"
-										            [ngValue]="category_step3.id">
+										    <option *ngIf="category_step3.idcat2 === categoresid2"
+										            [value]="category_step3.id">
 											    {{ category_step3.title }}
 										    </option>
 									    </ng-container>
@@ -173,7 +173,7 @@ export class VacancyEmployerComponent implements OnInit {
 	currentUser: User;
 	users: User[] = [];
 	categoresid : number;
-
+	categoresid2 : number;
 	categores = [];
 	categores_step2 = [];
 	categores_step3 = [];
@@ -203,7 +203,7 @@ export class VacancyEmployerComponent implements OnInit {
 	}
 	changecategoryid2(eventel: any) {
 		let id = eventel.target.value;
-		this.categoresid = this.categores_step2[id-1].id;
+		this.categoresid2 = this.categores_step2[id-1].id;
 	}
 
 
